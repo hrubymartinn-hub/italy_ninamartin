@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Itálie 20.–26. 7. — tři varianty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12241f; --ink-soft:#3d5049;
+  --plaster:#e6e4d9; --paper:#f7f5ef;
+  --verde:#1e5f4b; --cobalto:#24468c; --vinaccia:#7b2233; --zafferano:#dfa22b;
+  --line:#c9c6b7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--plaster);color:var(--ink);font-family:'Archivo',system-ui,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 120px}
+
+/* topbar */
+.topbar{position:sticky;top:0;z-index:60;background:var(--verde);color:#fff;border-bottom:3px solid var(--ink)}
+.topbar-in{max-width:980px;margin:0 auto;padding:10px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.brand{font-family:'Archivo Black',Impact,sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin-right:auto}
+.brand small{display:block;font-family:'Archivo';font-weight:400;letter-spacing:.02em;opacity:.75;text-transform:none;font-size:11px}
+.who{display:flex;border:2px solid rgba(255,255,255,.5);border-radius:2px;overflow:hidden}
+.who button{font:inherit;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:transparent;color:#fff;border:0;padding:7px 13px;cursor:pointer}
+.who button[aria-pressed="true"]{background:#fff;color:var(--verde)}
+.util{font:inherit;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:var(--zafferano);color:var(--ink);border:0;padding:8px 13px;border-radius:2px;cursor:pointer}
+.util:hover{filter:brightness(1.08)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:99;background:var(--ink);color:#fff;padding:11px 18px;border-radius:3px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.on{opacity:1}
+
+/* hero */
+.hero{padding:48px 0 30px}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--verde)}
+h1{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(34px,7vw,62px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;margin:12px 0 6px}
+h1 em{font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;text-transform:none;display:block;color:var(--vinaccia)}
+.lede{font-family:'Newsreader',Georgia,serif;font-size:19px;line-height:1.5;max-width:56ch;margin-top:16px;color:var(--ink-soft)}
+.howto{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--zafferano);padding:16px 18px;margin-top:26px;font-size:14px}
+
+/* variant chooser */
+.chooser{margin-top:40px;padding-top:34px;border-top:1px solid var(--line)}
+.sec-label{font-family:'Archivo Black';text-transform:uppercase;font-size:20px;letter-spacing:-.01em;margin-bottom:4px}
+.sec-sub{font-size:14px;color:var(--ink-soft);margin-bottom:22px}
+.vgrid{display:grid;gap:16px}
+@media(min-width:820px){.vgrid{grid-template-columns:1fr 1fr 1fr}}
+.vcard{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;position:relative;transition:.2s}
+.vcard.match{border-color:var(--zafferano);box-shadow:0 0 0 3px rgba(223,162,43,.28)}
+.vcard.match::before{content:"SHODA";position:absolute;top:-1px;right:-1px;background:var(--zafferano);color:var(--ink);font-family:'Archivo Black';font-size:10px;letter-spacing:.14em;padding:4px 8px}
+.vcard-top{padding:18px 18px 0}
+.vletter{font-family:'Archivo Black';font-size:11px;letter-spacing:.14em;background:var(--ink);color:#fff;display:inline-block;padding:4px 8px}
+.vname{font-family:'Newsreader',Georgia,serif;font-size:26px;line-height:1.12;margin:9px 0 6px}
+.vtag{font-size:14px;color:var(--ink-soft);min-height:63px}
+.vstats{display:flex;flex-wrap:wrap;gap:14px;padding:14px 18px;border-top:1px solid var(--line);margin-top:14px}
+.vstat b{display:block;font-family:'Archivo Black';font-size:15px;line-height:1.2}
+.vstat span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.vpro{padding:0 18px 4px}
+.vpro li{font-size:13px;padding:4px 0 4px 16px;position:relative;line-height:1.4}
+.vpro li.plus::before{content:"+";position:absolute;left:0;color:var(--verde);font-weight:700}
+.vpro li.minus::before{content:"–";position:absolute;left:0;color:var(--vinaccia);font-weight:700}
+.vfoot{margin-top:auto;display:flex;align-items:center;gap:10px;padding:13px 18px;border-top:1px solid var(--line);background:rgba(30,95,75,.05)}
+.vfoot span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-right:auto}
+
+/* tabs */
+.tabs{position:sticky;top:52px;z-index:40;background:var(--plaster);border-bottom:2px solid var(--ink);margin-top:52px;display:flex;gap:0;overflow-x:auto}
+.tabs button{font:inherit;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:transparent;border:0;border-bottom:3px solid transparent;padding:13px 16px;cursor:pointer;white-space:nowrap;color:var(--ink-soft)}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--zafferano)}
+
+/* stages */
+.vhead{padding:36px 0 0}
+.vhead h2{font-family:'Archivo Black';text-transform:uppercase;font-size:clamp(22px,4vw,30px);line-height:1}
+.vhead p{font-family:'Newsreader',Georgia,serif;font-size:18px;color:var(--ink-soft);max-width:60ch;margin-top:10px}
+.stage{padding:46px 0 6px;border-top:1px solid var(--line);margin-top:38px}
+.stage-head{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
+.km{font-family:'Archivo Black';font-size:12px;letter-spacing:.05em;background:var(--ink);color:#fff;padding:5px 9px;white-space:nowrap}
+.stage h3{font-family:'Archivo Black',Impact,sans-serif;text-transform:uppercase;font-size:clamp(22px,4vw,32px);line-height:1;letter-spacing:-.01em}
+.when{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde);font-weight:600}
+.note{font-family:'Newsreader',Georgia,serif;font-size:18px;color:var(--ink-soft);max-width:62ch;margin-top:10px}
+
+.opts{display:grid;gap:18px;margin-top:24px}
+@media(min-width:760px){.opts{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}}
+.opt{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;position:relative;transition:.2s}
+.opt.match{border-color:var(--zafferano);box-shadow:0 0 0 3px rgba(223,162,43,.28)}
+.opt.match::before{content:"SHODA";position:absolute;top:-1px;right:-1px;background:var(--zafferano);color:var(--ink);font-family:'Archivo Black';font-size:10px;letter-spacing:.14em;padding:4px 8px}
+.opt-head{padding:18px 18px 14px;border-bottom:1px solid var(--line)}
+.opt-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
+.opt-name{font-family:'Newsreader',Georgia,serif;font-size:27px;line-height:1.1;margin:3px 0 8px}
+.opt-why{font-size:14px;color:var(--ink-soft)}
+.opt-body{padding:16px 18px;flex:1}
+h4{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--verde);margin:16px 0 7px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+h4:first-child{margin-top:0}
+ul{list-style:none}
+.doing li{font-size:14px;padding:5px 0 5px 15px;position:relative;line-height:1.45}
+.doing li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;background:var(--verde)}
+.doing li i{font-style:normal;color:var(--vinaccia);font-size:12px;font-weight:600}
+.eat li{font-size:14px;padding:5px 0;line-height:1.4}
+.eat a,.hotel-main a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);font-weight:600}
+.eat a:hover,.hotel-main a:hover{border-color:var(--ink)}
+.eat span{color:var(--ink-soft);font-size:13px}
+.hotel{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dotted var(--line)}
+.hotel:last-child{border-bottom:0}
+.tier{font-family:'Archivo Black';font-size:9px;letter-spacing:.08em;padding:4px 5px;color:#fff;white-space:nowrap;margin-top:2px;min-width:54px;text-align:center}
+.t-low{background:var(--ink-soft)}.t-mid{background:var(--cobalto)}.t-top{background:var(--vinaccia)}
+.hotel-main{flex:1;min-width:0}
+.hotel-main a,.hotel-main b{font-size:14px}
+.hotel-meta{font-size:12px;color:var(--ink-soft);margin-top:2px;line-height:1.4}
+.price{font-family:'Archivo Black';font-size:12px;margin-top:3px}
+.stamp{border:2px solid var(--line);background:transparent;width:32px;height:32px;border-radius:50%;cursor:pointer;flex-shrink:0;font-family:'Archivo Black';font-size:12px;color:var(--line);display:grid;place-items:center;transition:.16s;padding:0}
+.stamp:hover{border-color:var(--ink-soft);color:var(--ink-soft)}
+.stamp[data-on="M"]{background:var(--cobalto);border-color:var(--cobalto);color:#fff}
+.stamp[data-on="N"]{background:var(--vinaccia);border-color:var(--vinaccia);color:#fff}
+.stamp[data-on="MN"]{background:var(--zafferano);border-color:var(--zafferano);color:var(--ink)}
+.stamp:focus-visible{outline:3px solid var(--zafferano);outline-offset:2px}
+.opt-vote{display:flex;align-items:center;gap:11px;padding:13px 18px;border-top:1px solid var(--line);background:rgba(30,95,75,.05)}
+.opt-vote span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-right:auto}
+
+.box{background:var(--ink);color:var(--plaster);padding:22px;margin-top:24px}
+.box h5{font-family:'Archivo Black';text-transform:uppercase;font-size:13px;letter-spacing:.1em;color:var(--zafferano);margin-bottom:10px}
+.box p,.box li{font-size:14px;line-height:1.6}
+.box ul{margin-top:8px}
+.box li{padding-left:15px;position:relative;margin-bottom:5px}
+.box li::before{content:"—";position:absolute;left:0;color:var(--zafferano)}
+.box a{color:var(--zafferano)}
+
+.summary{margin-top:60px;background:var(--paper);border:2px solid var(--ink);padding:26px}
+.summary h2{font-family:'Archivo Black';text-transform:uppercase;font-size:22px;margin-bottom:4px}
+.summary .sub{font-size:13px;color:var(--ink-soft);margin-bottom:18px}
+.sum-row{padding:11px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.sum-row:last-child{border-bottom:0}
+.sum-stage{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--verde);min-width:112px}
+.sum-pick{font-family:'Newsreader',Georgia,serif;font-size:18px;flex:1;min-width:180px}
+.sum-tag{font-family:'Archivo Black';font-size:9px;letter-spacing:.1em;padding:3px 6px;color:#fff}
+.tag-match{background:var(--zafferano);color:var(--ink)}
+.tag-m{background:var(--cobalto)}.tag-n{background:var(--vinaccia)}
+.tag-none{background:var(--line);color:var(--ink-soft)}
+.empty{font-family:'Newsreader',Georgia,serif;font-style:italic;color:var(--ink-soft);font-size:17px}
+footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand">Itálie 20.–26.&nbsp;7.<small>tři varianty · klikej na kolečka</small></div>
+    <div class="who" role="group" aria-label="Kdo hlasuje">
+      <button id="btnM" aria-pressed="true">Martin</button>
+      <button id="btnN" aria-pressed="false">Nina</button>
+    </div>
+    <button class="util" id="btnShare">Zkopírovat odkaz s hlasy</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Road trip ve dvou · služební auto · 6 nocí</div>
+  <h1>Sever, jih,<br><em>nebo jenom klid</em></h1>
+  <p class="lede">Stejný týden se dá strávit třemi hodně různými způsoby. Rozdíl není v tom, co uvidíte — ale kolik z toho týdne prosedíte v autě. Vyberte si nejdřív směr, pak teprve zastávky.</p>
+  <div class="howto">
+    <b>Jak to funguje:</b> nahoře přepni, jestli jsi Martin nebo Nina. Nejdřív zahlasuj u varianty A/B/C, pak si projdi její zastávky a hotely a klikej na kolečka u toho, co se ti líbí. Když se strefíme oba, karta zežloutne. Nakonec dej „Zkopírovat odkaz s hlasy“ a pošli ho druhému — otevře se mu to s tvými hlasy. Dole je souhrn.
+  </div>
+</header>
+
+<section class="chooser">
+  <div class="sec-label">Nejdřív: kudy vůbec?</div>
+  <p class="sec-sub">Tohle je jediné rozhodnutí, které je opravdu potřeba udělat společně. Zbytek už je jen výběr z hezkých možností.</p>
+  <div class="vgrid" id="vcards"></div>
+</section>
+
+<nav class="tabs" id="tabs" role="tablist" aria-label="Varianty trasy"></nav>
+
+<div id="itinerary"></div>
+
+<section class="summary" id="summary">
+  <h2>Náš plán</h2>
+  <p class="sub">Aktualizuje se, jak klikáte. Žlutá = shodli jsme se.</p>
+  <div id="sumBody"></div>
+</section>
+
+<footer>
+  Ceny ubytování jsou odhad za dvoulůžkový pokoj a noc v sezoně — ověřte aktuální. Hodnocení, otevírací a zavírací dny z Map Google ke dni sestavení plánu; před cestou překontrolujte, hlavně u restaurací. Odkazy vedou na Mapy Google.
+</footer>
+
+</div>
+
+<script>
+const G=(n,id)=>`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(n)}${id?`&query_place_id=${id}`:""}`;
+
+/* ---------- sdílené bloky ---------- */
+const AT_OPTS = pre => ([
+  {id:pre+"at1",kicker:"Korutany · 6 h z Prahy",name:"Ossiacher See",
+   why:"Zaparkuješ u jezera, ráno se vykoupeš a v poledne jsi v Itálii. Nejlepší poměr únava/odměna.",
+   do:["Večerní koupel — voda má koncem července přes 24 °C.","Ráno kafe v Annenheimu a dolů tunelem Karawanken. <i>2,5 h do Benátska</i>"],
+   eat:[],
+   stay:[
+    {t:"low",n:"Hotel City Villach",id:"ChIJa8vKesWBcEcRrKqNPGmEHGA",m:"4,4★ · v centru u nádraží, parkování před hotelem, sauna. Bez klimatizace — nechte si ji zapnout na recepci.",p:"~90 €"},
+    {t:"mid",n:"Hotel Ossiacher See",id:"ChIJWfc29a99cEcRShOG3c1utq0",m:"4,6★ · Steindorf. Vlastní pláž, bazén, snídaně na terase nad jezerem. Rodinný, starosvětský.",p:"~120 €"},
+    {t:"top",n:"Lake Lodge Ossiacher See",id:"ChIJc3a8JaeBcEcRO5VpXXBj3yE",m:"4,9★ · Annenheim. Nové apartmány s výhledem na jezero, minuty od vody.",p:"~180 €"}]},
+  {id:pre+"at2",kicker:"Salcbursko · 4:45 h z Prahy",name:"Golling an der Salzach",
+   why:"Kratší večerní jízda. Daň: zítra musíte odjet dřív a přidat pět hodin za volantem.",
+   do:["<b>Gollinger Wasserfall</b> — 10 minut pěšky od parkoviště, stihne se ráno.","Soutěska Salzachöfen, pokud bude nálada."],
+   eat:[],
+   stay:[
+    {t:"mid",n:"Hotel Hauslwirt",id:"ChIJD0-zv6rBdkcRc9EvQ90MTnc",m:"4,4★ · na hlavní ulici, nejlepší restaurace ve městě, velkorysá snídaně. Pokoje malé, ale útulné.",p:"~110 €"},
+    {t:"low",n:"Landgasthof Torrenerhof",id:"ChIJA8GjkwrBdkcR0nGbntT6CvM",m:"3,5★ · u vodopádu, krásné okolí — ale recenze rozkolísané. Jen jako záložní.",p:"~85 €"}]},
+  {id:pre+"at3",kicker:"už v Itálii · 6:45 h z Prahy",name:"Tarvisio",
+   why:"Nejdelší dnešní jízda, ale ráno vstanete v Itálii — espresso, italské ceny paliva a náskok na celý zbytek týdne.",
+   do:["Nic. Dojet, dát si pizzu, spát.","Ráno vyrazit v klidu — máte časovou rezervu."],
+   eat:[],
+   stay:[
+    {t:"low",n:"Hotel Nevada",id:"ChIJXakIyb5xekcR9cLuieMiF0w",m:"4,4★ · sauna a vířivka v ceně, parkování. Pozor: naproti bar s hudbou — vezměte špunty.",p:"~90 €"},
+    {t:"mid",n:"Hotel Tarvisio Four Seasons",id:"ChIJD8JhrZVxekcRvdj8jUqHivA",m:"4,0★ · výborná restaurace, jinak recenze rozkolísané. Beru kvůli večeři, ne kvůli pokoji.",p:"~110 €"}]}
+]);
+
+const VENETO_OPTS = pre => ([
+  {id:pre+"ve1",kicker:"město na kanálech",name:"Treviso",
+   why:"Kanály, loubí, rybí trh na ostrůvku. Benátky bez lidí — a do těch pravých 30 minut vlakem.",
+   do:["<b>Pescheria</b> — rybí trh na ostrůvku uprostřed kanálu, od šesti ráno.","<b>Museo Santa Caterina</b> — fresky Tomasa da Modena v odsvěceném klášteře. Skoro prázdné.","Piazza dei Signori, hradby, procházka podél Sile. Půjčit kolo.","Večerní spritz „in ombra“ u vody. <i>Tiramisu vzniklo tady</i>"],
+   eat:[
+    {n:"Osteria Alla Grotta",id:"ChIJ5UM8c9U3eUcRhZgWwQKHc8s",m:"4,6★ · rodinná, malá, rezervace nutná. Zavřeno po a ne."},
+    {n:"Osteria Contemporanea",id:"ChIJddHnZRNJeUcRP2hIzCT-s9g",m:"4,5★ · u kanálu, skvělá vinná karta a tiramisu."}],
+   stay:[
+    {t:"low",n:"Trevisi27",id:"ChIJPWnd6SpIeUcR5tZ1qizrg1I",m:"4,9★ · B&B přímo u kanálu, prostorné pokoje, kuchyňka, kafe zdarma. Nejlepší poměr cena/výkon v celém plánu.",p:"~90 €"},
+    {t:"mid",n:"Locanda San Tomaso",id:"ChIJlYEG3ytIeUcR2z_fxAnM8pI",m:"4,7★ · hotýlek plný obrazů a kuriozit, výborná snídaně, milý hostitel. V hradbách.",p:"~130 €"},
+    {t:"top",n:"le camere di Palazzo Bortolan",id:"ChIJAQCwsNRJeUcRvfGBKMD8G3M",m:"4,2★ · historický palác nad kanálem, klenuté stropy. Krásné, ale recenze rozkolísané — čtěte ty nejnovější.",p:"~150 €"}]},
+  {id:pre+"ve2",kicker:"Giotto a studenti",name:"Padova",
+   why:"Pro umění. Scrovegniho kaple je jediná věc v Benátsku, kvůli které stojí za to stát frontu — a nemusíte, když rezervujete.",
+   do:["<b>Scrovegniho kaple</b> — Giottův freskový cyklus, 1305. Vchází se přes klimatickou komoru, uvnitř 15 minut. <i>Rezervovat teď hned</i>","<b>Orto Botanico</b> — nejstarší botanická zahrada světa (1545), UNESCO, prázdno.","Prato della Valle — obří eliptické náměstí se 78 sochami a kanálem dokola.","Palazzo della Ragione a bacari kolem Piazza delle Erbe. <i>Spritz se vymyslel tady</i>"],
+   eat:[],
+   stay:[
+    {t:"low",n:"Hotel Casa del Pellegrino",id:"ChIJWV0oM1TafkcRCaokndCemqE",m:"4,2★ · přímo u baziliky sv. Antonína, prostý, čistý, levný. Berte pokoj do dvora — do ulice je hluk.",p:"~80 €"},
+    {t:"mid",n:"Casa Giotto",id:"ChIJk8OoxlvafkcRiC6CNbVVLpA",m:"4,7★ · designový B&B, 6 pokojů, poukázky na snídani do tří okolních kaváren. Kousek od kaple.",p:"~140 €"},
+    {t:"top",n:"Palazzo Mantua Benavides",id:"ChIJdcD4ylvafkcR6U84DVrTDYM",m:"4,6★ · renesanční palác, obří pokoje, socha Herkula na dvoře, parkování v areálu za 25 €.",p:"~230 €"}]},
+  {id:pre+"ve3",kicker:"podhůří · Palladio a Scarpa",name:"Asolo a Bassano",
+   why:"Nejklidnější a architektonicky nejsilnější varianta. Daň: do Benátek hodinu, takže je nejspíš vynecháte. Což možná není daň.",
+   do:["<b>Tomba Brion</b>, San Vito di Altivole — hřbitovní areál Carla Scarpy. Beton, voda, kruhy. Vstup zdarma, prázdno. <i>Otevřeno jen st–ne 10–18</i>","<b>Villa di Maser</b> — Palladiova vila s freskami Veronese. Rodina tam pořád bydlí, dělají prosecco. <i>Po zavřeno</i>","<b>Asolo</b> — „město stovky obzorů“, hrad, loubí. Bydlela tu Eleonora Duse.","<b>Bassano del Grappa</b> — Palladiův krytý dřevěný most, palírna Nardini přímo na něm.","<b>Possagno</b> — Canovův chrám, kopie Pantheonu na kopci."],
+   eat:[
+    {n:"Osteria Alla Caneva",id:"ChIJdzEBiYXaeEcRUTmHHDLw0sk",m:"4,5★ · Bassano, srdce starého města, polenta a hřiby, malý sál — rezervovat. Zavřeno út."},
+    {n:"Osteria della Gerbera",id:"ChIJYcfdRQDbeEcRJPBmqL4cbrQ",m:"4,9★ · přímo u krytého mostu, cicchetti a ryby, ceny slušné. Zavřeno út."}],
+   stay:[
+    {t:"mid",n:"Ca' Baracca & Bellavista",id:"ChIJg9BsjpjFeEcRwFj91lBlO9I",m:"4,9★ · B&B na kopci nad Bassanem, terasa s výhledem, jacuzzi na pokoji. Skvělí hostitelé.",p:"~130 €"},
+    {t:"top",n:"Albergo al Sole",id:"ChIJt9cqwFsneUcRlicUSa8OY0A",m:"4,7★ · v srdci Asola, terasa nad údolím, restaurace La Terrazza. Tichý luxus, nic přezdobeného.",p:"~220 €"}]}
+]);
+
+const VALPO_OPT = pre => ({
+  id:pre+"vp",kicker:"vinice nad Veronou",name:"Valpolicella",
+  why:"Ráno Verona, odpoledne kopce, večer Amarone. O pět stupňů chladnější než město.",
+  do:["<b>San Giorgio di Valpolicella</b> — románský kostelík s ambitem na vrcholku, výhled na celé údolí. Vesnice o dvaceti domech.","<b>Ponte di Veja</b> — obří přírodní kamenný most v lese, chladno, prázdno.","Degustace ve sklepě: Amarone, Ripasso, Recioto. Většina vinařství bere jen po objednání."],
+  eat:[
+   {n:"Enoteca della Valpolicella",id:"ChIJmSy4IzT7gUcRbRTYG_0PcFs",m:"4,7★ · Fumane. Nejlepší jídlo na trase, michelinská úroveň za normální peníze. Rezervovat. Zavřeno po."},
+   {n:"Ristorante Valpolicella",id:"ChIJcSubppD8gUcReanyb-riT0w",m:"4,5★ · Negrar. Terasa s výhledem, srnčí s polentou."}],
+  stay:[
+   {t:"low",n:"Antico Casale Bergamini",id:"ChIJN_ZtsdjkgUcRhcXpCN5MX2k",m:"4,8★ · Sant'Ambrogio. Agriturismo s bazénem, čerstvá vejce k snídani, vlastní víno. Prosté a dokonalé.",p:"~110 €"},
+   {t:"mid",n:"Villa Allegri Agriturismo di Charme",id:"ChIJd5XW5RX9gUcRPxowee8f37Q",m:"4,9★ · Negrar. Bazén, výhled do údolí, rodina vaří večeře z vlastního. Lidi se sem vrací roky.",p:"~150 €"},
+   {t:"top",n:"Luxury Relais Villa dei Gelsi & SPA",id:"ChIJJzyKbuNZf0cRtYPx_dxOBVE",m:"5,0★ · nad Veronou, spa, dva bazény, snídaně u vody. Do centra pěšky (zpátky do kopce).",p:"~300 €"}]
+});
+
+const MANTOVA_OPT = pre => ({
+  id:pre+"mn",kicker:"nejpodceňovanější město severní Itálie",name:"Mantova",
+  why:"Renesanční město obklopené třemi jezery, prakticky bez turistů. A leží přesně na trase na jih.",
+  do:["<b>Palazzo Te</b> — Sala dei Giganti od Giulia Romana. Freska, ze které se na diváka hroutí strop. 15 €.","<b>Palazzo Ducale</b> a <b>Camera degli Sposi</b> — Mantegna. Jen s časovkou. <i>Limitovaný vstup, rezervovat</i>","Rotonda di San Lorenzo, Teatro Bibiena, projížďka lodí po jezerech s lekníny."],
+  eat:[
+   {n:"Osteria dell'Oca",id:"ChIJpR2SMD3UgUcRFD7eo6OSujo",m:"4,5★ · tortelli di zucca, mantovská klasika. Zavřeno út."},
+   {n:"Trattoria Due Cavallini",id:"ChIJJ1MoJzzUgUcRfB70U-0-anY",m:"4,4★ · rodinná, Slow Food, obří porce, lambrusco. Zavřeno út."}],
+  stay:[
+   {t:"mid",n:"Ca' degli Uberti Palace Hotel",id:"ChIJj-fvVR_UgUcRx0BrF_ZOr7Y",m:"4,5★ · přímo na Piazza Sordello, moderní pokoje ve starém paláci, zbytky fresek. Blíž centru to nejde.",p:"~140 €"},
+   {t:"top",n:"Grand Hotel San Lorenzo",id:"ChIJGRamNn_VgUcRMp5VyRtKFOE",m:"4,1★ · střešní bar s výhledem, spa pokoje, vlastní parkování. Recenze rozkolísané, ale poloha sedí.",p:"~200 €"}]
+});
+
+const GARDA_OPT = pre => ({
+  id:pre+"gd",kicker:"koupačka",name:"Torri del Benaco",
+  why:"Východní břeh Gardy. Nejturističtější varianta — ale po dnech chození je koupání v jezeře argument.",
+  do:["Plavání a nic. Hrad Scaligerů s citroníkovou zahradou.","Trajekt do Maderna a zpět — 30 minut, nejlevnější vyhlídková plavba v Itálii.","Punta San Vigilio — poloostrov s cypřiši, nejhezčí místo na jezeře."],
+  eat:[],
+  stay:[
+   {t:"low",n:"Albergo Del Garda",id:"ChIJnUWKjYT0gUcR2cay7iVGOIs",m:"4,5★ · vlastní pláž přes ulici, výhled z balkonu, klidnější než centrum.",p:"~140 €"},
+   {t:"mid",n:"Hotel le Torri del Garda",id:"ChIJu9_knArzgUcRY0-vUA7sADw",m:"4,6★ · na kopci, bazén, velké pokoje s výhledem. Spíš rodinný resort — hodně dětí, jídlo průměrné.",p:"~170 €"},
+   {t:"top",n:"Relais Rossar Garda & Hills",id:"ChIJTw7MnLTzgUcRHKPNlLVoB-Q",m:"4,9★ · Marciaga, butik v kopcích nad jezerem, bazén, snídaně jiná každý den.",p:"~250 €"}]
+});
+
+const TRENTO_OPT = pre => ({
+  id:pre+"tn",kicker:"na cestě domů",name:"Trento",
+  why:"Nejkratší nedělní dojezd ze všech. A město samo o sobě stojí za zastávku.",
+  do:["<b>Castello del Buonconsiglio</b> — <i>Ciclo dei Mesi</i>, gotický freskový kalendář měsíců. Jeden z nejkrásnějších v Evropě, a skoro nikdo tam nechodí.","<b>MUSE</b> — přírodovědné muzeum od Renza Piana.","Piazza Duomo s freskovanými domy, večeře venku."],
+  eat:[],
+  stay:[
+   {t:"low",n:"Hotel Garni Venezia",id:"ChIJc3CX_kpxgkcR4GgOYRKjeLg",m:"4,7★ · přímo na Piazza Duomo, balkony nad náměstím, historické a čisté. Nejlepší cena v centru.",p:"~110 €"},
+   {t:"mid",n:"Grand Hotel Trento",id:"ChIJ8Zi8ojVxgkcRKzARkiw60lY",m:"4,5★ · hlídané parkování (podstatné), velké pokoje, kousek od starého města.",p:"~150 €"}]
+});
+
+const LUCCA_OPT = pre => ({
+  id:pre+"lu",kicker:"město v hradbách",name:"Lucca",
+  why:"Jediné toskánské město, které si udrželo kompletní renesanční hradby — a udělalo z nich park. Klid, kola, opera.",
+  do:["<b>Hradby na kole</b> — 4,2 km po koruně hradeb ve stínu platanů. Půjčovny u každé brány, ~4 €/h. Dělejte to večer.","<b>Piazza dell'Anfiteatro</b> — domy postavené na půdorysu římské arény, dokonalá elipsa.","<b>Torre Guinigi</b> — na střeše věže rostou duby. Ano, opravdu.","Katedrála San Martino, San Michele in Foro. Puccini se tu narodil — koncert každý večer."],
+  eat:[
+   {n:"Vecchia Trattoria Buralli",id:"ChIJx8dgA4yD1RIRlYoNNJMbh48",m:"4,3★ · tordelli lucchesi a divočák, denní menu psané rukou. Zavřeno st."},
+   {n:"Trattoria da Nonna Clara",id:"ChIJfc6fa_CB1RIREKKbtcCQ4_c",m:"4,4★ · domácí těstoviny, bistecca. Rezervovat."}],
+  stay:[
+   {t:"low",n:"Agriturismo Ai Linchi",id:"ChIJF0KTAAqD1RIReIRhGO6ABl4",m:"4,8★ · statek 10 min na kole od centra, vlastní víno, půjčují kola. Hostitel Andrea je legenda.",p:"~85 €"},
+   {t:"mid",n:"Inside the Wall",id:"ChIJAf3p0S2D1RIRb7Ehvmf487Q",m:"4,7★ · přímo v hradbách u Piazza Santa Maria, rustikální, skvělá hostitelka.",p:"~140 €"},
+   {t:"top",n:"Hotel Villa La Principessa",id:"ChIJz_k0pPiE1RIRsRDXLWTr6us",m:"4,5★ · historická vila s parkem a bazénem 5 km od centra. Toskánsko z katalogu, ale skutečné.",p:"~230 €"}]
+});
+
+const VOLTERRA_OPT = pre => ({
+  id:pre+"vo",kicker:"etruské město na kopci",name:"Volterra",
+  why:"Kámen, alabastr, útesy a skoro nikdo. Nejsilnější atmosféra z celého Toskánska, stranou hlavních tras.",
+  do:["<b>Museo Etrusco Guarnacci</b> — <i>Ombra della Sera</i>, protáhlá bronzová soška ze 3. st. př. n. l. Giacometti se z ní učil.","<b>Římské divadlo</b> — vidět shora zdarma z hradeb, nemusíte platit vstup.","<b>Le Balze</b> — sesuvná srázová pole, kam se propadají kostely. Nejlepší při západu slunce.","Alabastrové dílny, kde se pořád pracuje. Palazzo dei Priori — nejstarší radnice v Toskánsku."],
+  eat:[
+   {n:"La Vecchia Lira",id:"ChIJ2_3HbUQaKhMRy3_NSBs-mbQ",m:"4,6★ · divočák v čokoládě, výborné domácí víno, ceny normální. Zavřeno čt."},
+   {n:"Osteria La Pace",id:"ChIJPYHc5kYaKhMRxknMxGBh_II",m:"4,5★ · pici s divočákem, fiorentina, posezení u římského divadla. Zavřeno st."}],
+  stay:[
+   {t:"low",n:"Hotel San Lino",id:"ChIJr9OOS0MaKhMRDE-EdMtDuxE",m:"4,1★ · v hradbách, malý bazén, vlastní parkování. Pokoje starší, ale poloha a bazén to vyváží.",p:"~95 €"},
+   {t:"mid",n:"Hotel La Locanda",id:"ChIJAXoZ8EMaKhMR5tC8LJRHM04",m:"4,7★ · přímo v centru, propojený s Ristorante Etruria. Vynikající personál a snídaně.",p:"~130 €"},
+   {t:"top",n:"Farmhouse Villa Marmini",id:"ChIJM6xU_2waKhMRvoUfdIqNK3U",m:"4,8★ · 5 minut autem, apartmány v kamenném statku, velký bazén. Absolutní klid.",p:"~180 €"}]
+});
+
+/* ---------- VARIANTY ---------- */
+const VARIANTS = [
+{
+ id:"A", name:"Sever s ochutnávkou Toskánska", letter:"Varianta A",
+ tag:"Původní plán: laguna, Verona, a na konci týdne rychlý zásek do Toskánska.",
+ stats:[["2 380 km","celkem"],["~12 500 Kč","náklady"],["1 000 km","v neděli"]],
+ pros:[["plus","Vidíte sever i jih v jednom týdnu"],["plus","Benátky, Verona i Lucca"],["minus","Toskánsko dostane jen den a půl"],["minus","Nedělní návrat je 10–11 h za volantem"]],
+ intro:"Kompromis. Sever je hlavní jídlo, Toskánsko dezert. Funguje, ale poslední dva dny se dost jezdí.",
+ stages:[
+  {id:"a1",km:"1 · 600 km · 6 h",title:"Přes Rakousko",when:"Pondělí 20. 7. — 1 noc",
+   note:"Vyrazit kolem 16:30, ne později. Cílem není dojet daleko, ale probudit se odpočatý pár hodin od Itálie.",
+   opts:AT_OPTS("a")},
+  {id:"a2",km:"2 · 250 km · 2,5 h",title:"Benátsko",when:"Úterý 21. + středa 22. 7. — 2 noci",
+   note:"Úterý patří laguně z té chudší, opravdovější strany. Středa je na výběr: Benátky za svítání, nebo Scarpova hrobka a kopce nad Asolem.",
+   opts:VENETO_OPTS("a"),
+   boxes:[
+    {h:"Chioggia — úterní oběd",p:"Rybářské město na jižním konci laguny. Kanál Vena, Ponte de Vigo, funkční přístav. Vypadá jako Benátky, ale chodí tudy lidi z práce.",li:[
+      `<a href="${G("Dò Ombre Chioggia","ChIJUZGRSpiZfkcR_O2gWFggv_c")}" target="_blank">Dò Ombre Ristorante &amp; fishbar</a> — 4,8★, chobotnice a čerstvé ryby, rezervace nutná. V úterý 9–17, takže oběd ano, večeře ne.`,
+      `<a href="${G("Osteria Gustò Chioggia","ChIJ-_q_UdeZfkcRGeJawgSdJoE")}" target="_blank">Osteria Gustò</a> — 4,6★, tuňák a bigoli. Pozor: <b>v úterý zavřeno.</b>`]},
+    {h:"Benátky, pokud do nich chcete",li:[
+      "<b>Autem nikdy.</b> Z Trevisa vlak (30 min, ~4 €). Nebo zaparkovat v Punta Sabbioni a jet lodí — přijedete od moře, což je hezčí.",
+      "<b>Být tam do 8:30, pryč do 11:00.</b> Mezi jedenáctou a šestou je to v červenci nepoužitelné.",
+      "Kam: <b>Cannaregio</b>, <b>Fondamente Nove</b>, <b>Scuola Grande di San Rocco</b> (Tintoretto, celý sál, skoro prázdno), hřbitovní ostrov <b>San Michele</b>.",
+      "Kam ne: San Marco a Rialto mezi 10. a 18. hodinou."]}
+   ]},
+  {id:"a3",km:"3 · 170 km · 2 h",title:"Verona a kopce",when:"Čtvrtek 23. 7. — 1 noc",
+   note:"Veronu projít ráno a do oběda z ní zmizet. Její nejlepší věc není aréna — je to Castelvecchio, které přestavěl Carlo Scarpa.",
+   opts:[VALPO_OPT("a"),MANTOVA_OPT("a"),GARDA_OPT("a")],
+   boxes:[{h:"Verona ráno — tři věci a hotovo",li:[
+     `<a href="${G("Castelvecchio Museum Verona","ChIJgRfBNEVff0cRpqRSmH_bPXU")}" target="_blank">Museo di Castelvecchio</a> — 4,6★, út–ne 10–18, <b>v pondělí zavřeno.</b> Beton, mosaz a ocel vsazené do středověkého hradu. Nejlepší muzejní architektura v Itálii.`,
+     "<b>San Zeno Maggiore</b> — románská bazilika, bronzové dveře, Mantegnův oltář. Deset minut od Castelvecchia, prázdno.",
+     "<b>Piazza delle Erbe</b> na kafe. Julii vynechte, je to nádvoří s frontou."]}]},
+  {id:"a4",km:"4 · 330 km · 3,5 h",title:"Toskánsko",when:"Pátek 24. 7. — 1–2 noci",
+   note:"Vyrazit po snídani, být na místě odpoledne. Základna na zbytek výletu.",
+   opts:[LUCCA_OPT("a"),VOLTERRA_OPT("a"),
+    {id:"ach",kicker:"vinice mezi Florencií a Sienou",name:"Chianti",
+     why:"Když chcete kopce, cypřiše a víno. Blíž k Florencii, ale i blíž k davům.",
+     do:["<b>Badia a Passignano</b> — opatství uprostřed vinic, sklep Antinori pod ním.","Greve in Chianti — trojúhelníkové náměstí s loubím, řeznictví Falorni (200 let).","Castellina, Radda, Volpaia — kamenné vesnice na hřebeni, silnice SS222 mezi nimi.","Degustace u malých vinařů — ne u těch s cedulí v pěti jazycích u silnice."],
+     eat:[],
+     stay:[
+      {t:"mid",n:"Farmhouse La Sala",id:"ChIJfX-NiUKzKxMRvdbOqd0kIjo",m:"5,0★ · Greve. Apartmány s bazénem a výhledem do údolí, vlastní víno a olej.",p:"~140 €"},
+      {t:"mid",n:"Farmhouse Colle",id:"ChIJDXDJKlqyKxMRrH5RyQtozew",m:"4,9★ · Poggio alla Croce. Bazén, uvítací víno, hostitel Giovanni vozí hosty do Florencie.",p:"~150 €"}]}]},
+  {id:"a5",km:"5 · rozhodnutí",title:"Sobotní noc",when:"Sobota 25. 7. — poslední noc",
+   note:"Buď si Toskánsko užijete o den víc a v neděli si dáte tisíc kilometrů, nebo se v sobotu posunete na sever a neděle bude mírná. Obojí nejde.",
+   opts:[
+    {id:"a5a",kicker:"Toskánsko naplno",name:"Zůstat, kde jste",
+     why:"Druhá noc na stejném místě. Sobota celá vaše — a v neděli tisíc kilometrů.",
+     do:["<b>Neděle: 1 000 km, 10,5–11 h čisté jízdy.</b> Vyjet v 7:00, doma kolem 21:00–22:00. <i>Reálné, ale den je pryč</i>","Sobota A: <b>Volterra</b> celý den, pokud bydlíte v Lucce (nebo naopak).","Sobota B: <b>Florencie, ale jen Oltrarno.</b> Zaparkovat u Piazzale Michelangelo, sejít dolů. Santo Spirito, Brancacciho kaple (Masaccio), večer <b>San Miniato al Monte</b> — mniši zpívají chorál v 18:30.","Sobota C: <b>San Gimignano</b>, ale jen když dorazíte před devátou. Po desáté je nepoužitelné."],
+     eat:[],
+     stay:[{t:"low",n:"Druhá noc tam, kde spíte v pátek",id:"",m:"Rezervujte rovnou dvě noci — vyjde to levněji a nemusíte se dvakrát balit.",p:"—"}]},
+    {id:"a5b",kicker:"klidný návrat",name:"Posunout se na sever",
+     why:"V sobotu ve 13:00 odjet z Toskánska (350 km, 4 h) a přespat u Gardy nebo v Trentu. Neděle je pak jen dojezdové kolo.",
+     do:["<b>Neděle: 700 km, 7 h.</b> Vyjet v 9:00, doma kolem 17:00. <i>Zbyde vám kus neděle</i>","Sobota dopoledne: poslední toskánské město, oběd, odjezd.","Večer: koupačka u Gardy, nebo Trento a jeho freskový kalendář v Castello del Buonconsiglio."],
+     eat:[],
+     stay:[
+      {t:"low",n:"Hotel Garni Venezia — Trento",id:"ChIJc3CX_kpxgkcR4GgOYRKjeLg",m:"4,7★ · na Piazza Duomo, balkony nad náměstím. Nejlepší cena v centru.",p:"~110 €"},
+      {t:"mid",n:"Grand Hotel Trento",id:"ChIJ8Zi8ojVxgkcRKzARkiw60lY",m:"4,5★ · hlídané parkování, velké pokoje, kousek od starého města.",p:"~150 €"},
+      {t:"top",n:"Relais Rossar Garda & Hills",id:"ChIJTw7MnLTzgUcRHKPNlLVoB-Q",m:"4,9★ · Marciaga nad Gardou. Bazén, zahrada, ticho. Poslední noc jako odměna.",p:"~250 €"}]},
+    {id:"a5c",kicker:"kompromis",name:"Noc v Mantově",
+     why:"Sobota 400 km, neděle 800 km. Dává smysl jen když jste Mantovu ve čtvrtek vynechali — a ona za to stojí.",
+     do:["<b>Neděle: 800 km, 8,5 h.</b> Střední cesta mezi oběma variantami.","Sobota odpoledne: Palazzo Te a večeře na náměstí.","Nedělní ráno: Palazzo Ducale, kafe, vyrazit v poledne."],
+     eat:[],
+     stay:[{t:"mid",n:"Ca' degli Uberti Palace Hotel",id:"ChIJj-fvVR_UgUcRx0BrF_ZOr7Y",m:"4,5★ · na Piazza Sordello, naproti Palazzo Ducale.",p:"~140 €"}]}]}
+ ]
+},
+
+{
+ id:"B", name:"Toskánsko naplno", letter:"Varianta B",
+ tag:"Sever se projede. Čtyři noci v Toskánsku, dvě základny — sever a Val d'Orcia.",
+ stats:[["2 750 km","celkem"],["~14 500 Kč","náklady"],["4 noci","v Toskánsku"]],
+ pros:[["plus","Toskánsko se dá opravdu poznat, ne jen proletět"],["plus","Val d'Orcia, Siena, Pienza — to nejlepší"],["minus","Benátky vynecháte úplně"],["minus","Úterý je 600 km za volantem"]],
+ intro:"Sever obětujete. V úterý ho projedete s jednou zastávkou na oběd a večer už spíte v Toskánsku. Za to dostanete čtyři noci a dvě základny — což je minimum, aby to nebylo jen focení cypřišů z okna auta.",
+ stages:[
+  {id:"b1",km:"1 · 600 km · 6 h",title:"Přes Rakousko",when:"Pondělí 20. 7. — 1 noc",
+   note:"Tady platí dvojnásob: dojeďte co nejdál. Tarvisio dává smysl víc než v ostatních variantách, protože zítra vás čeká 600 km.",
+   opts:AT_OPTS("b")},
+  {id:"b2",km:"2 · 600 km · 6 h",title:"Severní Toskánsko",when:"Úterý 21. + středa 22. 7. — 2 noci",
+   note:"Dlouhý přejezd. Rozdělte ho obědem ve Veroně nebo v Mantově. Večer už jste na místě a máte celou středu volnou.",
+   opts:[LUCCA_OPT("b"),VOLTERRA_OPT("b"),
+    {id:"bsg",kicker:"věže na kopci",name:"San Gimignano (okolí)",
+     why:"Město je v poledne peklo, ale okolní kopce jsou nádherné a agriturisma tam jsou nejlepší v Toskánsku. Bydlet venku, do města jít ráno.",
+     do:["<b>Do města jen před devátou nebo po sedmé večer.</b> Mezitím je to fronta na zmrzlinu.","Věže, Collegiata (fresky), Rocca při západu slunce.","<b>Vernaccia di San Gimignano</b> — jediné bílé DOCG víno Toskánska, degustace ve sklepích okolo.","Odtud je to 40 minut do Volterry i do Sieny — dobrá základna."],
+     eat:[],
+     stay:[
+      {t:"mid",n:"Agriturismo Poggiacolle",id:"ChIJIdgbfow8KhMRrXMhoOKBAQ8",m:"4,8★ · 3 km od města, bazén, výhled na věže, vlastní zelenina a víno. Vaří i večeře (nutno předem).",p:"~130 €"},
+      {t:"mid",n:"Farmhouse Antico Casolare",id:"ChIJF01t0kY8KhMRx3Z35rItNQo",m:"4,9★ · 7 minut pěšky do města přes vinice, zahrada s výhledem, domácí koláče k snídani. Hostitelka Gabriella.",p:"~140 €"}]}],
+   boxes:[{h:"Co cestou v úterý",li:[
+     `<b>Verona na oběd</b> — zaparkovat mimo hradby, <a href="${G("Castelvecchio Museum Verona","ChIJgRfBNEVff0cRpqRSmH_bPXU")}" target="_blank">Castelvecchio</a> (Scarpa), San Zeno, kafe na Piazza delle Erbe, a jet dál. Přidá to k trase asi hodinu.`,
+     "<b>Nebo Mantova</b> — Palazzo Te je za 40 minut hotové a leží skoro na trase. Kdo si nechce dělat program, dá si oběd u jezera.",
+     "Odjezd z Rakouska v 8:00, příjezd do Toskánska kolem 17:00 včetně zastávky. Dlouhý den, ale jediný takový."]}]},
+  {id:"b3",km:"3 · 150 km · 2 h",title:"Val d'Orcia a jih",when:"Čtvrtek 23. + pátek 24. 7. — 2 noci",
+   note:"Tohle je to Toskánsko z pohlednic — a zaslouženě. Cypřišové aleje, termální prameny, opatství uprostřed polí. Jižní základna otevírá Sienu, Pienzu, Montalcino i San Galgano.",
+   opts:[
+    {id:"bvo",kicker:"krajina UNESCO",name:"Val d'Orcia / San Quirico",
+     why:"Bydlet přímo v té krajině, ne u ní. Ráno vyjdete na terasu a máte před sebou to, co znáte z fotek — bez lidí, kteří tam ty fotky dělají.",
+     do:[`<b><a href="${G("Bagno Vignoni","ChIJv3gjDxRpKRMRLwDt3Gjr6x0")}" target="_blank">Bagno Vignoni</a></b> — vesnice, jejíž náměstí je termální bazén ze 16. století. Koupat se v něm nesmí, ale pod vsí je volný pramen.`,
+      `<b><a href="${G("Abbazia di Sant'Antimo","ChIJ1V69JuFxKRMRHlZY6qt8f9c")}" target="_blank">Abbazia di Sant'Antimo</a></b> — 4,7★, románské opatství samo v údolí u Montalcina. Když zrovna zpívají, je to zážitek na celý rok.`,
+      `<b><a href="${G("Abbazia di San Galgano","ChIJnyJb6kKPKRMRb8AldKhqEd0")}" target="_blank">Abbazia di San Galgano</a></b> — 4,7★, gotické opatství bez střechy. Nad ním kaple s mečem zabodnutým do skály.`,
+      "<b>Pienza</b> — renesanční město navržené na zelené louce, pecorino, výhled do údolí. Malé, projde se za dvě hodiny.",
+      "<b>Montalcino</b> a Brunello, <b>Montepulciano</b> a Vino Nobile. Vyberte si jedno, obě se za den nedají."],
+     eat:[
+      {n:"Sette di Vino",id:"ChIJJ_VVIgpnKRMRYIfsv6Ec08A",m:"4,8★ · Pienza. Malý, bez rezervací na oběd, hostitel Luciano. Pecorino a jednoduché věci dělané dokonale. Zavřeno st."},
+      {n:"Baccus l'Osteria",id:"ChIJOTewZQBnKRMRrkuTV5tniQ0",m:"4,9★ · Pienza. Ručně psané menu na zdi, cacio e pepe, fiorentina. Majitel Giuseppe je figura."}],
+     stay:[
+      {t:"mid",n:"Podere Spagliarda",id:"ChIJ7cOCgyhmKRMRFA_q8agJRBk",m:"4,9★ · San Quirico d'Orcia. Infinity bazén s výhledem na celé údolí, půjčují kola. Rezervovat přímo, ne přes portály — vyjde to levněji.",p:"~120 €"},
+      {t:"mid",n:"Agriturismo San Marcello",id:"ChIJ0SHGHOVoKRMRfQQgf6C6V-c",m:"4,9★ · Castiglione d'Orcia. Výhledy na obě strany, absolutní ticho, výborná snídaně. Centrální poloha na výlety.",p:"~160 €"}]},
+    {id:"bsi",kicker:"město",name:"Siena",
+     why:"Když nechcete bydlet na samotě. Siena je velká, ale po sedmé večer ji turisté opustí a zůstane vám středověké město pro sebe.",
+     do:[`<b><a href="${G("Siena Cathedral","ChIJw6OmtLssKhMRRd5_XIUZ_VE")}" target="_blank">Duomo</a></b> — 4,8★. <b>Pozor: od 27. 6. do 31. 7. je odkrytá celá mramorová podlaha</b> — 56 vykládaných výjevů, které se ukazují jen pár týdnů v roce. Trefíte to přesně.`,
+      "<b>Piazza del Campo</b> — sednout si na dlažbu jako všichni ostatní. Palio bylo 2. 7., takže máte klid.",
+      "Museo Civico a Lorenzettiho <i>Alegorie dobré vlády</i> — nejlepší politický plakát středověku.",
+      "Odtud 30 minut do Chianti, hodinu do Val d'Orcia."],
+     eat:[
+      {n:"La Taverna di San Giuseppe",id:"ChIJraNanbosKhMRkH4M6I8Ah2U",m:"4,6★ · michelinské doporučení, sklep pod restaurací. Rezervace jen telefonicky a s předstihem. Zavřeno po a ne."},
+      {n:"Osteria La Sosta di Violante",id:"ChIJZ1UfSbEsKhMRiR89VT1Qwy8",m:"4,7★ · pici, tagliata, normální ceny, plno. Rezervovat. Zavřeno ne."}],
+     stay:[
+      {t:"low",n:"Il Chiostro del Carmine",id:"ChIJK5iNy6QsKhMR82tbLoNbQA4",m:"4,1★ · bývalý klášter ze 14. století s vnitřním nádvořím, kousek od centra. Recenze rozkolísané, ale poloha a cena sedí.",p:"~110 €"},
+      {t:"top",n:"Palazzo Patrizi Suites & Spa",id:"ChIJJWZw1lotKhMR-gyTuj_A2pk",m:"4,9★ · na Via di Città, pár kroků od Campa. Suity v historickém paláci. Nejlepší poloha v Sieně.",p:"~280 €"}]},
+    {id:"bmp",kicker:"vinařské město",name:"Montepulciano",
+     why:"Kamenné město na hřebeni, sklepy pod domy, Vino Nobile. Kompromis mezi samotou a městem.",
+     do:["Piazza Grande na vrcholu, sklepy vytesané do skály pod paláci.","Degustace Vino Nobile přímo v centru — Contucci, De' Ricci.","<b>San Biagio</b> — renesanční kostel na louce pod městem, dokonalý řecký kříž. Jeden z nejhezčích v Toskánsku.","Pienza je 20 minut, Montalcino 40."],
+     eat:[],
+     stay:[
+      {t:"low",n:"Centro Montepulciano Rooms",id:"ChIJSUIbwI1dKRMR9fcOVDZFfPs",m:"4,9★ · pokoje s terasou a výhledem přímo v centru. Auto nechat na parkovišti P7 (zdarma) a 10 min pěšky — je to v ZTL.",p:"~100 €"},
+      {t:"mid",n:"Palazzo Mosela alla Porta",id:"ChIJj5WLgBpcKRMRoL_FZrjg3Ws",m:"4,5★ · u brány do starého města, velké pokoje, snídaně v kavárně naproti. Bez výtahu.",p:"~130 €"}]}]},
+  {id:"b4",km:"4 · 450 km · 4,5 h",title:"Zpátky na sever",when:"Sobota 25. 7. — 1 noc",
+   note:"Sobota dopoledne ještě Toskánsko, po obědě 450 km na sever. Neděle je pak 750 km a doma jste v podvečer.",
+   opts:[GARDA_OPT("b"),TRENTO_OPT("b"),MANTOVA_OPT("b")]}
+ ]
+},
+
+{
+ id:"C", name:"Jenom sever, doopravdy klidně", letter:"Varianta C",
+ tag:"Žádné Toskánsko. Zato 150 km denně místo 350 a čas si někam sednout.",
+ stats:[["2 100 km","celkem"],["~11 000 Kč","náklady"],["~150 km","denně"],],
+ pros:[["plus","Nejmíň jízdy, nejvíc času na místech"],["plus","Palladio, Scarpa, Mantegna — architektonicky nejsilnější"],["plus","Dva dny na jednom místě, ne pořád balení"],["minus","Toskánsko si necháte na jindy"]],
+ intro:"Tohle je jediná varianta, kterou by se dalo poctivě nazvat klidný road trip. Denně 100–200 km, dvě dvounoční základny, a čas na to sedět dvě hodiny u oběda, protože nikam nespěcháte. Toskánsko si nechte na samostatný týden — říká si o to.",
+ stages:[
+  {id:"c1",km:"1 · 600 km · 6 h",title:"Přes Rakousko",when:"Pondělí 20. 7. — 1 noc",
+   note:"Jediný dlouhý den celého výletu. Od zítřka už se skoro nejezdí.",
+   opts:AT_OPTS("c")},
+  {id:"c2",km:"2 · 250 km · 2,5 h",title:"Benátsko",when:"Úterý 21. + středa 22. 7. — 2 noci",
+   note:"Dvě noci, jedno rozbalení. Úterý Chioggia a laguna, středa Benátky za svítání — nebo Scarpa a Palladio v kopcích.",
+   opts:VENETO_OPTS("c"),
+   boxes:[
+    {h:"Chioggia — úterní oběd",p:"Rybářské město na jižním konci laguny. Kanál Vena, funkční přístav, chodí tudy lidi z práce.",li:[
+      `<a href="${G("Dò Ombre Chioggia","ChIJUZGRSpiZfkcR_O2gWFggv_c")}" target="_blank">Dò Ombre Ristorante &amp; fishbar</a> — 4,8★, rezervace nutná. V úterý 9–17.`,
+      `<a href="${G("Osteria Gustò Chioggia","ChIJ-_q_UdeZfkcRGeJawgSdJoE")}" target="_blank">Osteria Gustò</a> — 4,6★. Pozor: <b>v úterý zavřeno.</b>`]},
+    {h:"Benátky za svítání",li:[
+      "Vlak z Trevisa 30 min (~4 €), z Padovy podobně. Autem nikdy.",
+      "Být tam do 8:30, pryč do 11:00. Cannaregio, Fondamente Nove, Scuola Grande di San Rocco, ostrov San Michele."]}
+   ]},
+  {id:"c3",km:"3 · 90 km · 1 h",title:"Mezizastávka",when:"Čtvrtek 23. 7. — 1 noc",
+   note:"Krátký přejezd. Celý den zbývá na jedno město — a všechna tři, která přicházejí v úvahu, jsou z těch, kam Češi nejezdí.",
+   opts:[
+    {id:"cvi",kicker:"Palladio v originále",name:"Vicenza",
+     why:"Město, které navrhl jeden architekt. Palladio tu postavil dvacet budov a pak z nich odvodil evropskou architekturu na dalších 400 let.",
+     do:[`<b><a href="${G("Teatro Olimpico Vicenza","ChIJ9wq5M9Qzf0cRWF6p_NtKqH8")}" target="_blank">Teatro Olimpico</a></b> — 4,8★, nejstarší krytý divadelní sál na světě. Kulisy jsou trvalé a dělají perspektivní iluzi nekonečných ulic. <b>V pondělí zavřeno.</b>`,
+      `<b><a href="${G("Villa la Rotonda Vicenza","ChIJh7FZ_5kxf0cRdUHiFcj9Z2I")}" target="_blank">Villa La Rotonda</a></b> — 4,6★. Nejkopírovanější dům v dějinách. <b>Interiér jen pá–ne 10–13 a 15–18.</b> Ve čtvrtek uvidíte jen zvenku a park — což je pořád ono.`,
+      "<b>Basilica Palladiana</b> a Corso Palladio. Celé centrum je UNESCO.",
+      "Villa Valmarana ai Nani — Tiepolovy fresky, kousek od Rotondy, dá se propojit procházkou."],
+     eat:[],
+     stay:[
+      {t:"low",n:"Antico Hotel Vicenza",id:"ChIJSXYbi30xf0cRyBGwW-IU0xs",m:"4,5★ · v centru, střešní bar s výhledem, starosvětský půvab. Parkování je 10 min pěšky a veřejné — počítejte s tím.",p:"~100 €"},
+      {t:"mid",n:"Hotel Campo Marzio",id:"ChIJh-OhYnsxf0cRjHjXHzRV9aE",m:"4,4★ · u parku kousek od centra, hlídané parkování před hotelem. Prostorné pokoje.",p:"~140 €"}]},
+    {id:"cfe",kicker:"renesanční město na kolech",name:"Ferrara",
+     why:"První plánované město moderní Evropy. Ploché, tiché, všichni jezdí na kole, turisté skoro žádní. UNESCO a nikdo o něm neví.",
+     do:["<b>Castello Estense</b> — hrad s vodním příkopem uprostřed náměstí. Dá se vylézt na věž.","<b>Palazzo dei Diamanti</b> — fasáda z 8 500 mramorových jehlanů. Uvnitř galerie.","<b>Hradby</b> — 9 km souvislého okruhu, dá se objet na kole za hodinu. Půjčovny všude.","Via delle Volte — středověká ulička s klenbami, jedna z nejhezčích v Itálii."],
+     eat:[
+      {n:"Osteria I Quattro Angeli",id:"ChIJs4NJpGxOfkcR8_3j61s0hU4",m:"4,2★ · terasa proti hradu, cappellacci di zucca (dýňové taštičky) — místní specialita. Zavřeno po."},
+      {n:"Ristorante Cusina e Butega",id:"ChIJzXjyh2tOfkcRx0HstMyzRIY",m:"4,3★ · velký, oblíbený, rezervace nutná. Salamina da sugo a čerstvé těstoviny. Zavřeno út."}],
+     stay:[
+      {t:"mid",n:"Hotel Annunziata",id:"ChIJwwJcx2xOfkcRor5MYg9KVw4",m:"4,7★ · přímo naproti hradu, pokoje s výhledem na náměstí, výborná snídaně. Parkování 200 m.",p:"~130 €"},
+      {t:"low",n:"Casa d'Este",id:"ChIJIV_f2vVPfkcRmfeL3PNRyh0",m:"4,2★ · u hradu, klenuté stropy, dřevo, recepce 24 h. Parkování mimo ZTL.",p:"~100 €"}]},
+    {id:"cce",kicker:"kopce a termály",name:"Colli Euganei",
+     why:"Sopečné kopce jižně od Padovy — vinice, termály, středověké vesnice. Dvacet minut od města a nikdo tam není.",
+     do:[`<b><a href="${G("Arquà Petrarca","ChIJ27vlYwDhfkcRPbVBAL26Hqs")}" target="_blank">Arquà Petrarca</a></b> — 4,6★, jedna z nejkrásnějších vesnic Itálie. Petrarca tu dožil, jeho dům se dá projít.`,
+      "<b>Termály v Abano a Montegrotto</b> — bahenní lázně fungují od římských dob. Denní vstupy do bazénů.",
+      "<b>Monselice</b> a <b>Este</b> — hrady na kopcích, vinice Colli Euganei DOC.","Villa dei Vescovi (Palladiánská, FAI) — vila mezi vinicemi, dá se dovnitř."],
+     eat:[],
+     stay:[
+      {t:"top",n:"Le Volpi Wine Relais",id:"ChIJrSDLJtwff0cRrBT9rUNg7fI",m:"4,8★ · Baone. Infinity bazén nad vinicemi, degustace, prostorné pokoje. Nejhezčí místo v této etapě.",p:"~180 €"},
+      {t:"mid",n:"Agriturismo Tenuta Monterosso",id:"ChIJ6adlwTLffkcRHMn5yNiW0Yk",m:"4,6★ · Teolo. Velký bazén, rozlehlý areál, čisté a prosté. Spíš hotel než statek.",p:"~120 €"}]}]},
+  {id:"c4",km:"4 · 150–200 km · 2 h",title:"Poslední dvě noci",when:"Pátek 25. + sobota 26. 7. — 2 noci",
+   note:"Ještě jednou dvě noci na jednom místě, tentokrát už blíž domovu. Pátek přejezd a Verona, sobota volno.",
+   opts:[VALPO_OPT("c"),GARDA_OPT("c"),
+    {id:"cbz",kicker:"Jižní Tyrolsko",name:"Bolzano",
+     why:"Nejsevernější varianta a nejkratší nedělní jízda (~700 km). Vinice, hory, německo-italská schizofrenie a nejlepší jídlo v Alpách.",
+     do:["<b>Ötzi</b> — muzeum s ledovým mužem. Malé, ale stojí za to.","Lanovky ze středu města na náhorní plošiny (Renon, Kohlern) — z 260 na 1 200 m za deset minut.","Vinná cesta jižně od města: Termeno, Caldaro, Appiano. Lagrein a Gewürztraminer.","Trh na Piazza delle Erbe, obědy typu speck a knedlíky, ale s italskou kávou."],
+     eat:[],
+     stay:[
+      {t:"top",n:"Eisenhut Boutique Hotel",id:"ChIJfV7oNwCfgkcRIn5RJRvenbU",m:"4,9★ · ve starém městě, nejlepší snídaně široko daleko, v ceně i městská doprava. Personál výjimečný.",p:"~200 €"},
+      {t:"low",n:"B&B HOTEL Bolzano",id:"ChIJKVEkTjecgkcRk6xgiy-yqWM",m:"4,6★ · moderní, čistý, parkování, kousek od centra. Nic víc, ale nic míň.",p:"~95 €"}]}],
+   boxes:[{h:"Verona v pátek",li:[
+     `<a href="${G("Castelvecchio Museum Verona","ChIJgRfBNEVff0cRpqRSmH_bPXU")}" target="_blank">Museo di Castelvecchio</a> — Scarpova rekonstrukce, út–ne 10–18.`,
+     "<b>San Zeno Maggiore</b> — románská bazilika s Mantegnovým oltářem. Prázdno.",
+     "V pátek večer je aréna v provozu — pokud vás láká opera pod širým nebem, lístky se dají koupit i na místě."]},
+    {h:"Nedělní návrat",li:[
+     "Z Valpolicelly: 850 km, 8,5 h.",
+     "Od Gardy: 800 km, 8 h.",
+     "Z Bolzana: 700 km, 7 h. Nejkratší.",
+     "Ve všech případech vyjet v 8:00 a doma jste odpoledne."]}]}
+ ]
+}
+];
+
+/* ---------- praktické (společné) ---------- */
+const PRACTICAL = [
+ {h:"ZTL — nejdražší chyba, kterou můžete udělat",
+  p:"Verona, Lucca, Volterra, Florencie, Mantova, Padova, Treviso, Siena, Montepulciano, Vicenza i Ferrara mají historické centrum uzavřené kamerami. Vjezd bez povolení = pokuta 80–100 €, chodí i rok zpětně, a za každý průjezd zvlášť.",
+  li:["Vždycky parkovat mimo hradby a jít pěšky.",
+      "Pokud má hotel parkování uvnitř ZTL, <b>pošlete mu SPZ dopředu</b> a nechte si písemně potvrdit registraci.",
+      "Navigace ZTL běžně ignorují. Nespoléhat na Google Maps."]},
+ {h:"Poplatky a palivo",
+  li:["<b>Rakouská viněta</b> 10denní, digitální na asfinag.at — kupte aspoň 18 dní předem, jinak platí až za 18 dnů. Na poslední chvíli papírovou na pumpě.",
+      "<b>Tunel Karawanken</b> ~8 € / průjezd (trasa přes Villach), nebo přes Tarvisio bez tunelu.",
+      "<b>Italské mýto</b> se platí na výjezdu, karta funguje.",
+      "<b>Natankovat plnou v Rakousku.</b> A v Itálii tankovat „fai da te“, ne „servito“ — je to o 20 centů na litr levnější."]},
+ {h:"Rezervovat hned, ne až tam",
+  li:["<b>Scrovegniho kaple</b> v Padově — časovky se vyprodávají týdny předem.",
+      "<b>Camera degli Sposi</b> v Mantově — limitovaný vstup.",
+      "<b>Enoteca della Valpolicella</b>, <b>Dò Ombre</b>, <b>La Taverna di San Giuseppe</b> — bez rezervace nedostupné.",
+      "<b>Tomba Brion</b> — zdarma, ale jen st–ne. <b>Villa La Rotonda</b> — interiér jen pá–ne."]},
+ {h:"Horko",
+  p:"Konec července znamená 33–36 °C, v Toskánsku i víc. Prohlídky do 11:00 a po 18:00, odpoledne bazén nebo stín. Proto jsou skoro všechny doporučené agriturismy s bazénem — není to luxus, je to podmínka použitelnosti odpoledne."}
+];
+
+/* ---------- STATE ---------- */
+let me="M", active="A";
+const votes={M:new Set(),N:new Set()};
+function readHash(){
+  const h=new URLSearchParams(location.hash.slice(1));
+  (h.get("m")||"").split(",").filter(Boolean).forEach(v=>votes.M.add(v));
+  (h.get("n")||"").split(",").filter(Boolean).forEach(v=>votes.N.add(v));
+  if(h.get("v")) active=h.get("v");
+}
+function writeHash(){
+  const p=new URLSearchParams();
+  if(votes.M.size)p.set("m",[...votes.M].join(","));
+  if(votes.N.size)p.set("n",[...votes.N].join(","));
+  p.set("v",active);
+  history.replaceState(null,"","#"+p.toString());
+}
+const st=id=>(votes.M.has(id)?"M":"")+(votes.N.has(id)?"N":"");
+const hid=(o,h)=>o.id+"~"+h.n.slice(0,12).replace(/\W/g,"");
+
+function stamp(id){
+  const s=st(id);
+  const l=s==="MN"?"MN":s||"+";
+  return `<button class="stamp" data-vote="${id}" ${s?`data-on="${s}"`:""} aria-label="Líbí se mi">${l}</button>`;
+}
+
+/* ---------- RENDER ---------- */
+function renderVariantCards(){
+  document.getElementById("vcards").innerHTML=VARIANTS.map(v=>`
+    <article class="vcard${st("V"+v.id)==="MN"?" match":""}">
+      <div class="vcard-top">
+        <div class="vletter">${v.letter}</div>
+        <div class="vname">${v.name}</div>
+        <div class="vtag">${v.tag}</div>
+      </div>
+      <div class="vstats">${v.stats.map(s=>`<div class="vstat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div>
+      <ul class="vpro">${v.pros.map(p=>`<li class="${p[0]}">${p[1]}</li>`).join("")}</ul>
+      <div class="vfoot"><span>Chci tuhle</span>${stamp("V"+v.id)}</div>
+    </article>`).join("");
+}
+
+function renderTabs(){
+  document.getElementById("tabs").innerHTML=VARIANTS.map(v=>
+    `<button role="tab" data-tab="${v.id}" aria-selected="${active===v.id}">${v.letter} — ${v.name}</button>`).join("");
+}
+
+function optHTML(o){
+  const doing=o.do.length?`<h4>Co tam dělat</h4><ul class="doing">${o.do.map(d=>`<li>${d}</li>`).join("")}</ul>`:"";
+  const eating=o.eat.length?`<h4>Kde jíst</h4><ul class="eat">${o.eat.map(e=>`<li><a href="${G(e.n,e.id)}" target="_blank">${e.n}</a><br><span>${e.m}</span></li>`).join("")}</ul>`:"";
+  const staying=o.stay.length?`<h4>Kde spát</h4><div>${o.stay.map(h=>{
+    const tl=h.t==="low"?"LEVNĚ":h.t==="mid"?"STŘED":"PREMIUM";
+    const nm=h.id?`<a href="${G(h.n,h.id)}" target="_blank">${h.n}</a>`:`<b>${h.n}</b>`;
+    return `<div class="hotel"><div class="tier t-${h.t}">${tl}</div>
+      <div class="hotel-main">${nm}<div class="hotel-meta">${h.m}</div><div class="price">${h.p}</div></div>
+      ${h.id?stamp(hid(o,h)):""}</div>`;
+  }).join("")}</div>`:"";
+  return `<article class="opt${st(o.id)==="MN"?" match":""}">
+    <div class="opt-head"><div class="opt-kicker">${o.kicker}</div><div class="opt-name">${o.name}</div><div class="opt-why">${o.why}</div></div>
+    <div class="opt-body">${doing}${eating}${staying}</div>
+    <div class="opt-vote"><span>Chci sem</span>${stamp(o.id)}</div>
+  </article>`;
+}
+
+function boxHTML(b){
+  return `<div class="box"><h5>${b.h}</h5>${b.p?`<p>${b.p}</p>`:""}${b.li?`<ul>${b.li.map(x=>`<li>${x}</li>`).join("")}</ul>`:""}</div>`;
+}
+
+function renderItinerary(){
+  const v=VARIANTS.find(x=>x.id===active);
+  const stages=v.stages.map(s=>`
+    <section class="stage">
+      <div class="stage-head">
+        <div class="km">${s.km}</div>
+        <h3>${s.title}</h3>
+        <div class="when">${s.when}</div>
+      </div>
+      <p class="note">${s.note}</p>
+      <div class="opts">${s.opts.map(optHTML).join("")}</div>
+      ${(s.boxes||[]).map(boxHTML).join("")}
+    </section>`).join("");
+  document.getElementById("itinerary").innerHTML=`
+    <div class="vhead"><h2>${v.letter} — ${v.name}</h2><p>${v.intro}</p></div>
+    ${stages}
+    <section class="stage"><div class="stage-head"><h3>Praktické</h3></div>
+      ${PRACTICAL.map(boxHTML).join("")}
+    </section>`;
+}
+
+function renderSummary(){
+  const vBoth=VARIANTS.filter(v=>st("V"+v.id)==="MN");
+  const vM=VARIANTS.filter(v=>st("V"+v.id)==="M");
+  const vN=VARIANTS.filter(v=>st("V"+v.id)==="N");
+  let vp,vt;
+  if(vBoth.length){vp=vBoth.map(v=>v.name).join(" / ");vt=`<span class="sum-tag tag-match">SHODA</span>`;}
+  else if(vM.length&&vN.length){vp=`Martin: ${vM.map(v=>v.name).join(", ")} &nbsp;·&nbsp; Nina: ${vN.map(v=>v.name).join(", ")}`;vt=`<span class="sum-tag tag-none">NEDOHODA</span>`;}
+  else if(vM.length){vp=vM.map(v=>v.name).join(", ");vt=`<span class="sum-tag tag-m">JEN MARTIN</span>`;}
+  else if(vN.length){vp=vN.map(v=>v.name).join(", ");vt=`<span class="sum-tag tag-n">JEN NINA</span>`;}
+  else {vp=`<span class="empty">zatím nevybraná</span>`;vt="";}
+  let out=`<div class="sum-row"><div class="sum-stage">Kudy</div><div class="sum-pick">${vp}</div>${vt}</div>`;
+
+  const v=VARIANTS.find(x=>x.id===active);
+  out+=v.stages.map(s=>{
+    const b=s.opts.filter(o=>st(o.id)==="MN"), m=s.opts.filter(o=>st(o.id)==="M"), n=s.opts.filter(o=>st(o.id)==="N");
+    let pick,tag;
+    if(b.length){pick=b.map(o=>o.name).join(" / ");tag=`<span class="sum-tag tag-match">SHODA</span>`;}
+    else if(m.length&&n.length){pick=`Martin: ${m.map(o=>o.name).join(", ")} &nbsp;·&nbsp; Nina: ${n.map(o=>o.name).join(", ")}`;tag=`<span class="sum-tag tag-none">NEDOHODA</span>`;}
+    else if(m.length){pick=m.map(o=>o.name).join(", ");tag=`<span class="sum-tag tag-m">JEN MARTIN</span>`;}
+    else if(n.length){pick=n.map(o=>o.name).join(", ");tag=`<span class="sum-tag tag-n">JEN NINA</span>`;}
+    else{pick=`<span class="empty">zatím nikdo</span>`;tag="";}
+    return `<div class="sum-row"><div class="sum-stage">${active} · ${s.title}</div><div class="sum-pick">${pick}</div>${tag}</div>`;
+  }).join("");
+
+  const hotels=[];
+  VARIANTS.forEach(vr=>vr.stages.forEach(s=>s.opts.forEach(o=>o.stay.forEach(h=>{
+    if(h.id && st(hid(o,h))==="MN") hotels.push(`${h.n} <span style="color:var(--ink-soft);font-size:13px">(${vr.id} · ${o.name})</span>`);
+  }))));
+  out+=hotels.length
+    ? `<div class="sum-row"><div class="sum-stage">Hotely — shoda</div><div class="sum-pick">${hotels.join("<br>")}</div><span class="sum-tag tag-match">REZERVOVAT</span></div>`
+    : `<div class="sum-row"><div class="sum-stage">Hotely — shoda</div><div class="sum-pick"><span class="empty">zatím žádný hotel, na kterém bychom se shodli</span></div></div>`;
+
+  document.getElementById("sumBody").innerHTML=out;
+}
+
+function render(){renderVariantCards();renderTabs();renderItinerary();renderSummary();writeHash();}
+
+/* ---------- EVENTS ---------- */
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-vote]");
+  if(b){const id=b.dataset.vote;votes[me].has(id)?votes[me].delete(id):votes[me].add(id);render();return;}
+  const t=e.target.closest("[data-tab]");
+  if(t){active=t.dataset.tab;render();document.getElementById("tabs").scrollIntoView({block:"start"});}
+});
+function setWho(w){me=w;document.getElementById("btnM").setAttribute("aria-pressed",w==="M");document.getElementById("btnN").setAttribute("aria-pressed",w==="N");}
+document.getElementById("btnM").onclick=()=>setWho("M");
+document.getElementById("btnN").onclick=()=>setWho("N");
+const toast=document.getElementById("toast");
+const say=t=>{toast.textContent=t;toast.classList.add("on");setTimeout(()=>toast.classList.remove("on"),2200);};
+document.getElementById("btnShare").onclick=async()=>{
+  writeHash();
+  try{await navigator.clipboard.writeText(location.href);say("Odkaz zkopírován — pošli ho druhému");}
+  catch{prompt("Zkopíruj tenhle odkaz a pošli ho:",location.href);}
+};
+
+readHash();render();
+</script>
+</body>
+</html>
