@@ -3,105 +3,157 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toskánsko 20.–27. 7. — Villa Tiberini + Chianti</title>
+<title>Toskánsko 20.–27. 7. — Villa Tiberini &amp; Chianti</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#12241f;--ink-soft:#3d5049;--plaster:#e6e4d9;--paper:#f7f5ef;--verde:#1e5f4b;--cobalto:#24468c;--vinaccia:#7b2233;--zafferano:#dfa22b;--line:#c9c6b7}
+:root{
+  --bg:#f4efe4; --surface:#fffdf8; --ink:#33291f; --ink-soft:#726552;
+  --terracotta:#c26b47; --olive:#7c8248; --gold:#c99a4d; --wine:#864f4c; --sky:#4f7a86;
+  --line:#e7ddca; --line-soft:#efe8d9;
+  --shadow:0 1px 2px rgba(51,41,31,.04),0 8px 24px rgba(51,41,31,.06);
+  --shadow-lg:0 2px 4px rgba(51,41,31,.05),0 16px 40px rgba(51,41,31,.10);
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--plaster);color:var(--ink);font-family:'Archivo',system-ui,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px 120px}
-.topbar{position:sticky;top:0;z-index:60;background:var(--verde);color:#fff;border-bottom:3px solid var(--ink)}
-.topbar-in{max-width:1000px;margin:0 auto;padding:10px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.brand{font-family:'Archivo Black',Impact,sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin-right:auto}
-.brand small{display:block;font-family:'Archivo';font-weight:400;letter-spacing:.02em;opacity:.75;text-transform:none;font-size:11px}
-.who{display:flex;border:2px solid rgba(255,255,255,.5);border-radius:2px;overflow:hidden}
-.who button{font:inherit;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:transparent;color:#fff;border:0;padding:7px 13px;cursor:pointer}
-.who button[aria-pressed="true"]{background:#fff;color:var(--verde)}
-.util{font:inherit;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:var(--zafferano);color:var(--ink);border:0;padding:8px 13px;border-radius:2px;cursor:pointer}
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:99;background:var(--ink);color:#fff;padding:11px 18px;border-radius:3px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .25s}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px 130px}
+a{color:inherit}
+
+/* topbar */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(244,239,228,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1060px;margin:0 auto;padding:11px 22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.brand{font-family:'Fraunces',serif;font-weight:600;font-size:16px;letter-spacing:-.01em;margin-right:auto;line-height:1.15}
+.brand small{display:block;font-family:'Inter';font-weight:400;font-size:11px;letter-spacing:.02em;color:var(--ink-soft)}
+.who{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:100px;overflow:hidden;padding:2px}
+.who button{font:inherit;font-size:12px;font-weight:600;background:transparent;color:var(--ink-soft);border:0;padding:6px 14px;cursor:pointer;border-radius:100px;transition:.15s}
+.who button[aria-pressed="true"]{background:var(--terracotta);color:#fff}
+.who button:nth-child(2)[aria-pressed="true"]{background:var(--wine)}
+.util{font:inherit;font-size:12px;font-weight:600;background:var(--ink);color:var(--surface);border:0;padding:8px 15px;border-radius:100px;cursor:pointer;transition:.15s}
+.util:hover{background:var(--terracotta)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:26px;z-index:99;background:var(--ink);color:var(--surface);padding:12px 20px;border-radius:100px;font-size:14px;font-weight:500;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:var(--shadow-lg)}
 .toast.on{opacity:1}
-.hero{padding:50px 0 30px}
-.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--verde)}
-h1{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(34px,7vw,60px);line-height:.94;letter-spacing:-.02em;text-transform:uppercase;margin:12px 0 6px}
-h1 em{font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;text-transform:none;display:block;color:var(--vinaccia)}
-.lede{font-family:'Newsreader',Georgia,serif;font-size:19px;line-height:1.5;max-width:58ch;margin-top:16px;color:var(--ink-soft)}
-.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px}
-.fact b{display:block;font-family:'Archivo Black';font-size:21px;line-height:1.1}
-.fact span{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft)}
-.howto{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--zafferano);padding:16px 18px;margin-top:26px;font-size:14px}
-.stage{padding:48px 0 6px;border-top:1px solid var(--line);margin-top:36px}
-.stage-head{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
-.km{font-family:'Archivo Black';font-size:12px;letter-spacing:.05em;background:var(--ink);color:#fff;padding:5px 9px;white-space:nowrap}
-h2{font-family:'Archivo Black',Impact,sans-serif;text-transform:uppercase;font-size:clamp(24px,4.4vw,34px);line-height:1;letter-spacing:-.01em}
-.when{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde);font-weight:600}
-.note{font-family:'Newsreader',Georgia,serif;font-size:18px;color:var(--ink-soft);max-width:64ch;margin-top:10px}
-h3{font-family:'Archivo Black';text-transform:uppercase;font-size:13px;letter-spacing:.14em;color:var(--verde);margin:38px 0 6px;padding-bottom:6px;border-bottom:2px solid var(--ink)}
-.h3sub{font-size:13px;color:var(--ink-soft);margin-bottom:18px}
-.grid{display:grid;gap:16px}
-@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
-@media(min-width:980px){.grid.g3{grid-template-columns:1fr 1fr 1fr}}
-.card{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;position:relative;transition:.2s}
-.card.match{border-color:var(--zafferano);box-shadow:0 0 0 3px rgba(223,162,43,.28)}
-.card.match::before{content:"SHODA";position:absolute;top:-1px;right:-1px;background:var(--zafferano);color:var(--ink);font-family:'Archivo Black';font-size:10px;letter-spacing:.14em;padding:4px 8px;z-index:2}
-.card-top{padding:16px 18px 14px;flex:1}
+
+/* hero */
+.hero{padding:56px 0 20px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--terracotta)}
+h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(38px,6.6vw,66px);line-height:1.02;letter-spacing:-.02em;margin:16px 0 0}
+h1 em{font-style:italic;color:var(--terracotta);font-weight:400}
+.lede{font-size:19px;line-height:1.6;max-width:60ch;margin-top:20px;color:var(--ink-soft)}
+.facts{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow)}
+.fact b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:21px;line-height:1.1}
+.fact span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.howto{background:linear-gradient(180deg,#fffdf8,#fbf6ea);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-top:28px;font-size:14.5px;line-height:1.6;box-shadow:var(--shadow)}
+.howto b{font-weight:600;color:var(--ink)}
+
+/* section */
+.stage{padding:44px 0 6px;margin-top:30px;border-top:1px solid var(--line)}
+.stage:first-of-type{border-top:0}
+.stage-head{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.pill{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--surface);padding:6px 12px;border-radius:100px}
+.pill.book{background:var(--olive)}
+h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,4.2vw,38px);line-height:1.05;letter-spacing:-.01em}
+.when{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--olive);font-weight:600}
+.note{font-size:18px;line-height:1.6;color:var(--ink-soft);max-width:66ch;margin-top:10px}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:20px;letter-spacing:-.01em;margin:40px 0 4px;color:var(--ink);display:flex;align-items:center;gap:10px}
+h3::before{content:"";width:22px;height:2px;background:var(--terracotta);border-radius:2px}
+.h3sub{font-size:14px;color:var(--ink-soft);margin:0 0 20px 32px}
+
+/* grid + cards */
+.grid{display:grid;gap:18px}
+@media(min-width:680px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.grid.g3{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s,border-color .18s}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.card.match{border-color:var(--gold);box-shadow:0 0 0 2px rgba(201,154,77,.35),var(--shadow-lg)}
+.card.match .ph::after{content:"SHODA";position:absolute;top:10px;right:10px;background:var(--gold);color:#3a2c12;font-size:10px;font-weight:600;letter-spacing:.1em;padding:4px 9px;border-radius:100px;z-index:2}
+.ph{aspect-ratio:16/10;position:relative;overflow:hidden;background:linear-gradient(135deg,#d9b48c,#c9a15f 45%,#9aa06a)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.card:hover .ph img{transform:scale(1.04)}
+.ph-lbl{position:absolute;left:12px;bottom:10px;z-index:2;color:#fff;font-family:'Fraunces',serif;font-style:italic;font-size:15px;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.ph::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.28));z-index:1}
+.card-top{padding:16px 18px 4px;flex:1}
 .tierline{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
-.tier{font-family:'Archivo Black';font-size:9px;letter-spacing:.08em;padding:4px 6px;color:#fff}
-.t-low{background:var(--ink-soft)}.t-mid{background:var(--cobalto)}.t-top{background:var(--vinaccia)}
-.kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
-.cname{font-family:'Newsreader',Georgia,serif;font-size:24px;line-height:1.15;margin:2px 0 7px}
-.cname a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
-.cname a:hover{border-color:var(--ink)}
-.cdesc{font-size:14px;color:var(--ink-soft);line-height:1.5}
-.cprice{font-family:'Archivo Black';font-size:13px;margin-top:9px}
-.cdesc ul{margin-top:9px;list-style:none}
-.cdesc li{padding:4px 0 4px 15px;position:relative;line-height:1.45;color:var(--ink)}
-.cdesc li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;background:var(--verde)}
-.cdesc li i{font-style:normal;color:var(--vinaccia);font-size:12px;font-weight:600}
-.cdesc a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
-.cvote{display:flex;align-items:center;gap:10px;padding:12px 18px;border-top:1px solid var(--line);background:rgba(30,95,75,.05)}
-.cvote span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-right:auto}
-.stamp{border:2px solid var(--line);background:transparent;width:32px;height:32px;border-radius:50%;cursor:pointer;flex-shrink:0;font-family:'Archivo Black';font-size:12px;color:var(--line);display:grid;place-items:center;transition:.16s;padding:0}
+.tier{font-size:10px;font-weight:600;letter-spacing:.06em;padding:4px 9px;color:#fff;border-radius:100px}
+.t-low{background:var(--olive)}.t-mid{background:var(--sky)}.t-top{background:var(--wine)}
+.kicker{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
+.cname{font-family:'Fraunces',serif;font-weight:600;font-size:22px;line-height:1.2;margin:2px 0 8px;letter-spacing:-.01em}
+.cname a{text-decoration:none;border-bottom:1.5px solid var(--line)}
+.cname a:hover{border-color:var(--terracotta)}
+.cdesc{font-size:14px;color:var(--ink-soft);line-height:1.55}
+.cprice{font-family:'Fraunces',serif;font-weight:600;font-size:15px;margin-top:10px;color:var(--ink)}
+.cdesc ul{list-style:none;margin-top:10px}
+.cdesc li{padding:5px 0 5px 16px;position:relative;line-height:1.5;color:var(--ink)}
+.cdesc li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--olive)}
+.cdesc li i{font-style:normal;color:var(--terracotta);font-size:12.5px;font-weight:600}
+.cdesc a{font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+.cdesc a:hover{border-color:var(--terracotta)}
+.cvote{display:flex;align-items:center;gap:10px;padding:12px 18px;border-top:1px solid var(--line-soft);background:#fdfbf5}
+.cvote span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-right:auto}
+.stamp{border:1.5px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:50%;cursor:pointer;flex-shrink:0;font-size:12px;font-weight:700;color:#c4b89f;display:grid;place-items:center;transition:.16s;padding:0}
 .stamp:hover{border-color:var(--ink-soft);color:var(--ink-soft)}
-.stamp[data-on="M"]{background:var(--cobalto);border-color:var(--cobalto);color:#fff}
-.stamp[data-on="N"]{background:var(--vinaccia);border-color:var(--vinaccia);color:#fff}
-.stamp[data-on="MN"]{background:var(--zafferano);border-color:var(--zafferano);color:var(--ink)}
-.stamp:focus-visible{outline:3px solid var(--zafferano);outline-offset:2px}
-.eatlist{background:var(--paper);border:1px solid var(--line)}
-.eatrow{display:flex;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);align-items:flex-start}
+.stamp[data-on="M"]{background:var(--terracotta);border-color:var(--terracotta);color:#fff}
+.stamp[data-on="N"]{background:var(--wine);border-color:var(--wine);color:#fff}
+.stamp[data-on="MN"]{background:var(--gold);border-color:var(--gold);color:#3a2c12}
+.stamp:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* villa block with photo strip */
+.villa{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin-top:8px}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:0;overflow-x:auto;scroll-snap-type:x mandatory}
+@media(min-width:760px){.strip{grid-auto-columns:1fr;grid-auto-flow:column}}
+.strip .ph{aspect-ratio:4/3;scroll-snap-align:start;border-right:1px solid rgba(255,255,255,.4)}
+.villa-body{padding:20px 22px}
+.villa-body h4{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:4px}
+.villa-body .meta{font-size:13px;color:var(--ink-soft);margin-bottom:12px}
+.villa-body p{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+.villa-body a.link{font-weight:600;color:var(--terracotta);text-decoration:none;border-bottom:1px solid var(--line)}
+
+/* info box */
+.box{background:linear-gradient(180deg,#faf5ea,#f6efdf);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-top:20px}
+.box h5{font-family:'Fraunces',serif;font-weight:600;font-size:17px;margin-bottom:10px;color:var(--ink);display:flex;align-items:center;gap:9px}
+.box h5::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--terracotta)}
+.box p,.box li{font-size:14px;line-height:1.65;color:var(--ink-soft)}
+.box b{color:var(--ink);font-weight:600}
+.box ul{list-style:none;margin-top:10px}
+.box li{padding-left:18px;position:relative;margin-bottom:6px}
+.box li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.box a{color:var(--terracotta);font-weight:600}
+
+/* eat list */
+.eatlist{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.eatrow{display:flex;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line-soft);align-items:flex-start}
 .eatrow:last-child{border-bottom:0}
-.eatplace{min-width:120px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--verde);padding-top:4px}
-.eatmain{flex:1}
-.eatmain a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line);font-size:15px}
-.eatmain a:hover{border-color:var(--ink)}
-.eatmeta{font-size:13px;color:var(--ink-soft);margin-top:2px;line-height:1.45}
-.closed{color:var(--vinaccia);font-weight:600}
-.box{background:var(--ink);color:var(--plaster);padding:22px;margin-top:24px}
-.box h5{font-family:'Archivo Black';text-transform:uppercase;font-size:13px;letter-spacing:.1em;color:var(--zafferano);margin-bottom:10px}
-.box p,.box li{font-size:14px;line-height:1.6}
-.box ul{margin-top:8px;list-style:none}
-.box li{padding-left:15px;position:relative;margin-bottom:5px}
-.box li::before{content:"—";position:absolute;left:0;color:var(--zafferano)}
-.box a{color:var(--zafferano)}
-.days{background:var(--paper);border:1px solid var(--line);margin-top:22px}
-.day{display:flex;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line)}
-.day:last-child{border-bottom:0}
-.day-d{font-family:'Archivo Black';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);min-width:70px;padding-top:3px}
-.day-t{flex:1;font-size:14px;line-height:1.55}
-.summary{margin-top:60px;background:var(--paper);border:2px solid var(--ink);padding:26px}
-.summary h2{font-size:22px;margin-bottom:4px}
-.summary .sub{font-size:13px;color:var(--ink-soft);margin-bottom:18px}
-.sum-row{padding:11px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.eatplace{min-width:118px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;color:var(--olive);padding-top:3px}
+.eatmain a{font-family:'Fraunces',serif;font-weight:600;font-size:16px;text-decoration:none;border-bottom:1px solid var(--line)}
+.eatmain a:hover{border-color:var(--terracotta)}
+.eatmain span.plain{font-family:'Fraunces',serif;font-weight:600;font-size:16px}
+.eatmeta{font-size:13px;color:var(--ink-soft);margin-top:3px;line-height:1.5}
+.closed{color:var(--wine);font-weight:600}
+
+/* day timeline */
+.days{margin-top:22px;border-left:2px solid var(--line);margin-left:6px;padding-left:0}
+.day{display:flex;gap:16px;padding:12px 0 12px 22px;position:relative}
+.day::before{content:"";position:absolute;left:-7px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--terracotta)}
+.day-d{font-family:'Fraunces',serif;font-weight:600;font-size:14px;color:var(--olive);min-width:64px;padding-top:1px}
+.day-t{flex:1;font-size:14px;line-height:1.6;color:var(--ink-soft)}
+.day-t b{color:var(--ink);font-weight:600}
+
+/* summary */
+.summary{margin-top:64px;background:linear-gradient(180deg,#fffdf8,#faf4e8);border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shadow-lg)}
+.summary h2{margin-bottom:2px}
+.summary .sub{font-size:14px;color:var(--ink-soft);margin-bottom:20px}
+.sum-row{padding:13px 0;border-bottom:1px solid var(--line-soft);display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
 .sum-row:last-child{border-bottom:0}
-.sum-stage{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--verde);min-width:140px}
-.sum-pick{font-family:'Newsreader',Georgia,serif;font-size:17px;flex:1;min-width:180px;line-height:1.45}
-.sum-tag{font-family:'Archivo Black';font-size:9px;letter-spacing:.1em;padding:3px 6px;color:#fff}
-.tag-match{background:var(--zafferano);color:var(--ink)}
-.tag-m{background:var(--cobalto)}.tag-n{background:var(--vinaccia)}
-.empty{font-family:'Newsreader',Georgia,serif;font-style:italic;color:var(--ink-soft);font-size:16px}
-footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
+.sum-stage{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--olive);min-width:150px}
+.sum-pick{font-family:'Fraunces',serif;font-size:18px;flex:1;min-width:180px;line-height:1.4}
+.sum-tag{font-size:10px;font-weight:600;letter-spacing:.06em;padding:4px 9px;border-radius:100px;color:#fff}
+.tag-match{background:var(--gold);color:#3a2c12}
+.tag-m{background:var(--terracotta)}.tag-n{background:var(--wine)}
+.empty{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:16px}
+footer{margin-top:46px;font-size:12.5px;color:var(--ink-soft);line-height:1.7}
+footer a{color:var(--terracotta)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -109,12 +161,12 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
 
 <div class="topbar">
   <div class="topbar-in">
-    <div class="brand">Toskánsko 20.–27.&nbsp;7.<small>Villa Tiberini + Chianti · klikej na kolečka</small></div>
+    <div class="brand">Toskánsko · 20.–27.&nbsp;7.<small>Villa Tiberini &amp; Chianti</small></div>
     <div class="who" role="group" aria-label="Kdo hlasuje">
       <button id="btnM" aria-pressed="true">Martin</button>
       <button id="btnN" aria-pressed="false">Nina</button>
     </div>
-    <button class="util" id="btnShare">Zkopírovat odkaz s hlasy</button>
+    <button class="util" id="btnShare">Sdílet s hlasy</button>
   </div>
 </div>
 <div class="toast" id="toast"></div>
@@ -123,31 +175,32 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
 
 <header class="hero">
   <div class="eyebrow">Jeden zátah · dvě základny · šest nocí</div>
-  <h1>Val d'Orcia,<br>pak Chianti<br><em>a Florencie na dohled</em></h1>
-  <p class="lede">Tři noci ve vile u Torrity di Siena, pak přejezd na sever do Villa Fioriamo v Greve in Chianti — s bazénem a s Florencií na půl hodiny cesty. Poslední tři noci tak spojí toskánský klid s jedním velkým městským dnem. A v pondělí je to domů blíž.</p>
+  <h1>Val d'Orcia, pak Chianti<br><em>a Florencie na dohled</em></h1>
+  <p class="lede">Tři noci ve vile u Torrity di Siena, pak přejezd na sever do Villa Fioriamo v Greve in Chianti — s bazénem a s Florencií na půl hodiny cesty. Poslední tři noci spojí toskánský klid s jedním velkým městským dnem. A v pondělí je to domů blíž.</p>
   <div class="facts">
     <div class="fact"><b>2 250 km</b><span>celkem</span></div>
     <div class="fact"><b>~11 500 Kč</b><span>palivo, mýto, parkování</span></div>
-    <div class="fact"><b>2</b><span>základny, 6 nocí</span></div>
+    <div class="fact"><b>2</b><span>základny · 6 nocí</span></div>
     <div class="fact"><b>34–37 °C</b><span>čekejte vedro</span></div>
   </div>
   <div class="howto">
-    <b>Jak to funguje:</b> nahoře přepni, jestli jsi Martin nebo Nina, a klikej na kolečka u ubytování a výletů. Když se strefíme oba, karta zežloutne a napíše SHODA. Pak dej „Zkopírovat odkaz s hlasy“ a pošli ho druhému. Dole je souhrn.
+    <b>Jak to funguje:</b> nahoře přepni, jestli jsi Martin nebo Nina, a klikej na kolečka u výletů a míst, která se ti líbí. Když se strefíme oba, karta dostane zlatý rámeček a napíše SHODA. Pak dej „Sdílet s hlasy“ a pošli odkaz druhému — otevře se mu to s tvými hlasy. Dole je souhrn.
   </div>
 </header>
 
-<section class="stage" style="border-top:0;margin-top:10px;padding-top:16px">
+<!-- PŘEJEZD -->
+<section class="stage">
   <div class="stage-head">
-    <div class="km">Pondělí · 1 100 km · 10,5 h</div>
+    <span class="pill">Pondělí · 1 100 km · 10,5 h</span>
     <h2>Noční přejezd</h2>
-    <div class="when">20. 7. — odjezd v 17:00</div>
+    <span class="when">20. 7. — odjezd 17:00</span>
   </div>
   <p class="note">Praha → Linec → Salzburg → Villach → Tarvisio → Udine → Bologna → Torrita di Siena. Střídat se po 2,5 hodinách, ne po hodině — člověk se zajede a je to bezpečnější.</p>
   <div class="box">
     <h5>Napište vile, že přijedete brzy ráno</h5>
-    <p>Check-in bude nejspíš až odpoledne, ale Villa Tiberini je rodinné vinařství a brzký příjezd řeší běžně. Napište jim předem — ať můžete aspoň zaparkovat, nechat kufry a jít se nasnídat, než bude pokoj.</p>
+    <p>Check-in bude nejspíš až odpoledne, ale Villa Tiberini je rodinné vinařství a brzký příjezd řeší běžně. Napište předem — ať můžete aspoň zaparkovat, nechat kufry a jít se nasnídat, než bude pokoj.</p>
     <ul>
-      <li>Kolem 1:00 Villach, 3:00 Udine, 6:00 Bologna, 8:00–8:30 u vily. Snídani cestou u Bologni.</li>
+      <li>Kolem 1:00 Villach, 3:00 Udine, 6:00 Bologna, 8:00–8:30 u vily. Snídani cestou.</li>
       <li>Natankovat plnou v Rakousku. Přes Tarvisio a Udine, ne přes Brenner — kratší a bez tunelu.</li>
     </ul>
   </div>
@@ -156,54 +209,58 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
 <!-- ZÁKLADNA 1 -->
 <section class="stage">
   <div class="stage-head">
-    <div class="km">Základna 1 · 3 noci · ZABOOKOVÁNO</div>
+    <span class="pill book">Základna 1 · 3 noci · zabookováno</span>
     <h2>Villa Tiberini</h2>
-    <div class="when">Úterý 21. – pátek 24. 7.</div>
+    <span class="when">Út 21. – pá 24. 7.</span>
   </div>
-  <p class="note">Torrita di Siena, na severovýchodním okraji Val d'Orcia. Poloha otevírá klasické Val d'Orcia i míň známý východ — Cortonu, Lucignano a jezero Trasimeno. Všechno do 40 minut.</p>
+  <p class="note">Torrita di Siena, na severovýchodním okraji Val d'Orcia — patří vinařství Tiberini z Montepulciana. Poloha otevírá klasické Val d'Orcia i míň známý východ: Cortonu, Lucignano a jezero Trasimeno. Všechno do 40 minut.</p>
+
+  <div class="villa" id="villaTib"></div>
 
   <h3>Kam na výlet z vily</h3>
   <p class="h3sub">Tři noci = dva a půl dne programu. Úterý je po noční jízdě odpočinkové. Vyberte tři, maximálně čtyři.</p>
-  <div class="grid" id="trip1"></div>
+  <div class="grid g3" id="trip1"></div>
 
   <h3>Kde jíst</h3>
   <p class="h3sub">Zavírací dny hlídejte — půlka podniků zavírá v úterý nebo pondělí.</p>
   <div class="eatlist" id="eat1"></div>
 
   <div class="days">
-    <div class="day"><div class="day-d">Út 21.</div><div class="day-t"><b>Nic.</b> Dospat, bazén, sklenka vlastního vína z vily. Večer Montepulciano (deset minut) na dlouhou večeři. Odměna za noční jízdu.</div></div>
+    <div class="day"><div class="day-d">Út 21.</div><div class="day-t"><b>Nic.</b> Dospat, bazén, sklenka vlastního vína. Večer Montepulciano (10 min) na dlouhou večeři. Odměna za noční jízdu.</div></div>
     <div class="day"><div class="day-d">St 22.</div><div class="day-t">První velký den — klasické Val d'Orcia (Pienza, Vitaleta, Bagno Vignoni), nebo Montalcino a Sant'Antimo.</div></div>
     <div class="day"><div class="day-d">Čt 23.</div><div class="day-t">Druhý velký den — východ (Cortona, Trasimeno, Lucignano), nebo Siena a Asciano na západ.</div></div>
-    <div class="day"><div class="day-d">Pá 24.</div><div class="day-t">Ráno sbalit, přejezd do Chianti (~1,5 h). Cestou zastávka — viz níž.</div></div>
+    <div class="day"><div class="day-d">Pá 24.</div><div class="day-t">Ráno sbalit, přejezd do Greve (~1,5 h). Cestou Siena nebo Monte Oliveto.</div></div>
   </div>
 </section>
 
-<!-- ZÁKLADNA 2 — CHIANTI -->
+<!-- ZÁKLADNA 2 -->
 <section class="stage">
   <div class="stage-head">
-    <div class="km">Základna 2 · 3 noci · ZABOOKOVÁNO</div>
+    <span class="pill book">Základna 2 · 3 noci · zabookováno</span>
     <h2>Villa Fioriamo, Greve</h2>
-    <div class="when">Pátek 24. – pondělí 27. 7.</div>
+    <span class="when">Pá 24. – po 27. 7.</span>
   </div>
   <p class="note">Greve in Chianti — přímo v srdci Chianti, s výhledem na kruhovou vesničku Montefioralle. Poloha je pro tenhle plán skoro ideální: Florencie na 35 minut, a jste rovnou na Chiantigianě (SS222), takže vinice a vesnice máte za dveřmi.</p>
+
+  <div class="villa" id="villaFio"></div>
 
   <div class="box">
     <h5>Poloha sedí · co je jak daleko</h5>
     <ul>
       <li><b>Florencie</b> (Piazzale Michelangelo) — ~35 min. Sobotní městský den funguje přesně.</li>
-      <li><b>Montefioralle</b> — z terasy, 5 minut. <b>Panzano a Cecchini</b> 10 min, <b>Castellina a Radda</b> 20–25 min. Jste přímo na SS222.</li>
-      <li><b>Siena</b> ~40 min, <b>San Gimignano</b> ~50 min — na dosah, kdybyste chtěli.</li>
+      <li><b>Montefioralle</b> z terasy, 5 min. <b>Panzano a Cecchini</b> 10 min, <b>Castellina a Radda</b> 20–25 min.</li>
+      <li><b>Siena</b> ~40 min, <b>San Gimignano</b> ~50 min — na dosah.</li>
       <li><b>Cesta z vily sem</b> (pátek): ~1,5 h. Zastávka Siena nebo Monte Oliveto pořád platí.</li>
     </ul>
   </div>
 
   <div class="box">
     <h5>Jedna věc k ověření — klimatizace</h5>
-    <p>Podle webu má klimatizaci v ložnici <b>jen apartmán Rosa</b>; ostatní chladí silnými zdmi a orientací domu. Při 34–37 °C to zvažte — zeptejte se, který apartmán máte. Když ne Rosa: přes den bazén, večer důkladně větrat, žaluzie přes poledne zavřené. Sleva 10 % kódem FIORIAMO10 při rezervaci přes jejich web.</p>
+    <p>Podle webu má klimatizaci v ložnici <b>jen apartmán Rosa</b>; ostatní chladí silné zdi. Při 34–37 °C to zvažte — zeptejte se, který apartmán máte. Když ne Rosa: přes den bazén, večer důkladně větrat, žaluzie přes poledne zavřené. Sleva 10 % kódem FIORIAMO10 při rezervaci přes jejich web.</p>
   </div>
 
   <h3>Florencie — jak na ni chytře</h3>
-  <p class="h3sub">Jeden městský den. V červenci a v sobotu je centrum náročné, tady je návod, jak si ho užít a ne protrpět.</p>
+  <p class="h3sub">Jeden městský den. V červenci a v sobotu je centrum náročné — tady je návod, jak si ho užít a ne protrpět.</p>
   <div class="grid" id="firenze"></div>
 
   <h3>Chianti — výlety kolem základny</h3>
@@ -211,11 +268,12 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
   <div class="grid" id="trip2"></div>
 
   <h3>Kde jíst</h3>
+  <p class="h3sub">Klasika Chianti — víno, divočák, řezník Cecchini.</p>
   <div class="eatlist" id="eat2"></div>
 
   <div class="days">
     <div class="day"><div class="day-d">Pá 24.</div><div class="day-t">Přejezd z vily, cestou Siena nebo Monte Oliveto. Odpoledne ubytovat, bazén, večeře v Greve nebo Panzano.</div></div>
-    <div class="day"><div class="day-d">So 25.</div><div class="day-t"><b>Florencie.</b> Být tam brzy (do 9:00), muzeum s rezervací, odpoledne zpět do chládku k bazénu. Nebo prohodit se sobotou/nedělí podle počasí.</div></div>
+    <div class="day"><div class="day-d">So 25.</div><div class="day-t"><b>Florencie.</b> Být tam brzy (do 9:00), muzeum s rezervací, odpoledne zpět do chládku k bazénu.</div></div>
     <div class="day"><div class="day-d">Ne 26.</div><div class="day-t"><b>Chianti.</b> Silnice SS222, degustace, kamenné vesnice. Poslední toskánský den v klidu.</div></div>
     <div class="day"><div class="day-d">Po 27.</div><div class="day-t"><b>Domů.</b> ~1 000 km, 10 h. Vyjet po snídani (7:00), střídat se. Doma kolem 20:00.</div></div>
   </div>
@@ -226,190 +284,193 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
   <div class="stage-head"><h2>Praktické</h2></div>
   <div class="box">
     <h5>Florencie autem — čtěte, ať nepřijde pokuta</h5>
-    <p>Celé centrum Florencie je <b>ZTL</b> a je hlídané kamerami. Autem tam nikdy. Řešení:</p>
+    <p>Celé centrum Florencie je <b>ZTL</b> a je hlídané kamerami. Autem tam nikdy.</p>
     <ul>
-      <li>Zaparkovat u <b>Piazzale Michelangelo</b> (mimo ZTL, zdarma nebo levně) a sejít pěšky — máte k tomu panorama města.</li>
-      <li>Nebo autobusem — z <b>Greve</b> jezdí linka <b>365 do Florencie</b> (autostazione, ~1 h). Necháte auto u vily a nemusíte v centru vůbec parkovat.</li>
+      <li>Zaparkovat u <b>Piazzale Michelangelo</b> (mimo ZTL) a sejít pěšky — máte k tomu panorama města.</li>
+      <li>Nebo autobusem — z <b>Greve</b> jezdí linka <b>365 do Florencie</b> (~1 h). Auto necháte u vily a v centru vůbec neparkujete.</li>
       <li>Pokuta za vjezd do ZTL: 80–100 €, chodí i rok zpětně, za každý průjezd zvlášť.</li>
     </ul>
   </div>
   <div class="box">
     <h5>Rezervovat hned</h5>
     <ul>
-      <li><b>Ubytování v Chianti od pátku.</b> Severní Chianti (blízko Florencie) se v červenci plní rychle.</li>
-      <li><b>Uffizi a Accademia</b> (David) ve Florencii — <b>vždy s časovkou předem</b>, jinak stojíte hodiny. Web b-ticket.com/b-ticket/uffizi.</li>
+      <li><b>Uffizi a Accademia</b> (David) — vždy s časovkou předem na b-ticket.com, jinak stojíte hodiny.</li>
       <li><b>Sienská katedrála</b> — do 31. 7. odkrytá mramorová podlaha, 56 výjevů jen pár týdnů v roce. Lístek online.</li>
-      <li><b>Rakouská viněta</b> 10denní na asfinag.at — kupte aspoň 18 dní předem, jinak platí až za 18 dnů. Na poslední chvíli papírovou na pumpě.</li>
+      <li><b>Degustace ve vile Tiberini</b> i malé osterie (Gio'Steria, Sette di Vino) — domlouvat předem.</li>
+      <li><b>Rakouská viněta</b> 10denní na asfinag.at — kupte aspoň 18 dní předem, jinak platí až za 18 dnů.</li>
     </ul>
   </div>
   <div class="box">
     <h5>Vedro</h5>
-    <p>34–37 °C. Prohlídky do 11:00 a po 18:00, mezi tím bazén. Florencii dělejte brzy ráno — v poledne je mezi kameny k nedýchání. Proto má každé ubytování bazén: odpoledne je na přežití vedra, ne luxus.</p>
+    <p>34–37 °C. Prohlídky do 11:00 a po 18:00, mezi tím bazén. Florencii dělejte brzy ráno — v poledne je mezi kameny k nedýchání.</p>
   </div>
 </section>
 
 <section class="summary">
   <h2>Náš plán</h2>
-  <p class="sub">Aktualizuje se, jak klikáte. Žlutá = shodli jsme se.</p>
+  <p class="sub">Aktualizuje se, jak klikáte. Zlatá = shodli jsme se.</p>
   <div id="sumBody"></div>
 </section>
 
 <footer>
-  Ceny jsou odhad za pokoj a noc v sezoně — ověřte aktuální. Hodnocení a zavírací dny z Map Google ke dni sestavení plánu; před cestou překontrolujte, hlavně u restaurací. Odkazy vedou na Mapy Google.
+  Fotky vil pocházejí z jejich webů (villatiberini.com, villafioriamo.com), fotky míst z Wikimedia Commons (volné licence). Hodnocení a zavírací dny z Map Google ke dni sestavení plánu; před cestou překontrolujte, hlavně u restaurací. Odkazy vedou na Mapy Google.
 </footer>
 
 </div>
 
 <script>
 const G=(n,id)=>`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(n)}${id?`&query_place_id=${id}`:""}`;
+const WM=f=>`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=1000`;
 
-/* ===== VILA — VÝLETY ===== */
+/* fotostrip vil (reálné fotky z jejich webů) */
+const TIB_IMGS=[
+ "https://www.villatiberini.com/wp-content/uploads/2026/03/holidays-in-tuscany-villa-tiberini-panoramic-scaled.webp",
+ "https://www.villatiberini.com/wp-content/uploads/2026/07/holidays-in-tuscany-villa-tiberini-home22-1024x682.webp",
+ "https://www.villatiberini.com/wp-content/uploads/2026/03/holidays-in-tuscany-villa-tiberini-home3-1024x682.webp",
+ "https://www.villatiberini.com/wp-content/uploads/2026/07/holidays-in-tuscany-villa-tiberini-home24-1024x682.webp",
+ "https://www.villatiberini.com/wp-content/uploads/2026/07/holidays-in-tuscany-villa-tiberini-home23-1024x682.webp"
+];
+const FIO_IMGS=[
+ "https://cf.bstatic.com/xdata/images/hotel/max1024x768/886149371.jpg?k=284e7327c35ca8b61ab0014b483ccc91ec963797ec0726a25969a8568e61266d&o=",
+ "https://cf.bstatic.com/xdata/images/hotel/max1024x768/886150061.jpg?k=d43a615433a4ad5d07e940dcac98e88aaea9db0b2abecf90808b23828b671dc3&o=",
+ "https://cf.bstatic.com/xdata/images/hotel/max1024x768/886150301.jpg?k=d807c69c5387b06b63deb34d9e60d81e1cc65bb0eaf3a364a991619e8c7157e5&o=",
+ "https://cf.bstatic.com/xdata/images/hotel/max1024x768/886155635.jpg?k=665ddab07779aca15b78bf82416566b2646c4bd9f9c8437b8018b2d350a0701a&o="
+];
+
+const VILLAS={
+ villaTib:{name:"Villa Tiberini",meta:"Torrita di Siena · vinařský statek s bazénem",url:"https://www.villatiberini.com/en/",
+  p:"Rodinné vinařství Tiberini, dva kamenné statky (La Pece a Il Pecino) mezi 50 hektary vinic a olivových hájů. Bazén, panoramatické výhledy na Val di Chiana, degustace přímo na místě.",imgs:TIB_IMGS},
+ villaFio:{name:"Villa Fioriamo",meta:"Greve in Chianti · sedm apartmánů, bazén, zahrada",url:"https://villafioriamo.com/en/",imgcap:"Fotky: Villa Fioriamo — bazén, zahrada a vila.",
+  p:"Malé, klidné, sedm apartmánů s plně vybavenou kuchyní. Velká zahrada s bazénem, terasy, lehátka a houpací sítě, výhled na Montefioralle. Klimatizace v ložnici jen v apartmánu Rosa — ostatní chladí silné zdi.",imgs:FIO_IMGS}
+};
+
+/* ===== VILA — VÝLETY (img = soubor na Wikimedia Commons, prázdné = barevný fallback) ===== */
 const TRIP1=[
- {id:"t1a",n:"Pienza, Corsignano a kaple Vitaleta",k:"Půl dne · 25 min",
+ {id:"t1a",n:"Pienza, Corsignano a kaple Vitaleta",k:"Půl dne · 25 min",img:"Pienza banner.JPG",lbl:"Pienza",
   d:`<b>Nejklasičtější den ve Val d'Orcia.</b>
    <ul>
     <li><b>Pienza</b> — renesanční město na zelené louce. Pecorino, promenáda po hradbách.</li>
     <li><b><a href="${G("Pieve di Corsignano Pienza","ChIJCYzoaqhnKRMRDMFx6BDmSPg")}" target="_blank">Pieve di Corsignano</a></b> — 4,6★, románský kostelík z roku 1000. Za ním jeden z nejlepších výhledů v Toskánsku.</li>
-    <li><b><a href="${G("Cappella della Madonna di Vitaleta","ChIJncrc52hmKRMR5pIZXi_ljr0")}" target="_blank">Kaple Vitaleta</a></b> — 4,6★, ta kaplička s cypřiši z fotek. <i>Parkovat na vyhrazeném místě, policie pokutuje auta u šotolinky</i></li>
+    <li><b><a href="${G("Cappella della Madonna di Vitaleta","ChIJncrc52hmKRMR5pIZXi_ljr0")}" target="_blank">Kaple Vitaleta</a></b> — 4,6★, kaplička s cypřiši z fotek. <i>Parkovat na vyhrazeném místě, policie pokutuje auta u šotolinky</i></li>
    </ul>`},
- {id:"t1b",n:"Montepulciano a San Biagio",k:"Půl dne · 10 min",
+ {id:"t1b",n:"Montepulciano a San Biagio",k:"Půl dne · 10 min",img:"Chiesa di San Biagio (Montepulciano) WLM23 006.jpg",lbl:"San Biagio",
   d:`<b>Máte to za rohem.</b>
    <ul>
     <li><b>Piazza Grande</b> na vrcholu, sklepy vytesané do skály. Vino Nobile — Contucci, De' Ricci.</li>
     <li><b>San Biagio</b> — renesanční kostel na louce pod městem, dokonalý řecký kříž, skoro nikdo tam nechodí.</li>
     <li>Vaše vila je vinařství Tiberini, sklep mají přímo v Montepulcianu. Zeptejte se na degustaci.</li>
    </ul>`},
- {id:"t1c",n:"Montalcino, Brunello a Sant'Antimo",k:"Celý den · 35 min",
+ {id:"t1c",n:"Montalcino, Brunello a Sant'Antimo",k:"Celý den · 35 min",img:"Abbey of Sant'Antimo near Montalcino, Tuscany, Italy.jpg",lbl:"Sant'Antimo",
   d:`<b>Nejlepší víno Toskánska a nejkrásnější opatství.</b>
    <ul>
     <li><b><a href="${G("Abbazia di Sant'Antimo","ChIJ1V69JuFxKRMRHlZY6qt8f9c")}" target="_blank">Abbazia di Sant'Antimo</a></b> — 4,7★, románské opatství samo v údolí.</li>
     <li><b>Montalcino</b> — pevnost, Brunello. Ve vedru dává Rosso di Montalcino větší smysl.</li>
    </ul>`},
- {id:"t1d",n:"Bagno Vignoni a Fosso Bianco",k:"Půl až celý den · 35 min",
+ {id:"t1d",n:"Bagno Vignoni a Fosso Bianco",k:"Půl až celý den · 35 min",img:"Bagno Vignoni.jpg",lbl:"Bagno Vignoni",
   d:`<b>Termální voda z podzemí, zdarma.</b>
    <ul>
     <li><b>Bagno Vignoni</b> — vesnice, jejíž náměstí je termální bazén ze 16. století.</li>
     <li><b><a href="${G("Fosso Bianco Bagni San Filippo","ChIJm97IcslrKRMRBDFISHvt9EA")}" target="_blank">Fosso Bianco</a></b> — 4,5★. Volné termální kaskády v lese, voda 36–40 °C. Zdarma. <i>Jít ráno, bez WC a sprch.</i></li>
    </ul>`},
- {id:"t1e",n:"Siena",k:"Celý den · 50 min",
+ {id:"t1e",n:"Siena",k:"Celý den · 50 min",img:"Piazza del Campo (Siena) 2011.JPG",lbl:"Piazza del Campo",
   d:`<b>Být tam v devět.</b>
    <ul>
     <li><b>Katedrála má do 31. 7. odkrytou mramorovou podlahu</b> — 56 výjevů jen pár týdnů v roce. Lístek online.</li>
     <li><b>Museo Civico</b>, Lorenzettiho <i>Alegorie dobré vlády</i>, Piazza del Campo. Parkovat mimo hradby.</li>
    </ul>`},
- {id:"t1f",n:"Cortona a jezero Trasimeno",k:"Celý den · 40 min",
+ {id:"t1f",n:"Cortona a jezero Trasimeno",k:"Celý den · 40 min",img:"",lbl:"Cortona",
   d:`<b>Východ — koupačka a filmové kulisy.</b>
    <ul>
     <li><b>Cortona</b> — kopcové město (z „Pod toskánským sluncem“), etruské muzeum, Fra Angelico.</li>
     <li><b>Jezero Trasimeno</b> — koupání. Castiglione del Lago, nebo loď na ostrov Maggiore. Vezměte plavky.</li>
    </ul>`},
- {id:"t1g",n:"Lucignano a Montefollonico",k:"Půl dne · 20 min",
+ {id:"t1g",n:"Lucignano a Montefollonico",k:"Půl dne · 20 min",img:"",lbl:"Lucignano",
   d:`<b>Dvě vesnice, které nikdo nezná.</b>
    <ul>
     <li><b><a href="${G("Lucignano Arezzo","ChIJK-fWZADnKxMRVAXyn4bQDDY")}" target="_blank">Lucignano</a></b> — 4,8★. Opevněná vesnice s eliptickým půdorysem, ulice se točí do spirály.</li>
-    <li><b>Montefollonico</b> — kamenný borgo deset minut od vily. Projít se, dát si oběd.</li>
+    <li><b>Montefollonico</b> — kamenný borgo 10 minut od vily. Projít se, dát si oběd.</li>
    </ul>`}
 ];
 
 const EAT1=[
- {p:"Torrita di Siena",n:"Gio'Steria da Nonno Gio'",id:"ChIJs9gtfohfKRMR83Fu-I1Rtm8",m:"4,8★ · Kousek od vily. Giovanni a jeho žena, domácí kuchyně, hlemýždi, telecí, nezapomenutelné dezerty a domácí likéry. <span class='closed'>Zavřeno v pondělí; večeře jen v sobotu.</span>"},
- {p:"Torrita (Noci)",n:"Al Botteghino",id:"ChIJLQekqjheKRMRYAjbyj5fhPg",m:"4,6★ · Neturistické, poctivé, levné (€). Žebírka na BBQ, pizza, ravioli s lanýžem. Vtipný číšník. Rezervovat. <span class='closed'>Út jen večer.</span> Repelent s sebou."},
- {p:"Pienza",n:"Sette di Vino",id:"ChIJJ_VVIgpnKRMRYIfsv6Ec08A",m:"4,8★ · Malinký, hostitel Luciano. Pecorino, fazole, jednoduše a dokonale. Na oběd bez rezervací. <span class='closed'>Zavřeno ve středu.</span>"},
- {p:"Montepulciano",n:"Osteria Acquacheta",id:"",m:"Klasika — bistecca alla fiorentina se váží před vámi, dlouhé stoly, hlučno a výborně. Rezervovat týden předem."},
- {p:"Montalcino",n:"Re di Macchia",id:"ChIJtwBIjHdwKRMRCuUH-kdFQiw",m:"4,7★ · Rodinná, malá, elegantní. Roberta a Valentino. Rezervovat. <span class='closed'>Zavřeno ve čtvrtek.</span>"}
-];
-
-/* ===== CHIANTI — UBYTOVÁNÍ ===== */
-const STAY2=[
- {id:"s2a",t:"low",p:"~120 €",n:"Agriturismo Il Pintello",gid:"ChIJ-8-qihxQKhMR8DzViVWsKTE",k:"San Casciano · 4,7★ · 15 min k Florencii",
-  d:"Nejblíž Florencii z celého seznamu — 15 minut na Piazzale Michelangelo, a Chiantigiana (SS222) hned za rohem. Apartmány s kuchyní, bazén, výhledy do kopců. Hostitelka Giulia. <i>Pozor: na pozemku bývá dětský tábor a psi, ověřte klid v termínu.</i>"},
- {id:"s2b",t:"low",p:"~110 €",n:"Agriturismo Olmi Grossi",gid:"ChIJTePbswBOKhMRZZwfPEAkQYk",k:"Impruneta · 4,6★ · 20 min k Florencii",
-  d:"Rustikální statek jižně od Florencie, 20 minut do centra, u domu i autobusová zastávka do města (dá se nechat auto). Bazén s výhledem, apartmány s kuchyňkou, ráno koláče. Prosté a útulné, výborný poměr cena/výkon."},
- {id:"s2c",t:"mid",p:"~150 €",n:"Fattoria Santo Stefano",gid:"ChIJi3L1VGNLKhMR0BdQINgDxmg",k:"Greve in Chianti · 4,7★ · 30 min k Florencii",
-  d:"Pohlednicový statek nad Greve, olivové háje a vinice, bazén na ranní plavání. Agostino a Elena, vlastní víno a olej, kurzy vaření. 30 minut do Florencie. <i>Příjezdová cesta je krkolomná, ale zvládne ji i malé auto.</i>"},
- {id:"s2d",t:"mid",p:"~150 €",n:"Agriturismo I Poggi",gid:"ChIJIWasuSFOKhMRCj0PBVvdmiA",k:"Impruneta · 4,6★ · 20 min k Florencii",
-  d:"Rodinný statek s bazénem a velkým výhledem, 20 minut do Florencie. Giulio a Francesca — vlastní víno, výborná vlastní restaurace (trofie, crostini, limoncello na závěr). Skvělá základna na město i na Chianti."},
- {id:"s2e",t:"top",p:"~170 €",n:"Farmhouse La Sala",gid:"ChIJfX-NiUKzKxMRvdbOqd0kIjo",k:"Greve in Chianti · 5,0★ · 40 min k Florencii",
-  d:"5,0★ z 50 recenzí. Apartmány s výhledem do údolí, bazén, vlastní víno a olej. Hostitelka Anastasia sepíše doporučení na celý týden. Klidné, krásné, srdeční. Na dosah Siena, San Gimignano i Florencie."},
- {id:"s2f",t:"top",p:"~200 €",n:"Fattoria la Loggia",gid:"ChIJ50QfE9VIKhMRahmvjFdQj_Q",k:"San Casciano · 4,7★ · 25 min k Florencii",
-  d:"Historické fattoria s uměním a vlastním vinařstvím, 25 minut od Florencie, hned u RA3. Sestry Ludovica a Federica (vyučené v pětihvězdičkových hotelích) to od 2026 vedou s obrovskou péčí — ovoce a med z vlastního, plná lednička. Nejvíc rozmazlující volba."}
+ {p:"Torrita di Siena",n:"Gio'Steria da Nonno Gio'",id:"ChIJs9gtfohfKRMR83Fu-I1Rtm8",m:"4,8★ · Kousek od vily. Domácí kuchyně, hlemýždi, telecí, dezerty a domácí likéry. <span class='closed'>Zavřeno v pondělí; večeře jen v sobotu.</span>"},
+ {p:"Torrita (Noci)",n:"Al Botteghino",id:"ChIJLQekqjheKRMRYAjbyj5fhPg",m:"4,6★ · Neturistické, poctivé, levné. Žebírka na BBQ, pizza, ravioli s lanýžem. Rezervovat. <span class='closed'>Út jen večer.</span> Repelent s sebou."},
+ {p:"Pienza",n:"Sette di Vino",id:"ChIJJ_VVIgpnKRMRYIfsv6Ec08A",m:"4,8★ · Malinký, hostitel Luciano. Pecorino, jednoduše a dokonale. <span class='closed'>Zavřeno ve středu.</span>"},
+ {p:"Montepulciano",n:"Osteria Acquacheta",id:"",m:"Klasika — bistecca alla fiorentina se váží před vámi, dlouhé stoly, výborně. Rezervovat týden předem."},
+ {p:"Montalcino",n:"Re di Macchia",id:"ChIJtwBIjHdwKRMRCuUH-kdFQiw",m:"4,7★ · Rodinná, malá, elegantní. Rezervovat. <span class='closed'>Zavřeno ve čtvrtek.</span>"}
 ];
 
 /* ===== FLORENCIE ===== */
 const FIRENZE=[
- {id:"f_a",n:"Uffizi — cesta renesancí",k:"Půl dne · rezervace nutná",
+ {id:"f_a",n:"Uffizi — cesta renesancí",k:"Půl dne · rezervace nutná",img:"",lbl:"Uffizi",
   d:`<b>Nejslavnější galerie na světě. Bez časovky nechoďte.</b>
    <ul>
-    <li>Botticelliho <i>Zrození Venuše</i> a <i>Primavera</i>, Leonardo, Michelangelo, Caravaggio, Piero della Francesca.</li>
+    <li>Botticelliho <i>Zrození Venuše</i> a <i>Primavera</i>, Leonardo, Michelangelo, Caravaggio.</li>
     <li><b>Rezervace na b-ticket.com předem</b> — jinak stojíte i dvě hodiny. První vstup 8:15 je nejprázdnější.</li>
-    <li>Počítejte 2–3 hodiny. Ve vedru je uvnitř klimatizace — dobrý cíl na horké dopoledne.</li>
+    <li>Počítejte 2–3 hodiny. Uvnitř klimatizace — dobrý cíl na horké dopoledne.</li>
    </ul>`},
- {id:"f_b",n:"Accademia — David",k:"1–2 h · rezervace nutná",
+ {id:"f_b",n:"Accademia — David",k:"1–2 h · rezervace nutná",img:"",lbl:"Accademia",
   d:`<b>Michelangelův David, v originále.</b>
    <ul>
-    <li>Kromě Davida i nedokončení <i>Vězni</i>, kteří se derou z mramoru — na mnohé silnější zážitek než David sám.</li>
+    <li>Kromě Davida i nedokončení <i>Vězni</i>, kteří se derou z mramoru — často silnější zážitek než David sám.</li>
     <li>Menší než Uffizi, na hodinu až dvě. <b>Taky s časovkou.</b></li>
-    <li>Když máte vybrat jen jedno muzeum a sochu nad malbu, tohle je rychlejší a intenzivnější než Uffizi.</li>
    </ul>`},
- {id:"f_c",n:"Duomo, Baptisterium a kopule",k:"Půl dne · výstup rezervovat",
+ {id:"f_c",n:"Duomo, Baptisterium a kupole",k:"Půl dne · výstup rezervovat",img:"Florence Cathedral (Duomo).jpg",lbl:"Duomo",
   d:`<b>Srdce města a Brunelleschiho kupole.</b>
    <ul>
-    <li><b>Kupole</b> — výstup 463 schodů, zblízka Vasariho fresky Posledního soudu, nahoře výhled na celou Florencii. <b>Slot rezervovat předem.</b></li>
-    <li><b>Baptisterium</b> — zlaté mozaiky uvnitř, Ghibertiho <i>Rajská brána</i> (kopie) venku.</li>
-    <li>Katedrála samotná je zdarma, ale bývá dlouhá fronta — jděte brzy ráno.</li>
+    <li><b>Kupole</b> — výstup 463 schodů, zblízka Vasariho fresky, nahoře výhled na celou Florencii. <b>Slot rezervovat.</b></li>
+    <li><b>Baptisterium</b> — zlaté mozaiky, Ghibertiho <i>Rajská brána</i> (kopie).</li>
+    <li>Katedrála zdarma, ale dlouhá fronta — jděte brzy ráno.</li>
    </ul>`},
- {id:"f_d",n:"Oltrarno — Florencie bez davů",k:"Půl dne · pěšky",
-  d:`<b>Levý břeh Arna. Řemeslné dílny, míň turistů, opravdovější město.</b>
+ {id:"f_d",n:"Oltrarno — Florencie bez davů",k:"Půl dne · pěšky",img:"Ponte Vecchio, Florence, Italy, 2023.jpg",lbl:"Oltrarno",
+  d:`<b>Levý břeh Arna. Řemeslné dílny, míň turistů.</b>
    <ul>
-    <li><b>Santo Spirito</b> — Brunelleschiho kostel, živé náměstí s bary a aperitivem.</li>
-    <li><b>Brancacciho kaple</b> (Santa Maria del Carmine) — Masacciovy fresky, které nastartovaly renesanci. Rezervovat.</li>
-    <li><b>San Miniato al Monte</b> — románský kostel nad městem, v 18:30 mniši zpívají gregoriánský chorál. Vedle Piazzale Michelangelo s panoramatem.</li>
-    <li>Palazzo Pitti a zahrady Boboli, pokud zbude čas a síla.</li>
+    <li><b>Santo Spirito</b> — Brunelleschiho kostel, živé náměstí s aperitivem.</li>
+    <li><b>Brancacciho kaple</b> — Masacciovy fresky, které nastartovaly renesanci. Rezervovat.</li>
+    <li><b>San Miniato al Monte</b> — v 18:30 mniši zpívají chorál. Vedle Piazzale Michelangelo s panoramatem.</li>
    </ul>`},
- {id:"f_e",n:"Bargello — sochy bez front",k:"1–2 h · klidnější",
+ {id:"f_e",n:"Bargello — sochy bez front",k:"1–2 h · klidnější",img:"",lbl:"Bargello",
   d:`<b>Pro milovníky sochařství a klidu.</b>
    <ul>
-    <li>Donatellův <i>David</i> (bronzový, první nahá socha od antiky), Michelangelo, Cellini. Nejlepší sochařská sbírka Itálie.</li>
-    <li>Skoro prázdno, i v sezoně. Kdo má Uffizi i Accademii za moc davů, sem.</li>
-    <li>V bývalém středověkém vězení a kasárnách — samo o sobě krásná budova.</li>
+    <li>Donatellův bronzový <i>David</i>, Michelangelo, Cellini. Nejlepší sochařská sbírka Itálie.</li>
+    <li>Skoro prázdno i v sezoně. Kdo má Uffizi za moc davů, sem.</li>
    </ul>`}
 ];
 
 /* ===== CHIANTI — VÝLETY ===== */
 const TRIP2=[
- {id:"c_t1",n:"Chianti Classico — cesta hřebenem",k:"Celý den · SS222",
+ {id:"c_t1",n:"Chianti Classico — cesta hřebenem",k:"Celý den · SS222",img:"Montefioralle - far view from west.jpg",lbl:"Montefioralle",
   d:`<b>Nejhezčí silnice Toskánska.</b>
    <ul>
-    <li><b>Greve, Panzano, Castellina, Radda</b> — vesnice na hřebeni, silnice SS222 (Chiantigiana) mezi nimi. Jeďte pomalu, zastavujte na výhledech.</li>
+    <li><b>Greve, Panzano, Castellina, Radda</b> — vesnice na hřebeni, SS222 (Chiantigiana) mezi nimi. Jeďte pomalu.</li>
+    <li><b>Montefioralle</b> nad Greve — kruhová středověká vesnička, máte ji z terasy.</li>
     <li>Degustace Chianti Classico (černý kohout) u malých vinařů — ne u těch s cedulí v pěti jazycích.</li>
-    <li><b>Montefioralle</b> nad Greve — kruhová středověká vesnička, jedna z nejhezčích v Chianti.</li>
    </ul>`},
- {id:"c_t2",n:"Panzano a Dario Cecchini",k:"Půl dne · oběd",
+ {id:"c_t2",n:"Panzano a Dario Cecchini",k:"Půl dne · oběd",img:"Olive groves, grape vines and cypresses in Chiantishire (4054460424).jpg",lbl:"Chianti",
   d:`<b>Nejslavnější řezník Itálie.</b>
    <ul>
-    <li><b><a href="${G("Antica Macelleria Cecchini Panzano","")}" target="_blank">Antica Macelleria Cecchini</a></b> — Dario Cecchini recituje Danteho nad masem. Tři podniky v jedné vesnici: rychlý oběd (Officina), bistecca menu (Solociccia), burger bar.</li>
-    <li>Zážitek, ne jen jídlo. Na hlavní menu rezervovat.</li>
-    <li>Panzano samo — vyhlídka na vinice Conca d'Oro, nejlepší část Chianti.</li>
+    <li><b><a href="${G("Antica Macelleria Cecchini Panzano","")}" target="_blank">Antica Macelleria Cecchini</a></b> — Dario Cecchini recituje Danteho nad masem. Tři podniky: rychlý oběd, bistecca menu, burger bar.</li>
+    <li>Panzano — vyhlídka na vinice Conca d'Oro, nejlepší část Chianti.</li>
    </ul>`},
- {id:"c_t3",n:"San Gimignano a Monteriggioni",k:"Celý den · 40–50 min",
+ {id:"c_t3",n:"San Gimignano a Monteriggioni",k:"Celý den · 40–50 min",img:"53037 San Gimignano, Province of Siena, Italy - panoramio.jpg",lbl:"San Gimignano",
   d:`<b>Věže a hradby — jižně od základny.</b>
    <ul>
     <li><b>San Gimignano</b> — „středověký Manhattan“. <b>Být tam před devátou nebo po sedmé.</b> Věže, Collegiata, Vernaccia.</li>
-    <li><b>Monteriggioni</b> — dokonale kruhové opevněné městečko na kopci, hradby s věžemi. Zmiňuje ho Dante. Malé, projde se za hodinu.</li>
+    <li><b>Monteriggioni</b> — dokonale kruhové opevněné městečko, hradby s věžemi. Zmiňuje ho Dante.</li>
    </ul>`},
- {id:"c_t4",n:"Siena podruhé, nebo Badia a Passignano",k:"Půl dne",
+ {id:"c_t4",n:"Siena podruhé, nebo Badia a Passignano",k:"Půl dne",img:"",lbl:"Badia a Passignano",
   d:`<b>Když jste Sienu z vily nestihli — nebo klášter mezi vinicemi.</b>
    <ul>
-    <li><b>Siena</b> je z Chianti 30–40 minut. Katedrála s odkrytou podlahou (do 31. 7.), Piazza del Campo.</li>
-    <li><b>Badia a Passignano</b> — opatství uprostřed vinic Antinori. Prohlídka kláštera jen v neděli odpoledne, sklep a restaurace celý týden.</li>
+    <li><b>Siena</b> je z Chianti 30–40 minut. Katedrála s odkrytou podlahou (do 31. 7.).</li>
+    <li><b>Badia a Passignano</b> — opatství uprostřed vinic Antinori. Prohlídka jen v neděli odpoledne.</li>
    </ul>`}
 ];
 
 const EAT2=[
- {p:"Panzano",n:"Antica Macelleria Cecchini",id:"",m:"Řeznická legenda Dario Cecchini. Od rychlého oběda po bistecca menu. Zážitek. Na hlavní menu rezervovat."},
- {p:"Greve",n:"Ristoro di Lamole",id:"",m:"Terasa s jedním z nejlepších výhledů v Chianti, poctivá toskánská kuchyně. Nad Greve. Rezervovat, hlavně na západ slunce."},
- {p:"Impruneta",n:"Agriturismo I Poggi — restaurace",id:"ChIJIWasuSFOKhMRCj0PBVvdmiA",m:"4,6★ · Trofie, vlastní víno, domácí limoncello. I když tam nebydlíte — volat předem."},
- {p:"San Casciano",n:"La Loggia — restaurace",id:"ChIJ50QfE9VIKhMRahmvjFdQj_Q",m:"Farm-to-table, většina bio z vlastního. Sestry Ludovica a Federica. Rezervovat."}
+ {p:"Panzano",n:"Antica Macelleria Cecchini",id:"",m:"Řeznická legenda Dario Cecchini. Od rychlého oběda po bistecca menu. Na hlavní menu rezervovat."},
+ {p:"Greve",n:"Ristoro di Lamole",id:"",m:"Terasa s jedním z nejlepších výhledů v Chianti, poctivá toskánská kuchyně. Rezervovat na západ slunce."},
+ {p:"Impruneta",n:"Agriturismo I Poggi — restaurace",id:"ChIJIWasuSFOKhMRCj0PBVvdmiA",m:"4,6★ · Trofie, vlastní víno, domácí limoncello. Volat předem."},
+ {p:"Greve · centrum",n:"Piazza Matteotti",id:"ChIJnZOBbBdLKhMRKejtxSA2oGw",m:"Trojúhelníkové náměstí s loubím přímo v Greve — řeznictví Falorni, kavárny, aperitivo. Na procházku a večerní posezení."}
 ];
 
 /* ===== STATE ===== */
@@ -424,25 +485,28 @@ function writeHash(){const p=new URLSearchParams();
  const s=p.toString();history.replaceState(null,"",s?"#"+s:location.pathname);}
 const st=id=>(votes.M.has(id)?"M":"")+(votes.N.has(id)?"N":"");
 const stamp=id=>{const s=st(id);return `<button class="stamp" data-vote="${id}" ${s?`data-on="${s}"`:""} aria-label="Líbí se mi">${s==="MN"?"MN":s||"+"}</button>`;};
+const ph=(file,lbl)=>file
+ ? `<div class="ph"><img src="${WM(file)}" alt="${lbl||""}" loading="lazy" onerror="this.remove()">${lbl?`<span class="ph-lbl">${lbl}</span>`:""}</div>`
+ : `<div class="ph">${lbl?`<span class="ph-lbl">${lbl}</span>`:""}</div>`;
 
-const stayHTML=o=>{
- const tl=o.t==="low"?"LEVNĚ":o.t==="mid"?"STŘED":"PREMIUM";
- return `<article class="card${st(o.id)==="MN"?" match":""}">
-  <div class="card-top">
-    <div class="tierline"><span class="tier t-${o.t}">${tl}</span><span class="kicker">${o.k}</span></div>
-    <div class="cname"><a href="${G(o.n,o.gid)}" target="_blank">${o.n}</a></div>
-    <div class="cdesc">${o.d}</div>
-    <div class="cprice">${o.p} / noc</div>
-  </div>
-  <div class="cvote"><span>Chci sem</span>${stamp(o.id)}</div>
- </article>`;
-};
 const tripHTML=o=>`<article class="card${st(o.id)==="MN"?" match":""}">
+  ${ph(o.img,o.lbl)}
   <div class="card-top"><div class="kicker">${o.k}</div><div class="cname">${o.n}</div><div class="cdesc">${o.d}</div></div>
   <div class="cvote"><span>Chci vidět</span>${stamp(o.id)}</div>
  </article>`;
 const eatHTML=e=>`<div class="eatrow"><div class="eatplace">${e.p}</div>
-  <div class="eatmain">${e.id?`<a href="${G(e.n,e.id)}" target="_blank">${e.n}</a>`:`<span style="font-weight:600;font-size:15px">${e.n}</span>`}<div class="eatmeta">${e.m}</div></div></div>`;
+  <div class="eatmain">${e.id?`<a href="${G(e.n,e.id)}" target="_blank">${e.n}</a>`:`<span class="plain">${e.n}</span>`}<div class="eatmeta">${e.m}</div></div></div>`;
+
+function villaHTML(v){
+ const strip=v.imgs.map(u=>`<div class="ph"><img src="${u}" alt="${v.name}" loading="lazy" onerror="this.remove()"></div>`).join("");
+ return `<div class="strip">${strip}</div>
+  ${v.imgcap?`<div style="padding:8px 22px 0;font-size:12px;color:var(--ink-soft)">${v.imgcap}</div>`:""}
+  <div class="villa-body">
+    <h4>${v.name}</h4><div class="meta">${v.meta}</div>
+    <p>${v.p}</p>
+    <p style="margin-top:10px"><a class="link" href="${v.url}" target="_blank">Web ubytování →</a></p>
+  </div>`;
+}
 
 function sumBlock(label,items){
  const b=items.filter(o=>st(o.id)==="MN"),m=items.filter(o=>st(o.id)==="M"),n=items.filter(o=>st(o.id)==="N");
@@ -456,6 +520,8 @@ function sumBlock(label,items){
 }
 
 function render(){
+ document.getElementById("villaTib").innerHTML=villaHTML(VILLAS.villaTib);
+ document.getElementById("villaFio").innerHTML=villaHTML(VILLAS.villaFio);
  document.getElementById("trip1").innerHTML=TRIP1.map(tripHTML).join("");
  document.getElementById("eat1").innerHTML=EAT1.map(eatHTML).join("");
  document.getElementById("firenze").innerHTML=FIRENZE.map(tripHTML).join("");
