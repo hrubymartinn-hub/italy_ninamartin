@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toskánsko 20.–26. 7. — Val d'Orcia &amp; Volterra</title>
+<title>Toskánsko 20.–27. 7. — Villa Tiberini + Chianti</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@ body{background:var(--plaster);color:var(--ink);font-family:'Archivo',system-ui,
 .toast.on{opacity:1}
 .hero{padding:50px 0 30px}
 .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--verde)}
-h1{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(36px,7.5vw,64px);line-height:.94;letter-spacing:-.02em;text-transform:uppercase;margin:12px 0 6px}
+h1{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(34px,7vw,60px);line-height:.94;letter-spacing:-.02em;text-transform:uppercase;margin:12px 0 6px}
 h1 em{font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;text-transform:none;display:block;color:var(--vinaccia)}
 .lede{font-family:'Newsreader',Georgia,serif;font-size:19px;line-height:1.5;max-width:58ch;margin-top:16px;color:var(--ink-soft)}
 .facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px}
@@ -72,7 +72,7 @@ h3{font-family:'Archivo Black';text-transform:uppercase;font-size:13px;letter-sp
 .eatlist{background:var(--paper);border:1px solid var(--line)}
 .eatrow{display:flex;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);align-items:flex-start}
 .eatrow:last-child{border-bottom:0}
-.eatplace{min-width:104px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--verde);padding-top:4px}
+.eatplace{min-width:120px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--verde);padding-top:4px}
 .eatmain{flex:1}
 .eatmain a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line);font-size:15px}
 .eatmain a:hover{border-color:var(--ink)}
@@ -84,6 +84,7 @@ h3{font-family:'Archivo Black';text-transform:uppercase;font-size:13px;letter-sp
 .box ul{margin-top:8px;list-style:none}
 .box li{padding-left:15px;position:relative;margin-bottom:5px}
 .box li::before{content:"—";position:absolute;left:0;color:var(--zafferano)}
+.box a{color:var(--zafferano)}
 .days{background:var(--paper);border:1px solid var(--line);margin-top:22px}
 .day{display:flex;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line)}
 .day:last-child{border-bottom:0}
@@ -94,7 +95,7 @@ h3{font-family:'Archivo Black';text-transform:uppercase;font-size:13px;letter-sp
 .summary .sub{font-size:13px;color:var(--ink-soft);margin-bottom:18px}
 .sum-row{padding:11px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
 .sum-row:last-child{border-bottom:0}
-.sum-stage{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--verde);min-width:132px}
+.sum-stage{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--verde);min-width:140px}
 .sum-pick{font-family:'Newsreader',Georgia,serif;font-size:17px;flex:1;min-width:180px;line-height:1.45}
 .sum-tag{font-family:'Archivo Black';font-size:9px;letter-spacing:.1em;padding:3px 6px;color:#fff}
 .tag-match{background:var(--zafferano);color:var(--ink)}
@@ -108,7 +109,7 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
 
 <div class="topbar">
   <div class="topbar-in">
-    <div class="brand">Toskánsko 20.–26.&nbsp;7.<small>Val d'Orcia + Volterra · klikej na kolečka</small></div>
+    <div class="brand">Toskánsko 20.–27.&nbsp;7.<small>Villa Tiberini + Chianti · klikej na kolečka</small></div>
     <div class="who" role="group" aria-label="Kdo hlasuje">
       <button id="btnM" aria-pressed="true">Martin</button>
       <button id="btnN" aria-pressed="false">Nina</button>
@@ -121,17 +122,17 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
 <div class="wrap">
 
 <header class="hero">
-  <div class="eyebrow">Jeden zátah · dvě základny · pět nocí</div>
-  <h1>Val d'Orcia<br><em>a pak Volterra</em></h1>
-  <p class="lede">V pondělí večer vyjedeme, prostřídáme se za volantem a v úterý v osm ráno jsme na místě. Čtyři noci v jílových kopcích, dvě na západě mezi alabastrem a párou ze země. Žádné přejezdy, žádné balení každý druhý den.</p>
+  <div class="eyebrow">Jeden zátah · dvě základny · šest nocí</div>
+  <h1>Val d'Orcia,<br>pak Chianti<br><em>a Florencie na dohled</em></h1>
+  <p class="lede">Tři noci ve vile u Torrity di Siena, pak přejezd na sever do Villa Fioriamo v Greve in Chianti — s bazénem a s Florencií na půl hodiny cesty. Poslední tři noci tak spojí toskánský klid s jedním velkým městským dnem. A v pondělí je to domů blíž.</p>
   <div class="facts">
-    <div class="fact"><b>2 150 km</b><span>celkem</span></div>
+    <div class="fact"><b>2 250 km</b><span>celkem</span></div>
     <div class="fact"><b>~11 500 Kč</b><span>palivo, mýto, parkování</span></div>
-    <div class="fact"><b>2</b><span>základny, 5 nocí</span></div>
+    <div class="fact"><b>2</b><span>základny, 6 nocí</span></div>
     <div class="fact"><b>34–37 °C</b><span>čekejte vedro</span></div>
   </div>
   <div class="howto">
-    <b>Jak to funguje:</b> nahoře přepni, jestli jsi Martin nebo Nina, a klikej na kolečka u ubytování a výletů, které se ti líbí. Když se strefíme oba, karta zežloutne a napíše SHODA. Pak dej „Zkopírovat odkaz s hlasy“ a pošli ho druhému. Dole je souhrn všeho, na čem jsme se shodli.
+    <b>Jak to funguje:</b> nahoře přepni, jestli jsi Martin nebo Nina, a klikej na kolečka u ubytování a výletů. Když se strefíme oba, karta zežloutne a napíše SHODA. Pak dej „Zkopírovat odkaz s hlasy“ a pošli ho druhému. Dole je souhrn.
   </div>
 </header>
 
@@ -141,103 +142,109 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
     <h2>Noční přejezd</h2>
     <div class="when">20. 7. — odjezd v 17:00</div>
   </div>
-  <p class="note">Praha → Linec → Salzburg → Villach → Tarvisio → Udine → Bologna → Val d'Orcia. Střídat se po 2,5 hodinách, ne po hodině — člověk se zajede a je to bezpečnější.</p>
+  <p class="note">Praha → Linec → Salzburg → Villach → Tarvisio → Udine → Bologna → Torrita di Siena. Střídat se po 2,5 hodinách, ne po hodině — člověk se zajede a je to bezpečnější.</p>
   <div class="box">
-    <h5>Nejdůležitější věc celého plánu</h5>
-    <p><b>Rezervujte ubytování už od pondělí, ne od úterý.</b> Zaplatíte noc navíc (~120 €), kterou neprospíte — ale v úterý v osm ráno padnete rovnou do postele místo toho, abyste se do tří odpoledne motali po parkovištích s kufry v autě.</p>
+    <h5>Napište vile, že přijedete brzy ráno</h5>
+    <p>Check-in bude nejspíš až odpoledne, ale Villa Tiberini je rodinné vinařství a brzký příjezd řeší běžně. Napište jim předem — ať můžete aspoň zaparkovat, nechat kufry a jít se nasnídat, než bude pokoj.</p>
     <ul>
-      <li>Napište hostiteli předem, že přijedete brzy ráno. Agriturisma to řeší běžně.</li>
-      <li>Kolem 1:00 Villach, 3:00 Udine, 6:00 Bologna, 8:00 na místě. Snídaně cestou.</li>
-      <li>Natankovat plnou v Rakousku. Jet přes Tarvisio a Udine, ne přes Brenner — je to kratší a bez tunelu.</li>
+      <li>Kolem 1:00 Villach, 3:00 Udine, 6:00 Bologna, 8:00–8:30 u vily. Snídani cestou u Bologni.</li>
+      <li>Natankovat plnou v Rakousku. Přes Tarvisio a Udine, ne přes Brenner — kratší a bez tunelu.</li>
     </ul>
   </div>
 </section>
 
+<!-- ZÁKLADNA 1 -->
 <section class="stage">
   <div class="stage-head">
-    <div class="km">Základna 1 · 4 noci</div>
-    <h2>Val d'Orcia</h2>
-    <div class="when">Pondělí 20. – čtvrtek 23. 7.</div>
+    <div class="km">Základna 1 · 3 noci · ZABOOKOVÁNO</div>
+    <h2>Villa Tiberini</h2>
+    <div class="when">Úterý 21. – pátek 24. 7.</div>
   </div>
-  <p class="note">Krajina UNESCO — jílové vlny, cypřišové aleje, opatství uprostřed polí. Odtud je Pienza deset minut, Montalcino pětadvacet, Siena a Asciano necelou hodinu. Ideální poloha je někde mezi San Quiricem, Pienzou a Castiglione d'Orcia.</p>
+  <p class="note">Torrita di Siena, na severovýchodním okraji Val d'Orcia. Poloha otevírá klasické Val d'Orcia i míň známý východ — Cortonu, Lucignano a jezero Trasimeno. Všechno do 40 minut.</p>
 
-  <h3>Kde spát</h3>
-  <p class="h3sub">Všechno agriturisma s bazénem a v přírodě, seřazená podle ceny. Odhad za dvoulůžkový pokoj a noc v sezoně.</p>
-  <div class="grid g3" id="stay1"></div>
-
-  <h3>Kam na výlet</h3>
-  <p class="h3sub">Máte tři dny (středa, čtvrtek a kus úterý). Vyberte tři, nanejvýš čtyři — víc se nedá stihnout, aniž byste to odjezdili.</p>
+  <h3>Kam na výlet z vily</h3>
+  <p class="h3sub">Tři noci = dva a půl dne programu. Úterý je po noční jízdě odpočinkové. Vyberte tři, maximálně čtyři.</p>
   <div class="grid" id="trip1"></div>
 
   <h3>Kde jíst</h3>
-  <p class="h3sub">Zavírací dny jsou důležité — půlka nejlepších podniků zavírá v úterý nebo ve středu.</p>
+  <p class="h3sub">Zavírací dny hlídejte — půlka podniků zavírá v úterý nebo pondělí.</p>
   <div class="eatlist" id="eat1"></div>
 
   <div class="days">
-    <div class="day"><div class="day-d">Út 21.</div><div class="day-t"><b>Nic.</b> Dospat do oběda, bazén, číst. Večer nejbližší městečko a dlouhá večeře. Tenhle den je odměna za noční jízdu — nesnažte se ho zachraňovat programem.</div></div>
-    <div class="day"><div class="day-d">St 22.</div><div class="day-t">První velký den. Podle toho, co vyberete výš.</div></div>
-    <div class="day"><div class="day-d">Čt 23.</div><div class="day-t">Druhý velký den. Siena, nebo Asciano a Crete Senesi. Obojí se za den nedá a obojí stojí za celý den.</div></div>
+    <div class="day"><div class="day-d">Út 21.</div><div class="day-t"><b>Nic.</b> Dospat, bazén, sklenka vlastního vína z vily. Večer Montepulciano (deset minut) na dlouhou večeři. Odměna za noční jízdu.</div></div>
+    <div class="day"><div class="day-d">St 22.</div><div class="day-t">První velký den — klasické Val d'Orcia (Pienza, Vitaleta, Bagno Vignoni), nebo Montalcino a Sant'Antimo.</div></div>
+    <div class="day"><div class="day-d">Čt 23.</div><div class="day-t">Druhý velký den — východ (Cortona, Trasimeno, Lucignano), nebo Siena a Asciano na západ.</div></div>
+    <div class="day"><div class="day-d">Pá 24.</div><div class="day-t">Ráno sbalit, přejezd do Chianti (~1,5 h). Cestou zastávka — viz níž.</div></div>
   </div>
 </section>
 
+<!-- ZÁKLADNA 2 — CHIANTI -->
 <section class="stage">
   <div class="stage-head">
-    <div class="km">Základna 2 · 2 noci · přejezd 90 km</div>
-    <h2>Volterra a okolí</h2>
-    <div class="when">Pátek 24. – sobota 25. 7.</div>
+    <div class="km">Základna 2 · 3 noci · ZABOOKOVÁNO</div>
+    <h2>Villa Fioriamo, Greve</h2>
+    <div class="when">Pátek 24. – pondělí 27. 7.</div>
   </div>
-  <p class="note">Úplně jiná krajina než Val d'Orcia — místo měkkých kopců zubaté útesy, alabastr, opuštěné doly a pole, ze kterých syčí pára. Nikdo sem nejezdí a je to skoro nepochopitelné. A hlavně: v neděli jste o hodinu blíž domovu.</p>
+  <p class="note">Greve in Chianti — přímo v srdci Chianti, s výhledem na kruhovou vesničku Montefioralle. Poloha je pro tenhle plán skoro ideální: Florencie na 35 minut, a jste rovnou na Chiantigianě (SS222), takže vinice a vesnice máte za dveřmi.</p>
 
-  <h3>Kde spát</h3>
-  <p class="h3sub">Volterra samotná je v hradbách a v ZTL. Doporučuju spát venku — je to pět minut autem a máte bazén.</p>
-  <div class="grid g3" id="stay2"></div>
+  <div class="box">
+    <h5>Poloha sedí · co je jak daleko</h5>
+    <ul>
+      <li><b>Florencie</b> (Piazzale Michelangelo) — ~35 min. Sobotní městský den funguje přesně.</li>
+      <li><b>Montefioralle</b> — z terasy, 5 minut. <b>Panzano a Cecchini</b> 10 min, <b>Castellina a Radda</b> 20–25 min. Jste přímo na SS222.</li>
+      <li><b>Siena</b> ~40 min, <b>San Gimignano</b> ~50 min — na dosah, kdybyste chtěli.</li>
+      <li><b>Cesta z vily sem</b> (pátek): ~1,5 h. Zastávka Siena nebo Monte Oliveto pořád platí.</li>
+    </ul>
+  </div>
 
-  <h3>Kam na výlet</h3>
-  <p class="h3sub">Dva dny, a z jednoho ukrojí přejezd. Vyberte dva.</p>
+  <div class="box">
+    <h5>Jedna věc k ověření — klimatizace</h5>
+    <p>Podle webu má klimatizaci v ložnici <b>jen apartmán Rosa</b>; ostatní chladí silnými zdmi a orientací domu. Při 34–37 °C to zvažte — zeptejte se, který apartmán máte. Když ne Rosa: přes den bazén, večer důkladně větrat, žaluzie přes poledne zavřené. Sleva 10 % kódem FIORIAMO10 při rezervaci přes jejich web.</p>
+  </div>
+
+  <h3>Florencie — jak na ni chytře</h3>
+  <p class="h3sub">Jeden městský den. V červenci a v sobotu je centrum náročné, tady je návod, jak si ho užít a ne protrpět.</p>
+  <div class="grid" id="firenze"></div>
+
+  <h3>Chianti — výlety kolem základny</h3>
+  <p class="h3sub">Dva zbylé dny na víno a vesnice. Vyberte dva.</p>
   <div class="grid" id="trip2"></div>
 
   <h3>Kde jíst</h3>
   <div class="eatlist" id="eat2"></div>
 
   <div class="days">
-    <div class="day"><div class="day-d">Pá 24.</div><div class="day-t">Sbalit v klidu, cestou <b>Abbazia di San Galgano</b> — gotické opatství bez střechy, uvnitř roste tráva. Nad ním kaple s mečem zabodnutým do skály. Odpoledne se ubytovat a jít do bazénu.</div></div>
-    <div class="day"><div class="day-d">So 25.</div><div class="day-t">Poslední celý den. Volterra dopoledne, odpoledne to, co si vyberete výš.</div></div>
-    <div class="day"><div class="day-d">Ne 26.</div><div class="day-t"><b>Domů.</b> ~1 030 km, 10 h čisté jízdy. Vyjet v 7:00, doma kolem 19:00–20:00. Zase se střídat.</div></div>
+    <div class="day"><div class="day-d">Pá 24.</div><div class="day-t">Přejezd z vily, cestou Siena nebo Monte Oliveto. Odpoledne ubytovat, bazén, večeře v Greve nebo Panzano.</div></div>
+    <div class="day"><div class="day-d">So 25.</div><div class="day-t"><b>Florencie.</b> Být tam brzy (do 9:00), muzeum s rezervací, odpoledne zpět do chládku k bazénu. Nebo prohodit se sobotou/nedělí podle počasí.</div></div>
+    <div class="day"><div class="day-d">Ne 26.</div><div class="day-t"><b>Chianti.</b> Silnice SS222, degustace, kamenné vesnice. Poslední toskánský den v klidu.</div></div>
+    <div class="day"><div class="day-d">Po 27.</div><div class="day-t"><b>Domů.</b> ~1 000 km, 10 h. Vyjet po snídani (7:00), střídat se. Doma kolem 20:00.</div></div>
   </div>
 </section>
 
+<!-- PRAKTICKÉ -->
 <section class="stage">
   <div class="stage-head"><h2>Praktické</h2></div>
   <div class="box">
-    <h5>ZTL — nejdražší chyba, kterou můžete udělat</h5>
-    <p>Siena, Volterra, Pienza, Montalcino, Montepulciano i San Gimignano mají historické centrum uzavřené kamerami. Vjezd bez povolení = pokuta 80–100 €, chodí i rok zpětně, a za každý průjezd zvlášť.</p>
+    <h5>Florencie autem — čtěte, ať nepřijde pokuta</h5>
+    <p>Celé centrum Florencie je <b>ZTL</b> a je hlídané kamerami. Autem tam nikdy. Řešení:</p>
     <ul>
-      <li>Vždycky parkovat mimo hradby a jít pěšky. V Sieně parkoviště Il Campo nebo Santa Caterina, ve Volteře P. Docciola nebo Vallebuona.</li>
-      <li>Navigace ZTL běžně ignorují. Nespoléhat na Google Maps.</li>
-      <li>U kaple Vitaleta místní policie ráda pokutuje auta odstavená u šotolinky. Zaparkujte na vyhrazeném místě a jděte těch deset minut pěšky.</li>
+      <li>Zaparkovat u <b>Piazzale Michelangelo</b> (mimo ZTL, zdarma nebo levně) a sejít pěšky — máte k tomu panorama města.</li>
+      <li>Nebo autobusem — z <b>Greve</b> jezdí linka <b>365 do Florencie</b> (autostazione, ~1 h). Necháte auto u vily a nemusíte v centru vůbec parkovat.</li>
+      <li>Pokuta za vjezd do ZTL: 80–100 €, chodí i rok zpětně, za každý průjezd zvlášť.</li>
     </ul>
   </div>
   <div class="box">
     <h5>Rezervovat hned</h5>
     <ul>
-      <li><b>Ubytování od pondělní noci.</b> Znovu: na tomhle to celé stojí.</li>
-      <li><b>Osteria Fra Paolino</b> (Monticchiello), <b>Re di Macchia</b> (Montalcino), <b>Il Molinello</b> (Asciano) — malé podniky, bez rezervace se nedostanete.</li>
-      <li><b>Sienská katedrála</b> — lístek online, v červenci je fronta.</li>
-      <li><b>Rakouská viněta</b> 10denní, digitálně na asfinag.at — ale kupte aspoň 18 dní předem, jinak platí až za 18 dnů. Na poslední chvíli papírovou na pumpě.</li>
+      <li><b>Ubytování v Chianti od pátku.</b> Severní Chianti (blízko Florencie) se v červenci plní rychle.</li>
+      <li><b>Uffizi a Accademia</b> (David) ve Florencii — <b>vždy s časovkou předem</b>, jinak stojíte hodiny. Web b-ticket.com/b-ticket/uffizi.</li>
+      <li><b>Sienská katedrála</b> — do 31. 7. odkrytá mramorová podlaha, 56 výjevů jen pár týdnů v roce. Lístek online.</li>
+      <li><b>Rakouská viněta</b> 10denní na asfinag.at — kupte aspoň 18 dní předem, jinak platí až za 18 dnů. Na poslední chvíli papírovou na pumpě.</li>
     </ul>
   </div>
   <div class="box">
     <h5>Vedro</h5>
-    <p>34–37 °C a v jílové krajině skoro žádný stín. Prohlídky do 11:00 a po 18:00, mezi tím bazén. Proto má každé doporučené ubytování bazén — není to luxus, je to podmínka použitelnosti odpoledne. Do batohu litr vody na osobu a hodinu.</p>
-  </div>
-  <div class="box">
-    <h5>Náklady, orientačně</h5>
-    <ul>
-      <li>Palivo 2 150 km při 7 l/100 km: ~6 500 Kč</li>
-      <li>Rakouská viněta + italské mýto tam a zpět: ~2 500 Kč</li>
-      <li>Parkování a vstupy: ~2 500 Kč</li>
-      <li>Ubytování 6 nocí (včetně pondělní): 600–1 100 € podle kategorie</li>
-    </ul>
+    <p>34–37 °C. Prohlídky do 11:00 a po 18:00, mezi tím bazén. Florencii dělejte brzy ráno — v poledne je mezi kameny k nedýchání. Proto má každé ubytování bazén: odpoledne je na přežití vedra, ne luxus.</p>
   </div>
 </section>
 
@@ -248,7 +255,7 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
 </section>
 
 <footer>
-  Ceny jsou odhad — ověřte aktuální. Hodnocení a zavírací dny z Map Google ke dni sestavení plánu; před cestou překontrolujte, hlavně u restaurací. Odkazy vedou na Mapy Google.
+  Ceny jsou odhad za pokoj a noc v sezoně — ověřte aktuální. Hodnocení a zavírací dny z Map Google ke dni sestavení plánu; před cestou překontrolujte, hlavně u restaurací. Odkazy vedou na Mapy Google.
 </footer>
 
 </div>
@@ -256,152 +263,156 @@ footer{margin-top:44px;font-size:12px;color:var(--ink-soft);line-height:1.7}
 <script>
 const G=(n,id)=>`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(n)}${id?`&query_place_id=${id}`:""}`;
 
-const STAY1=[
- {id:"s1a",t:"low",p:"~100 €",n:"Le Piane",gid:"ChIJlSGgkN1tKRMRFwbr2X2MX0U",k:"Castiglione d'Orcia · 4,5★",
-  d:"Přesně na půl cesty mezi San Quiricem a Montalcinem, dvacet minut od obojího. Nádherný bazén, velký pozemek, absolutní ticho. Hostitelka Luana neumí anglicky a je to jedno. Prosté pokoje, ale výhled na celé údolí z okna. Nejlevnější slušná věc v oblasti."},
- {id:"s1b",t:"low",p:"~120 €",n:"Podere Spagliarda",gid:"ChIJ7cOCgyhmKRMRFA_q8agJRBk",k:"San Quirico d'Orcia · 4,9★",
-  d:"Infinity bazén s výhledem na celou Val d'Orcia. Půjčují kola. Manuela a Marcello pečou k snídani domácí koláče. <b>Rezervovat přímo u nich, ne přes portály</b> — vyjde to výrazně levněji. Kousek od pšeničného pole z Gladiátora."},
- {id:"s1c",t:"mid",p:"~120 €",n:"Agriturismo Bonello",gid:"ChIJo4enEIpmKRMRz9VKZLMW7II",k:"Pienza · 4,7★",
-  d:"Bazén s výhledem, nezapomenutelné západy slunce. Větší dům (asi 25 pokojů), takže míň intimní — ale poloha je nejlepší z celé oblasti, patnáct až třicet minut od všeho. Hostitel Luca vám sepíše doporučení na papír."},
- {id:"s1d",t:"mid",p:"~130 €",n:"Agriturismo La Casellina",gid:"ChIJzem1hxJdKRMRcIrCPVoyVM0",k:"Monticchiello · 5,0★",
-  d:"Průměr 5,0 ze 67 recenzí, což je vzácné. Bazén, a z něj výhled naráz na Pienzu, San Quirico i Montalcino. Hostitel Mino vás uvítá vlastním vínem a jeho pes Bingo je součást balíčku. Snídaně za 10 € na osobu — vezměte si ji."},
- {id:"s1e",t:"mid",p:"~140 €",n:"Agriturismo Cerreto",gid:"ChIJgSLDAEZDKRMRylcS26m5W3s",k:"Pienza · 4,9★",
-  d:"Apartmány, vlastní víno a olivový olej, bazén. Hostitelka Monica nechává ráno přede dveřmi košík se snídaní. Deset minut autem do Pienzy, jinak ticho a západy slunce. Pro dva ideální — je to malé a osobní."},
- {id:"s1f",t:"mid",p:"~120 €",n:"Agriturismo Piombaia",gid:"ChIJlwRVMxVwKRMRRdgHCaGbuT8",k:"Montalcino · 4,4★",
-  d:"Tři kilometry od Montalcina mezi vinicemi. Bazén <b>a vířivka</b>. Vlastní restaurace — hovězí dušené v Brunellu je podle recenzí jedno z nejlepších jídel, co kdo v Toskánsku měl. Pokoje jsou prostší, koupelny by chtěly osvěžit."},
- {id:"s1g",t:"top",p:"~160 €",n:"Agriturismo San Marcello",gid:"ChIJ0SHGHOVoKRMRfQQgf6C6V-c",k:"Castiglione d'Orcia · 4,9★",
-  d:"Výhledy na obě strany údolí, ticho takové, že vás ráno vzbudí ptáci. Bohatá snídaně, stylové pokoje. Nejcentrálnější poloha pro výlety po celém jihu. Není nejlevnější a ví o tom."},
- {id:"s1h",t:"top",p:"~170 €",n:"il burellino",gid:"ChIJDZ76noB6KRMRJJ_vjq2n1KU",k:"Montalcino · 5,0★",
-  d:"5,0 ze 150 recenzí. Hostitel Fabio peče každý den jiný koláč a myslí i na věci, na které nikdo nemyslí — povlečení, vůně, světlo, klimatizace, která opravdu funguje. Recenzenti píší, že tohle byl nejlepší pobyt celé jejich italské cesty. Nejvíc „domov“ z celého seznamu."},
- {id:"s1i",t:"top",p:"~160 €",n:"Podere La Rocca",gid:"ChIJq9FDQZVYKRMRRZRAw1z1Okw",k:"Montepulciano · 4,7★",
-  d:"Bazén, spa s masážemi, vlastní restaurace a <b>kurz vaření s kuchařem Federicem</b> — uděláte si těstoviny a pak je sníte. Dělají i večeře ve vinici pod hvězdami. Nejdál na východ, ale nejvíc zážitkové."}
-];
-
+/* ===== VILA — VÝLETY ===== */
 const TRIP1=[
- {id:"t1a",n:"Pienza, Corsignano a kaple Vitaleta",k:"Půl dne · 15 minut autem",
-  d:`<b>Nejklasičtější den v oblasti — a stojí za něj.</b>
+ {id:"t1a",n:"Pienza, Corsignano a kaple Vitaleta",k:"Půl dne · 25 min",
+  d:`<b>Nejklasičtější den ve Val d'Orcia.</b>
    <ul>
-    <li><b>Pienza</b> — renesanční město, které nechal papež Pius II. postavit na zelené louce podle jednoho plánu. Projde se za dvě hodiny. Pecorino, promenáda po hradbách.</li>
-    <li><b><a href="${G("Pieve di Corsignano Pienza","ChIJCYzoaqhnKRMRDMFx6BDmSPg")}" target="_blank">Pieve di Corsignano</a></b> — 4,6★, románský kostelík z roku 1000, pět minut pěšky pod Pienzou. Pokřtili tu dva papeže. Sto metrů za ním je výhled, který lidi považují za nejlepší v Toskánsku.</li>
-    <li><b><a href="${G("Cappella della Madonna di Vitaleta","ChIJncrc52hmKRMR5pIZXi_ljr0")}" target="_blank">Kaple Vitaleta</a></b> — 4,6★, ta kaplička s cypřiši z fotek. Zaparkovat na vyhrazeném místě a jít deset minut pěšky. <i>Policie tady vesele pokutuje auta u cesty</i></li>
+    <li><b>Pienza</b> — renesanční město na zelené louce. Pecorino, promenáda po hradbách.</li>
+    <li><b><a href="${G("Pieve di Corsignano Pienza","ChIJCYzoaqhnKRMRDMFx6BDmSPg")}" target="_blank">Pieve di Corsignano</a></b> — 4,6★, románský kostelík z roku 1000. Za ním jeden z nejlepších výhledů v Toskánsku.</li>
+    <li><b><a href="${G("Cappella della Madonna di Vitaleta","ChIJncrc52hmKRMR5pIZXi_ljr0")}" target="_blank">Kaple Vitaleta</a></b> — 4,6★, ta kaplička s cypřiši z fotek. <i>Parkovat na vyhrazeném místě, policie pokutuje auta u šotolinky</i></li>
    </ul>`},
- {id:"t1b",n:"Termály: Bagno Vignoni a Fosso Bianco",k:"Půl až celý den · 20–40 min autem",
-  d:`<b>Voda z podzemí, horká a zdarma.</b>
+ {id:"t1b",n:"Montepulciano a San Biagio",k:"Půl dne · 10 min",
+  d:`<b>Máte to za rohem.</b>
    <ul>
-    <li><b>Bagno Vignoni</b> — vesnice, jejíž náměstí je termální bazén ze 16. století. Koupat se v něm nesmí, ale pod vsí teče volný pramen.</li>
-    <li><b><a href="${G("Fosso Bianco Bagni San Filippo","ChIJm97IcslrKRMRBDFISHvt9EA")}" target="_blank">Fosso Bianco</a></b> — 4,5★, Bagni San Filippo. Volné termální kaskády v lese, bílé vápencové útvary, voda nahoře kolem 40 °C, dole 36 °C. Zdarma. <i>Jít ráno, přes den je narváno. Žádné WC ani sprchy.</i></li>
-    <li>Cestou <b><a href="${G("Rocca di Tentennano Rocca d'Orcia","ChIJnRgr5CpvKRMRhs3zC0EbBGA")}" target="_blank">Rocca di Tentennano</a></b> — věž na skále, výhled na celou Val d'Orcia.</li>
+    <li><b>Piazza Grande</b> na vrcholu, sklepy vytesané do skály. Vino Nobile — Contucci, De' Ricci.</li>
+    <li><b>San Biagio</b> — renesanční kostel na louce pod městem, dokonalý řecký kříž, skoro nikdo tam nechodí.</li>
+    <li>Vaše vila je vinařství Tiberini, sklep mají přímo v Montepulcianu. Zeptejte se na degustaci.</li>
    </ul>`},
- {id:"t1c",n:"Montalcino, Brunello a Sant'Antimo",k:"Celý den · 25 min autem",
+ {id:"t1c",n:"Montalcino, Brunello a Sant'Antimo",k:"Celý den · 35 min",
   d:`<b>Nejlepší víno Toskánska a nejkrásnější opatství.</b>
    <ul>
-    <li><b><a href="${G("Abbazia di Sant'Antimo","ChIJ1V69JuFxKRMRHlZY6qt8f9c")}" target="_blank">Abbazia di Sant'Antimo</a></b> — 4,7★, románské opatství samo v údolí pod Montalcinem. Když zrovna zpívají, je to zážitek na celý rok. Audioprůvodce ~12 € pro dva.</li>
-    <li><b>Montalcino</b> — pevnost na kopci a Brunello. Degustace přímo v enotece uvnitř pevnosti, nebo ve sklepích v okolí.</li>
-    <li>Poznámka: Brunello je drahé a ve vedru se pije těžko. Rosso di Montalcino je jeho mladší bratr a v létě dává větší smysl.</li>
+    <li><b><a href="${G("Abbazia di Sant'Antimo","ChIJ1V69JuFxKRMRHlZY6qt8f9c")}" target="_blank">Abbazia di Sant'Antimo</a></b> — 4,7★, románské opatství samo v údolí.</li>
+    <li><b>Montalcino</b> — pevnost, Brunello. Ve vedru dává Rosso di Montalcino větší smysl.</li>
    </ul>`},
- {id:"t1d",n:"Asciano a Crete Senesi",k:"Celý den · 45 min autem",
-  d:`<b>Úplně jiná krajina než Val d'Orcia — holé jílové vlny, žádné cypřiše, prázdné silnice.</b>
+ {id:"t1d",n:"Bagno Vignoni a Fosso Bianco",k:"Půl až celý den · 35 min",
+  d:`<b>Termální voda z podzemí, zdarma.</b>
    <ul>
-    <li><b><a href="${G("Abbazia di Monte Oliveto Maggiore","ChIJD5Y9WNxiKRMR4LWfL01FeW0")}" target="_blank">Abbazia di Monte Oliveto Maggiore</a></b> — 4,7★. Ambit s freskami Signorelliho a Sodomy, žije tam třicet mnichů, mají vlastní likérku a knihovnu. Denně 9:30–12:20 a 14:30–17:40.</li>
-    <li><b><a href="${G("Crete Senesi Strada di Leonina Asciano","ChIJI6wMHLTWKxMR-7eqbdudCak")}" target="_blank">Strada di Leonina</a></b> — šotolinka mezi Ascianem a San Giovanni d'Asso. Zastavovat, kde se chce. Hodinu před západem slunce je to jiná planeta.</li>
-    <li><b><a href="${G("Museo Palazzo Corboli Asciano","ChIJBflCJE7YKxMROoX6s3qYI2o")}" target="_blank">Museo Palazzo Corboli</a></b> — 4,7★, etruské nálezy a sienské gotické desky. Malé a výborné. <i>V úterý zavřeno</i></li>
-    <li><b><a href="${G("Deserto di Accona Asciano","ChIJE8fiAn1iKRMR4sjjQ44Y6XE")}" target="_blank">Deserto di Accona</a></b> — <i>biancane</i>, bílé jílové kupy jako měsíční krajina. Přístupová cesta je rozbitá, jeďte opatrně.</li>
+    <li><b>Bagno Vignoni</b> — vesnice, jejíž náměstí je termální bazén ze 16. století.</li>
+    <li><b><a href="${G("Fosso Bianco Bagni San Filippo","ChIJm97IcslrKRMRBDFISHvt9EA")}" target="_blank">Fosso Bianco</a></b> — 4,5★. Volné termální kaskády v lese, voda 36–40 °C. Zdarma. <i>Jít ráno, bez WC a sprch.</i></li>
    </ul>`},
- {id:"t1e",n:"Siena",k:"Celý den · 50 min autem",
-  d:`<b>Být tam v devět, pryč po večeři.</b>
+ {id:"t1e",n:"Siena",k:"Celý den · 50 min",
+  d:`<b>Být tam v devět.</b>
    <ul>
-    <li><b>Katedrála má do 31. 7. odkrytou mramorovou podlahu</b> — 56 vykládaných výjevů, které se ukazují jen pár týdnů v roce. Trefíte to přesně, což je štěstí. Lístek online.</li>
-    <li><b>Museo Civico</b> a Lorenzettiho <i>Alegorie dobré a špatné vlády</i> — nejlepší politický plakát středověku.</li>
-    <li>Piazza del Campo. Palio bylo 2. 7., takže máte klid.</li>
-    <li>Parkovat mimo hradby — Il Campo nebo Santa Caterina, nahoru vedou eskalátory.</li>
+    <li><b>Katedrála má do 31. 7. odkrytou mramorovou podlahu</b> — 56 výjevů jen pár týdnů v roce. Lístek online.</li>
+    <li><b>Museo Civico</b>, Lorenzettiho <i>Alegorie dobré vlády</i>, Piazza del Campo. Parkovat mimo hradby.</li>
    </ul>`},
- {id:"t1f",n:"Monticchiello a Montepulciano",k:"Půl dne · 20 min autem",
-  d:`<b>Nejtišší kout Val d'Orcia.</b>
+ {id:"t1f",n:"Cortona a jezero Trasimeno",k:"Celý den · 40 min",
+  d:`<b>Východ — koupačka a filmové kulisy.</b>
    <ul>
-    <li><b>Monticchiello</b> — opevněná vesnička s cypřišovou alejí, kterou znáte z fotek. Uvnitř skoro nikdo.</li>
-    <li><b><a href="${G("Teatro Povero di Monticchiello","ChIJQ8SRSAhnKRMRg40O5ufhVBI")}" target="_blank">Teatro Povero</a></b> — 4,7★. Od roku 1967 tu místní každé léto hrají divadlo o sobě samých. Muzeum zdarma. Představení bývají koncem července — zeptejte se, jestli zrovna hrají.</li>
-    <li><b>Montepulciano</b> — sklepy vytesané do skály pod paláci, Vino Nobile. A pod městem <b>San Biagio</b>, renesanční kostel na louce, dokonalý řecký kříž, a skoro nikdo tam nechodí.</li>
+    <li><b>Cortona</b> — kopcové město (z „Pod toskánským sluncem“), etruské muzeum, Fra Angelico.</li>
+    <li><b>Jezero Trasimeno</b> — koupání. Castiglione del Lago, nebo loď na ostrov Maggiore. Vezměte plavky.</li>
    </ul>`},
- {id:"t1g",n:"Radicofani",k:"Půl dne · 40 min autem",
-  d:`<b>Pro ty, kdo chtějí být opravdu sami.</b>
+ {id:"t1g",n:"Lucignano a Montefollonico",k:"Půl dne · 20 min",
+  d:`<b>Dvě vesnice, které nikdo nezná.</b>
    <ul>
-    <li><b><a href="${G("Fortezza di Radicofani","ChIJr4CdbOxAKRMR-GvJkOgFd-g")}" target="_blank">Fortezza di Radicofani</a></b> — 4,6★. Pevnost na sopečné skále, 900 m n. m., vstup 5 € a z věže je vidět půlka Toskánska. Zvenku vypadá zanedbaně, uvnitř je to v pořádku.</li>
-    <li>U pevnosti je restaurace s výhledem, kde paní Carmen dělá tiramisu podle receptu své tchyně. Recenzenti o něm píší roky.</li>
-    <li>Je to na okraji regionu a nikdo tam nejezdí. Přesně proto tam jeďte.</li>
+    <li><b><a href="${G("Lucignano Arezzo","ChIJK-fWZADnKxMRVAXyn4bQDDY")}" target="_blank">Lucignano</a></b> — 4,8★. Opevněná vesnice s eliptickým půdorysem, ulice se točí do spirály.</li>
+    <li><b>Montefollonico</b> — kamenný borgo deset minut od vily. Projít se, dát si oběd.</li>
    </ul>`}
 ];
 
 const EAT1=[
- {p:"Pienza",n:"Sette di Vino",id:"ChIJJ_VVIgpnKRMRYIfsv6Ec08A",m:"4,8★ · Malinký. Na oběd bez rezervací (kdo dřív přijde), na večeři rezervovat. Hostitel Luciano. Pecorino, fazole, jednoduché věci dělané dokonale. <span class='closed'>Zavřeno ve středu.</span>"},
- {p:"Pienza",n:"Baccus l'Osteria",id:"ChIJOTewZQBnKRMRrkuTV5tniQ0",m:"4,9★ · Menu psané rukou na zdi, cacio e pepe, fiorentina, pecorino se syrovým medem. Majitel Giuseppe je figura a nalévá vin santo na účet podniku."},
- {p:"Monticchiello",n:"Osteria Fra Paolino",id:"ChIJz1UGYGVdKRMR9OEiWvQl3gU",m:"4,7★ · <b>Nejlepší jídlo v oblasti.</b> Degustační menu „allora, hai fame“ s párováním vín — toskánská klasika s drobnými asijskými zvraty. Rezervovat. <span class='closed'>Zavřeno v úterý.</span>"},
- {p:"Monticchiello",n:"Osteria La Porta",id:"ChIJVSNYzdJdKRMRZcOJTJv7FTM",m:"4,3★ · Terasa s jedním z nejlepších výhledů v Toskánsku. Jídlo dobré, ale obsluha podle recenzí kolísá — někdo má nezapomenutelný večer, jiný se cítí odbytý. Jděte kvůli výhledu, ne kvůli servisu."},
- {p:"Montalcino",n:"Re di Macchia",id:"ChIJtwBIjHdwKRMRCuUH-kdFQiw",m:"4,7★ · Rodinná, malá, elegantní bez nafoukanosti. Roberta a Valentino. Brokolicové suflé, lasagne s hřiby, tiramisu. Rezervovat. <span class='closed'>Zavřeno ve čtvrtek.</span>"},
- {p:"Montalcino",n:"Enoteca Grotta del Brunello",id:"ChIJbyigH3hwKRMRMd-3-MgJMi8",m:"4,7★ · Vinárna a restaurace ve sklepě, otevřeno od devíti ráno do jedné v noci. Skvělá obsluha, gastronomická úroveň za normální ceny. Dobré i na pozdní večeři."},
- {p:"Asciano",n:"AmorDivino",id:"ChIJx1ZAI07YKxMRXsdhG5KysH4",m:"4,7★ · Vinárna v centru Asciana, fiorentinu krájí před vámi. Terasa. <span class='closed'>Zavřeno v úterý.</span>"},
- {p:"Asciano",n:"Il Molinello",id:"ChIJPWr-8RjZKxMRFoVQYsUU8HE",m:"4,9★ · Na statku za městem, <b>jen večeře</b>, krátké menu, kuchař si recepty nechává pro sebe. Rezervovat — bývá plno."}
+ {p:"Torrita di Siena",n:"Gio'Steria da Nonno Gio'",id:"ChIJs9gtfohfKRMR83Fu-I1Rtm8",m:"4,8★ · Kousek od vily. Giovanni a jeho žena, domácí kuchyně, hlemýždi, telecí, nezapomenutelné dezerty a domácí likéry. <span class='closed'>Zavřeno v pondělí; večeře jen v sobotu.</span>"},
+ {p:"Torrita (Noci)",n:"Al Botteghino",id:"ChIJLQekqjheKRMRYAjbyj5fhPg",m:"4,6★ · Neturistické, poctivé, levné (€). Žebírka na BBQ, pizza, ravioli s lanýžem. Vtipný číšník. Rezervovat. <span class='closed'>Út jen večer.</span> Repelent s sebou."},
+ {p:"Pienza",n:"Sette di Vino",id:"ChIJJ_VVIgpnKRMRYIfsv6Ec08A",m:"4,8★ · Malinký, hostitel Luciano. Pecorino, fazole, jednoduše a dokonale. Na oběd bez rezervací. <span class='closed'>Zavřeno ve středu.</span>"},
+ {p:"Montepulciano",n:"Osteria Acquacheta",id:"",m:"Klasika — bistecca alla fiorentina se váží před vámi, dlouhé stoly, hlučno a výborně. Rezervovat týden předem."},
+ {p:"Montalcino",n:"Re di Macchia",id:"ChIJtwBIjHdwKRMRCuUH-kdFQiw",m:"4,7★ · Rodinná, malá, elegantní. Roberta a Valentino. Rezervovat. <span class='closed'>Zavřeno ve čtvrtek.</span>"}
 ];
 
+/* ===== CHIANTI — UBYTOVÁNÍ ===== */
 const STAY2=[
- {id:"s2a",t:"low",p:"~100 €",n:"Agriturismo Pretenzano",gid:"ChIJh7uv0_QQKhMRlGXn46v2150",k:"Volterra · 4,8★",
-  d:"Tiché místo v polích, velké čisté pokoje, milí majitelé. Vaří tradiční večeře a jsou vydatné. Prosté, ale poctivé — a ráno vás vzbudí ptáci. Nejlevnější slušná věc kolem Volterry."},
- {id:"s2b",t:"mid",p:"~120 €",n:"Agriturismo San Giacomo",gid:"ChIJjZEfLYEQKhMReEZ8cwVbZrU",k:"Volterra · 4,9★",
-  d:"Bazén obklopený zelení, apartmány, rodina Caruso — Antonio, jeho matka a otec. Matka vaří společné večeře u jednoho stolu s ostatními hosty a dělá vlastní kozí sýr. Vinice, artyčoky, psi. Nejrodinnější místo v seznamu."},
- {id:"s2c",t:"mid",p:"~140 €",n:"Antica Fonte Resort",gid:"ChIJe_BhFVA7KhMRSahdEUp9w38",k:"Casole d'Elsa · 4,6★",
-  d:"Apartmány, velký slaný bazén, spa, elegantní. Uprostřed ničeho a přitom blízko všemu — třicet minut do Volterry i do Sieny. Vlastní restaurace s výbornou fiorentinou. <i>Pozor: v restauraci není klimatizace, v červenci je to znát.</i>"},
- {id:"s2d",t:"mid",p:"~150 €",n:"Tenuta Colombaio",gid:"ChIJk5tTjNojKhMRWWPOud0pWws",k:"Casole d'Elsa · 4,6★",
-  d:"Bazén s výhledem, sklep s vínem, restaurace, terasa na západy slunce. Kousek pěšky do městečka. Recenze mluví o mimořádné pohostinnosti — hostitel vám otevře sklep a sedne si k vám s vínem a sýrem."},
- {id:"s2e",t:"top",p:"~160 €",n:"Farmhouse Santa Vittoria",gid:"ChIJo_kdnl0QKhMRqH7tt4s9DSg",k:"Volterra · 4,7★",
-  d:"Bazén, výhled do všech stran, a <b>vlastní restaurace, kam si sem místní jezdí zvát návštěvy</b> — sezonní kuchyně, terasa. Apartmány s kuchyní. Hostitel Luigi. Sedm kilometrů od Volterry."},
- {id:"s2f",t:"top",p:"~180 €",n:"Farmhouse Villa Marmini",gid:"ChIJM6xU_2waKhMRvoUfdIqNK3U",k:"Volterra · 4,8★",
-  d:"Pět minut autem od Volterry, apartmány v kamenném statku, velký bazén, zahrada se slušným nábytkem. Hostitelé Katie a Jacobi. Lidi se sem vrací šest let v kuse. Absolutní klid."}
+ {id:"s2a",t:"low",p:"~120 €",n:"Agriturismo Il Pintello",gid:"ChIJ-8-qihxQKhMR8DzViVWsKTE",k:"San Casciano · 4,7★ · 15 min k Florencii",
+  d:"Nejblíž Florencii z celého seznamu — 15 minut na Piazzale Michelangelo, a Chiantigiana (SS222) hned za rohem. Apartmány s kuchyní, bazén, výhledy do kopců. Hostitelka Giulia. <i>Pozor: na pozemku bývá dětský tábor a psi, ověřte klid v termínu.</i>"},
+ {id:"s2b",t:"low",p:"~110 €",n:"Agriturismo Olmi Grossi",gid:"ChIJTePbswBOKhMRZZwfPEAkQYk",k:"Impruneta · 4,6★ · 20 min k Florencii",
+  d:"Rustikální statek jižně od Florencie, 20 minut do centra, u domu i autobusová zastávka do města (dá se nechat auto). Bazén s výhledem, apartmány s kuchyňkou, ráno koláče. Prosté a útulné, výborný poměr cena/výkon."},
+ {id:"s2c",t:"mid",p:"~150 €",n:"Fattoria Santo Stefano",gid:"ChIJi3L1VGNLKhMR0BdQINgDxmg",k:"Greve in Chianti · 4,7★ · 30 min k Florencii",
+  d:"Pohlednicový statek nad Greve, olivové háje a vinice, bazén na ranní plavání. Agostino a Elena, vlastní víno a olej, kurzy vaření. 30 minut do Florencie. <i>Příjezdová cesta je krkolomná, ale zvládne ji i malé auto.</i>"},
+ {id:"s2d",t:"mid",p:"~150 €",n:"Agriturismo I Poggi",gid:"ChIJIWasuSFOKhMRCj0PBVvdmiA",k:"Impruneta · 4,6★ · 20 min k Florencii",
+  d:"Rodinný statek s bazénem a velkým výhledem, 20 minut do Florencie. Giulio a Francesca — vlastní víno, výborná vlastní restaurace (trofie, crostini, limoncello na závěr). Skvělá základna na město i na Chianti."},
+ {id:"s2e",t:"top",p:"~170 €",n:"Farmhouse La Sala",gid:"ChIJfX-NiUKzKxMRvdbOqd0kIjo",k:"Greve in Chianti · 5,0★ · 40 min k Florencii",
+  d:"5,0★ z 50 recenzí. Apartmány s výhledem do údolí, bazén, vlastní víno a olej. Hostitelka Anastasia sepíše doporučení na celý týden. Klidné, krásné, srdeční. Na dosah Siena, San Gimignano i Florencie."},
+ {id:"s2f",t:"top",p:"~200 €",n:"Fattoria la Loggia",gid:"ChIJ50QfE9VIKhMRahmvjFdQj_Q",k:"San Casciano · 4,7★ · 25 min k Florencii",
+  d:"Historické fattoria s uměním a vlastním vinařstvím, 25 minut od Florencie, hned u RA3. Sestry Ludovica a Federica (vyučené v pětihvězdičkových hotelích) to od 2026 vedou s obrovskou péčí — ovoce a med z vlastního, plná lednička. Nejvíc rozmazlující volba."}
 ];
 
+/* ===== FLORENCIE ===== */
+const FIRENZE=[
+ {id:"f_a",n:"Uffizi — cesta renesancí",k:"Půl dne · rezervace nutná",
+  d:`<b>Nejslavnější galerie na světě. Bez časovky nechoďte.</b>
+   <ul>
+    <li>Botticelliho <i>Zrození Venuše</i> a <i>Primavera</i>, Leonardo, Michelangelo, Caravaggio, Piero della Francesca.</li>
+    <li><b>Rezervace na b-ticket.com předem</b> — jinak stojíte i dvě hodiny. První vstup 8:15 je nejprázdnější.</li>
+    <li>Počítejte 2–3 hodiny. Ve vedru je uvnitř klimatizace — dobrý cíl na horké dopoledne.</li>
+   </ul>`},
+ {id:"f_b",n:"Accademia — David",k:"1–2 h · rezervace nutná",
+  d:`<b>Michelangelův David, v originále.</b>
+   <ul>
+    <li>Kromě Davida i nedokončení <i>Vězni</i>, kteří se derou z mramoru — na mnohé silnější zážitek než David sám.</li>
+    <li>Menší než Uffizi, na hodinu až dvě. <b>Taky s časovkou.</b></li>
+    <li>Když máte vybrat jen jedno muzeum a sochu nad malbu, tohle je rychlejší a intenzivnější než Uffizi.</li>
+   </ul>`},
+ {id:"f_c",n:"Duomo, Baptisterium a kopule",k:"Půl dne · výstup rezervovat",
+  d:`<b>Srdce města a Brunelleschiho kupole.</b>
+   <ul>
+    <li><b>Kupole</b> — výstup 463 schodů, zblízka Vasariho fresky Posledního soudu, nahoře výhled na celou Florencii. <b>Slot rezervovat předem.</b></li>
+    <li><b>Baptisterium</b> — zlaté mozaiky uvnitř, Ghibertiho <i>Rajská brána</i> (kopie) venku.</li>
+    <li>Katedrála samotná je zdarma, ale bývá dlouhá fronta — jděte brzy ráno.</li>
+   </ul>`},
+ {id:"f_d",n:"Oltrarno — Florencie bez davů",k:"Půl dne · pěšky",
+  d:`<b>Levý břeh Arna. Řemeslné dílny, míň turistů, opravdovější město.</b>
+   <ul>
+    <li><b>Santo Spirito</b> — Brunelleschiho kostel, živé náměstí s bary a aperitivem.</li>
+    <li><b>Brancacciho kaple</b> (Santa Maria del Carmine) — Masacciovy fresky, které nastartovaly renesanci. Rezervovat.</li>
+    <li><b>San Miniato al Monte</b> — románský kostel nad městem, v 18:30 mniši zpívají gregoriánský chorál. Vedle Piazzale Michelangelo s panoramatem.</li>
+    <li>Palazzo Pitti a zahrady Boboli, pokud zbude čas a síla.</li>
+   </ul>`},
+ {id:"f_e",n:"Bargello — sochy bez front",k:"1–2 h · klidnější",
+  d:`<b>Pro milovníky sochařství a klidu.</b>
+   <ul>
+    <li>Donatellův <i>David</i> (bronzový, první nahá socha od antiky), Michelangelo, Cellini. Nejlepší sochařská sbírka Itálie.</li>
+    <li>Skoro prázdno, i v sezoně. Kdo má Uffizi i Accademii za moc davů, sem.</li>
+    <li>V bývalém středověkém vězení a kasárnách — samo o sobě krásná budova.</li>
+   </ul>`}
+];
+
+/* ===== CHIANTI — VÝLETY ===== */
 const TRIP2=[
- {id:"t2a",n:"Volterra",k:"Půl dne · pěšky",
-  d:`<b>Etruské město na útesu. Kámen, alabastr, prázdné uličky.</b>
+ {id:"c_t1",n:"Chianti Classico — cesta hřebenem",k:"Celý den · SS222",
+  d:`<b>Nejhezčí silnice Toskánska.</b>
    <ul>
-    <li><b><a href="${G("Museo Etrusco Guarnacci Volterra","ChIJF0oA6kYaKhMRdwzQbgQiyKQ")}" target="_blank">Museo Etrusco Guarnacci</a></b> — 4,5★, 10 €. Po rekonstrukci v roce 2025 je to jedno z nejlepších muzeí v Toskánsku. Vrchol: <i>Ombra della Sera</i>, protáhlá bronzová soška ze 3. st. př. n. l., ze které se učil Giacometti. Začněte odshora a jděte dolů.</li>
-    <li><b>Římské divadlo</b> — vidět shora z hradeb <b>zdarma</b>, nemusíte platit vstup dolů.</li>
-    <li><b>Le Balze</b> — sesuvná srázová pole na západním okraji, do kterých se propadají kostely. Nejlepší při západu slunce.</li>
-    <li>Alabastrové dílny, kde se pořád pracuje. Palazzo dei Priori — nejstarší radnice v Toskánsku.</li>
+    <li><b>Greve, Panzano, Castellina, Radda</b> — vesnice na hřebeni, silnice SS222 (Chiantigiana) mezi nimi. Jeďte pomalu, zastavujte na výhledech.</li>
+    <li>Degustace Chianti Classico (černý kohout) u malých vinařů — ne u těch s cedulí v pěti jazycích.</li>
+    <li><b>Montefioralle</b> nad Greve — kruhová středověká vesnička, jedna z nejhezčích v Chianti.</li>
    </ul>`},
- {id:"t2b",n:"Geotermální Toskánsko: Larderello a Le Biancane",k:"Půl dne · 30–45 min autem",
-  d:`<b>Nejpodivnější místo v celém plánu — a nikdo o něm neví.</b>
+ {id:"c_t2",n:"Panzano a Dario Cecchini",k:"Půl dne · oběd",
+  d:`<b>Nejslavnější řezník Itálie.</b>
    <ul>
-    <li><b><a href="${G("Museo della Geotermia Larderello","ChIJDVZv-MYdKhMROSP4---0QdA")}" target="_blank">Museo della Geotermia</a></b> — 4,5★, <b>vstup zdarma</b>, otevřeno denně. Larderello je místo, kde v roce 1904 vznikla první geotermální elektrárna na světě. Chladicí věže vypadají jako z Blade Runnera.</li>
-    <li><b><a href="${G("Parco delle Biancane Monterotondo Marittimo","ChIJGeZQOqbxKRMRDOXL229dwpM")}" target="_blank">Parco delle Biancane</a></b> — 4,6★, zdarma. Krajina, ze které syčí pára ze země, bílé svahy, sirný zápach. Recenzenti píší, že je to jako chodit po Měsíci nebo v postapokalyptickém filmu. Audioprůvodce přes QR kódy u cesty.</li>
-    <li>Cesta je strmá, ale zvládnutelná. Jděte ráno — v poledním vedru je nad pařící se zemí těžko.</li>
+    <li><b><a href="${G("Antica Macelleria Cecchini Panzano","")}" target="_blank">Antica Macelleria Cecchini</a></b> — Dario Cecchini recituje Danteho nad masem. Tři podniky v jedné vesnici: rychlý oběd (Officina), bistecca menu (Solociccia), burger bar.</li>
+    <li>Zážitek, ne jen jídlo. Na hlavní menu rezervovat.</li>
+    <li>Panzano samo — vyhlídka na vinice Conca d'Oro, nejlepší část Chianti.</li>
    </ul>`},
- {id:"t2c",n:"San Gimignano a Certaldo",k:"Půl dne · 40 min autem",
-  d:`<b>Věže — ale jen brzy ráno.</b>
+ {id:"c_t3",n:"San Gimignano a Monteriggioni",k:"Celý den · 40–50 min",
+  d:`<b>Věže a hradby — jižně od základny.</b>
    <ul>
-    <li><b>San Gimignano</b> — <b>být tam před devátou nebo po sedmé večer.</b> Mezitím je to fronta na zmrzlinu. Věže, Collegiata, Rocca při západu slunce (výhled zdarma).</li>
-    <li><b>Vernaccia di San Gimignano</b> — jediné bílé DOCG víno Toskánska. Degustace ve sklepích v okolí.</li>
-    <li><b><a href="${G("Casa di Boccaccio Certaldo","ChIJP639IGk_KhMRlA2kzC_P-pc")}" target="_blank">Certaldo Alto</a></b> — 4,3★. Celé horní město z cihel, jede se tam lanovkou. Boccacciův dům s věží, ze které je vidět celý kraj. Prázdno, což je po San Gimignanu úleva.</li>
+    <li><b>San Gimignano</b> — „středověký Manhattan“. <b>Být tam před devátou nebo po sedmé.</b> Věže, Collegiata, Vernaccia.</li>
+    <li><b>Monteriggioni</b> — dokonale kruhové opevněné městečko na kopci, hradby s věžemi. Zmiňuje ho Dante. Malé, projde se za hodinu.</li>
    </ul>`},
- {id:"t2d",n:"Colle di Val d'Elsa a Casole",k:"Půl dne · 30 min autem",
-  d:`<b>Křišťál a kamenné uličky.</b>
+ {id:"c_t4",n:"Siena podruhé, nebo Badia a Passignano",k:"Půl dne",
+  d:`<b>Když jste Sienu z vily nestihli — nebo klášter mezi vinicemi.</b>
    <ul>
-    <li><b><a href="${G("Palazzo Campana Colle di Val d'Elsa","ChIJddvnX-A6KhMRYmP0scVN7N0")}" target="_blank">Colle Alta</a></b> — horní město na skalnatém hřebeni, do kterého se vstupuje obřím obloukem paláce Campana. Zaparkovat u Porta Nuova a deset minut pěšky. Vyrábí se tu <b>95 % italského křišťálu</b> — dílny a muzeum.</li>
-    <li><b>Casole d'Elsa</b> — malé opevněné městečko na kopci, kterého si nikdo nevšímá. Náměstí, kavárna, výhled.</li>
-    <li>Odtud je to dvacet minut do Sieny — kdybyste ji ve Val d'Orcia vynechali a nechali si ji na tenhle konec.</li>
-   </ul>`},
- {id:"t2e",n:"Massa Marittima",k:"Celý den · 1 h autem",
-  d:`<b>Nejdál a nejmíň známé. Ještě jedna úplně jiná krajina.</b>
-   <ul>
-    <li><b><a href="${G("Cattedrale di San Cerbone Massa Marittima","ChIJF2o-aQDvKRMR2vxfHXiPA20")}" target="_blank">Cattedrale di San Cerbone</a></b> — 4,9★. Románsko-gotická katedrála postavená našikmo do svažitého náměstí, takže vypadá, jako by se k vám nakláněla. Uvnitř Duccio di Buoninsegna a Giovanni Pisano.</li>
-    <li>Středověké město v kopcích Maremmy — hornické, tvrdé, krásné. Piazza Garibaldi s kavárnami.</li>
-    <li>Cestou zpátky se dá zastavit v <b>Biancane</b>, je to po cestě.</li>
+    <li><b>Siena</b> je z Chianti 30–40 minut. Katedrála s odkrytou podlahou (do 31. 7.), Piazza del Campo.</li>
+    <li><b>Badia a Passignano</b> — opatství uprostřed vinic Antinori. Prohlídka kláštera jen v neděli odpoledne, sklep a restaurace celý týden.</li>
    </ul>`}
 ];
 
 const EAT2=[
- {p:"Volterra",n:"La Vecchia Lira",id:"ChIJ2_3HbUQaKhMRy3_NSBs-mbQ",m:"4,6★ · Divočák v čokoládě — podle recenzí jedno z nejlepších jídel, co kdo v Itálii měl. Domácí víno, ceny normální. <span class='closed'>Zavřeno ve čtvrtek.</span>"},
- {p:"Volterra",n:"Osteria La Pace",id:"ChIJPYHc5kYaKhMRxknMxGBh_II",m:"4,5★ · Pici s divočákem, fiorentina, posezení u římského divadla. Velký a oblíbený, ale zvládají to. <span class='closed'>Zavřeno ve středu.</span>"},
- {p:"7 km od Volterry",n:"Farmhouse Santa Vittoria — restaurace",id:"ChIJo_kdnl0QKhMRqH7tt4s9DSg",m:"4,7★ · Terasa s výhledem do všech stran, sezonní venkovská kuchyně. Jezdí sem místní zvát návštěvy. <b>Volat předem</b>, i když tam nebydlíte."}
+ {p:"Panzano",n:"Antica Macelleria Cecchini",id:"",m:"Řeznická legenda Dario Cecchini. Od rychlého oběda po bistecca menu. Zážitek. Na hlavní menu rezervovat."},
+ {p:"Greve",n:"Ristoro di Lamole",id:"",m:"Terasa s jedním z nejlepších výhledů v Chianti, poctivá toskánská kuchyně. Nad Greve. Rezervovat, hlavně na západ slunce."},
+ {p:"Impruneta",n:"Agriturismo I Poggi — restaurace",id:"ChIJIWasuSFOKhMRCj0PBVvdmiA",m:"4,6★ · Trofie, vlastní víno, domácí limoncello. I když tam nebydlíte — volat předem."},
+ {p:"San Casciano",n:"La Loggia — restaurace",id:"ChIJ50QfE9VIKhMRahmvjFdQj_Q",m:"Farm-to-table, většina bio z vlastního. Sestry Ludovica a Federica. Rezervovat."}
 ];
 
+/* ===== STATE ===== */
 let me="M";
 const votes={M:new Set(),N:new Set()};
 function readHash(){const h=new URLSearchParams(location.hash.slice(1));
@@ -427,17 +438,11 @@ const stayHTML=o=>{
  </article>`;
 };
 const tripHTML=o=>`<article class="card${st(o.id)==="MN"?" match":""}">
-  <div class="card-top">
-    <div class="kicker">${o.k}</div>
-    <div class="cname">${o.n}</div>
-    <div class="cdesc">${o.d}</div>
-  </div>
+  <div class="card-top"><div class="kicker">${o.k}</div><div class="cname">${o.n}</div><div class="cdesc">${o.d}</div></div>
   <div class="cvote"><span>Chci vidět</span>${stamp(o.id)}</div>
  </article>`;
-const eatHTML=e=>`<div class="eatrow">
-  <div class="eatplace">${e.p}</div>
-  <div class="eatmain"><a href="${G(e.n,e.id)}" target="_blank">${e.n}</a><div class="eatmeta">${e.m}</div></div>
- </div>`;
+const eatHTML=e=>`<div class="eatrow"><div class="eatplace">${e.p}</div>
+  <div class="eatmain">${e.id?`<a href="${G(e.n,e.id)}" target="_blank">${e.n}</a>`:`<span style="font-weight:600;font-size:15px">${e.n}</span>`}<div class="eatmeta">${e.m}</div></div></div>`;
 
 function sumBlock(label,items){
  const b=items.filter(o=>st(o.id)==="MN"),m=items.filter(o=>st(o.id)==="M"),n=items.filter(o=>st(o.id)==="N");
@@ -451,17 +456,15 @@ function sumBlock(label,items){
 }
 
 function render(){
- document.getElementById("stay1").innerHTML=STAY1.map(stayHTML).join("");
  document.getElementById("trip1").innerHTML=TRIP1.map(tripHTML).join("");
  document.getElementById("eat1").innerHTML=EAT1.map(eatHTML).join("");
- document.getElementById("stay2").innerHTML=STAY2.map(stayHTML).join("");
+ document.getElementById("firenze").innerHTML=FIRENZE.map(tripHTML).join("");
  document.getElementById("trip2").innerHTML=TRIP2.map(tripHTML).join("");
  document.getElementById("eat2").innerHTML=EAT2.map(eatHTML).join("");
  document.getElementById("sumBody").innerHTML=
-   sumBlock("Val d'Orcia — spát",STAY1)+
-   sumBlock("Val d'Orcia — výlety",TRIP1)+
-   sumBlock("Volterra — spát",STAY2)+
-   sumBlock("Volterra — výlety",TRIP2);
+   sumBlock("Vila — výlety",TRIP1)+
+   sumBlock("Florencie",FIRENZE)+
+   sumBlock("Chianti — výlety",TRIP2);
  writeHash();
 }
 
